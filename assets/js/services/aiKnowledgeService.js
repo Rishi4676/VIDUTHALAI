@@ -13,6 +13,7 @@ class AIKnowledgeService {
       works: '/pages/works-and-poems.html',
       sanctum: '/pages/enter-1910.html',
       ai: '/pages/ai-bharathi.html',
+      safety: '/pages/women-safety.html',
       learn: '/pages/learn-hub.html'
     };
 
@@ -217,6 +218,9 @@ class AIKnowledgeService {
     }
     if (text.includes('go to ai') || text.includes('open ai') || text.includes('ai lab') || text.includes('ஆய்வகம்')) {
       return { type: 'NAVIGATE', target: this.routes.ai, response: 'AI பாரதி ஆய்வகத்திற்கு வழிகாட்டுகிறேன்.' };
+    }
+    if (text.includes('women safety') || text.includes('safety page') || text.includes('pudhumai penn') || text.includes('பெண் பாதுகாப்பு')) {
+      return { type: 'NAVIGATE', target: this.routes.safety, response: 'புதுமைப் பெண் மற்றும் பெண் பாதுகாப்புப் பக்கத்திற்கு வழிகாட்டுகிறேன்.' };
     }
 
     // 2. REAL MUSIC & YOUTUBE SONG PLAYER VOICE COMMAND

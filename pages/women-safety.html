@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>VIDUTHALAI - Pudhumai Penn & Women Safety Sanctuary</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Space+Grotesk:wght@400..700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html, body { margin:0; padding:0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#131315",
+            "surface-container": "#201f21",
+            "surface-container-high": "#2a2a2c",
+            "surface-container-low": "#1b1b1d",
+            "on-surface": "#e5e1e4",
+            "on-surface-variant": "#dec1b4",
+            primary: "#ffb691",
+            secondary: "#e9c349",
+            outline: "#a58b7f"
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/voice-assistant.css"/>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans antialiased selection:bg-amber-500 selection:text-black min-h-screen relative overflow-x-hidden">
+
+  <!-- BEGIN: GlobalHeader -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-charcoal-900/95 backdrop-blur-md border-b border-stone-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto w-full px-3 sm:px-4 md:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2 lg:gap-4 box-border min-h-[64px] max-h-[72px]">
+      
+      <!-- 1. Brand Logo -->
+      <a aria-label="VIDUTHALAI Home" class="flex items-center gap-2 sm:gap-2.5 shrink-0 group cursor-pointer focus:outline-none min-w-0 max-w-[210px] sm:max-w-[240px] md:max-w-xs" href="../index.html">
+        <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full border-2 border-amber-500/80 p-0.5 flex items-center justify-center bg-stone-900 shadow-lg shadow-amber-950/50 group-hover:border-saffron transition-all shrink-0 overflow-hidden">
+          <img src="../assets/images/viduthalai-logo.png" alt="VIDUTHALAI Logo" class="w-full h-full rounded-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+          <span class="absolute -inset-0.5 rounded-full border border-amber-400/40 animate-ping opacity-30 pointer-events-none"></span>
+        </div>
+        <div class="flex flex-col min-w-0 justify-center">
+          <span class="font-cinzel text-sm sm:text-base md:text-lg font-bold tracking-wider text-stone-100 flex items-center gap-1 leading-none truncate">
+            VIDUTHALAI <span class="text-amber-400 font-bold text-[10px] sm:text-xs font-tamil shrink-0">(விடுதலை)</span>
+          </span>
+          <span class="text-[8px] sm:text-[9px] tracking-wider uppercase text-amber-300/90 font-serif mt-0.5 truncate">
+            Mahakavi Bharathiyar Digital Archive
+          </span>
+        </div>
+      </a>
+
+      <!-- 2. Flexible Navigation -->
+      <div class="flex-1 min-w-0 hidden lg:flex items-center justify-center px-1 lg:px-2">
+        <nav class="flex items-center gap-1 lg:gap-1.5 p-1 bg-stone-900/90 rounded-xl border border-stone-800/80 shrink-0 max-w-full overflow-x-auto no-scrollbar">
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="../index.html">HOME</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="life-and-timeline.html">LIFE &amp; TIMELINE</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="journey-map.html">JOURNEY MAP</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="works-and-poems.html">WORKS &amp; POEMS</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="enter-1910.html">ENTER 1910</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="ai-bharathi.html">AI BHARATHI</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-amber-400 bg-amber-950/40 border border-amber-500/30 rounded-lg transition-colors whitespace-nowrap" href="women-safety.html">WOMEN SAFETY</a>
+          <a class="px-2 lg:px-2.5 py-1 text-[10.5px] lg:text-[11px] xl:text-[12px] font-cinzel font-semibold tracking-wider text-stone-300 hover:text-amber-400 hover:bg-stone-800/80 rounded-lg transition-colors whitespace-nowrap" href="learn-hub.html">LEARN HUB</a>
+        </nav>
+      </div>
+
+      <!-- 3. Right Utility Bar -->
+      <div class="flex items-center gap-1 sm:gap-1.5 md:gap-2 shrink-0">
+        <span class="px-3 py-1 rounded-full bg-red-500/20 border border-red-500/50 text-red-400 text-[10px] font-mono font-bold tracking-widest flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span> 1091 SOS HELPLINE
+        </span>
+      </div>
+    </div>
+  </header>
+  <!-- END: GlobalHeader -->
+
+  <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    
+    <!-- Hero Banner -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/40 text-amber-400 font-mono text-xs font-bold tracking-widest uppercase inline-block mb-3">
+        🛡️ PUDHUMAI PENN &amp; WOMEN SAFETY SANCTUARY / புதுமைப் பெண் பாதுகாப்பு
+      </span>
+      <h1 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-extrabold text-stone-100 tracking-wide mb-4 leading-tight">
+        Women Empowerment &amp; Interactive Safety Reality Simulation
+      </h1>
+      <p class="font-tamil text-amber-300 text-lg italic mb-3">
+        “நிமிர்ந்த நன்னடை நேர்கொண்ட பார்வையும், நிலத்தில் யார்க்கும் அஞ்சாத நெறிகளும்!” — மகாகவி பாரதியார்
+      </p>
+      <p class="text-stone-400 text-sm leading-relaxed">
+        Bharathiyar envisioned the modern woman ("புதுமைப் பெண்") as courageous, educated, self-reliant, and physically fearless. Explore real-world safety rules and test our live 3D CCTV reality simulation below.
+      </p>
+    </div>
+
+    <!-- MAIN SECTION: CCTV VIDEO REALITY SIMULATION (3 WOMEN SAFETY RULES) -->
+    <div class="bg-stone-900 border-2 border-amber-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-amber-950/40 mb-16 relative overflow-hidden">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-stone-800 pb-4">
+        <div>
+          <span class="text-amber-400 font-mono text-xs font-bold uppercase tracking-widest block mb-1">
+            🎥 REAL-TIME CCTV SURVEILLANCE &amp; SAFETY SIMULATOR
+          </span>
+          <h2 class="font-cinzel text-2xl font-bold text-stone-100">
+            3 Women Urban Safety Reality Feed (3 பெண்கள் தற்காப்பு மாதிரி)
+          </h2>
+        </div>
+        
+        <!-- Camera Selector -->
+        <div class="flex items-center gap-2 overflow-x-auto">
+          <button onclick="switchCCTVCamera(1)" id="cctv-btn-1" class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-amber-500 text-stone-950 border border-amber-400 transition-all">
+            CAM 01: NIGHT WALKWAY
+          </button>
+          <button onclick="switchCCTVCamera(2)" id="cctv-btn-2" class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-800 text-stone-400 border border-stone-700 hover:text-amber-300 transition-all">
+            CAM 02: METRO PLATFORM
+          </button>
+          <button onclick="switchCCTVCamera(3)" id="cctv-btn-3" class="px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-800 text-stone-400 border border-stone-700 hover:text-amber-300 transition-all">
+            CAM 03: CAMPUS AVENUE
+          </button>
+        </div>
+      </div>
+
+      <!-- CCTV Canvas & Monitor Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left: Live CCTV Screen -->
+        <div class="lg:col-span-8 bg-black rounded-2xl border-2 border-stone-800 relative overflow-hidden shadow-inner flex flex-col items-center justify-center min-h-[380px] sm:min-h-[440px]">
+          
+          <!-- CCTV HUD Overlay Header -->
+          <div class="absolute top-3 left-3 right-3 z-20 flex justify-between items-center text-[11px] font-mono text-emerald-400 bg-black/75 px-3 py-1.5 rounded-lg border border-stone-800">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+              <span class="font-bold text-white tracking-widest" id="cctv-cam-title">CAM 01: NIGHT STREET WALKWAY</span>
+            </div>
+            <div class="flex items-center gap-3 text-stone-400">
+              <span id="cctv-timestamp">2026-09-12 15:20:00 LIVE</span>
+              <span class="text-amber-400 font-bold">1080p HD • 60FPS</span>
+            </div>
+          </div>
+
+          <!-- CCTV Canvas Feed -->
+          <canvas id="cctv-canvas" width="800" height="460" class="w-full h-full object-cover rounded-2xl"></canvas>
+
+          <!-- Alarm Overlay Flash -->
+          <div id="cctv-alarm-flash" class="absolute inset-0 bg-red-600/30 pointer-events-none opacity-0 transition-opacity duration-300 flex items-center justify-center">
+            <div class="p-4 bg-red-950/90 border-2 border-red-500 rounded-2xl text-center shadow-2xl">
+              <span class="text-3xl block mb-1">🚨 EMERGENCY SOS ACTIVATED</span>
+              <span class="text-xs font-mono text-red-200 uppercase tracking-widest">REAL-TIME GPS BROADCAST &amp; NEAREST POLICE ALERTS SENT</span>
+            </div>
+          </div>
+
+          <!-- CCTV Footer Status -->
+          <div class="absolute bottom-3 left-3 right-3 z-20 flex justify-between items-center text-[10px] font-mono text-stone-400 bg-black/80 px-3 py-1.5 rounded-lg border border-stone-800">
+            <span>SURVEILLANCE SCENARIO: 3 WOMEN SAFE PASSAGE</span>
+            <span id="cctv-rule-status" class="text-emerald-400 font-bold">MODE: NORMAL SAFE MONITORING</span>
+          </div>
+        </div>
+
+        <!-- Right: 3 Interactive Safety Rules Control Panel -->
+        <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
+          
+          <div class="bg-stone-950 p-4 rounded-2xl border border-stone-800">
+            <h3 class="font-cinzel text-sm font-bold text-amber-400 mb-1 flex items-center gap-1.5">
+              <span>📜 3 ESSENTIAL WOMEN SAFETY RULES</span>
+            </h3>
+            <p class="text-[11px] text-stone-400 leading-relaxed font-tamil">
+              கீழே உள்ள 3 முக்கிய பாதுகாப்பு விதிகளின் பொத்தான்களை அழுத்தி CCTV திரையில் நேரலையாகப் பரிசோதிக்கலாம்:
+            </p>
+          </div>
+
+          <!-- Rule Button 1: SOS Panic Siren -->
+          <div class="p-4 rounded-xl bg-stone-950 border border-stone-800 hover:border-red-500/60 transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-red-400 font-mono">RULE 1: EMERGENCY SOS SIREN</span>
+              <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-[9px] font-mono">PANIC ALERT</span>
+            </div>
+            <p class="font-tamil text-xs text-stone-300 mb-3">
+              அவசர வேளையில் உரத்த சைரன் ஒலி மற்றும் நேரலை GPS இருப்பிடத்தைப் பரப்புதல்.
+            </p>
+            <button onclick="triggerRuleSOS()" class="w-full py-2 px-3 rounded-lg bg-red-600 hover:bg-red-500 text-white font-cinzel font-bold text-xs tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
+              <span>🚨 TRIGGER SOS PANIC SIREN</span>
+            </button>
+          </div>
+
+          <!-- Rule Button 2: Safe Distance Radar -->
+          <div class="p-4 rounded-xl bg-stone-950 border border-stone-800 hover:border-emerald-500/60 transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-emerald-400 font-mono">RULE 2: 360° SAFE PERIMETER</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[9px] font-mono">RADAR SHIELD</span>
+            </div>
+            <p class="font-tamil text-xs text-stone-300 mb-3">
+              3 பெண்களைச் சுற்றி 360° பாதுகாப்பான தூரத்தைக் கண்காணிக்கும் ரேடார் வட்டம்.
+            </p>
+            <button onclick="triggerRulePerimeter()" class="w-full py-2 px-3 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-cinzel font-bold text-xs tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
+              <span>🛡️ ACTIVATE SAFE RADAR ZONE</span>
+            </button>
+          </div>
+
+          <!-- Rule Button 3: Buddy Defense System -->
+          <div class="p-4 rounded-xl bg-stone-950 border border-stone-800 hover:border-amber-500/60 transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-amber-400 font-mono">RULE 3: BUDDY DEFENSE FORMATION</span>
+              <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[9px] font-mono">DEFENSE MODE</span>
+            </div>
+            <p class="font-tamil text-xs text-stone-300 mb-3">
+              3 பெண்களும் இணைந்து நிற்கும் கூட்டுத் தற்காப்பு மற்றும் ஃபிளாஷ் தடுப்பு உத்தி.
+            </p>
+            <button onclick="triggerRuleBuddyDefense()" class="w-full py-2 px-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-stone-950 font-cinzel font-bold text-xs tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
+              <span>⚡ ACTIVATE BUDDY DEFENSE</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BHARATHIYAR'S 5 COMMANDMENTS FOR WOMEN FREEDOM -->
+    <div class="mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs uppercase tracking-widest">
+          📜 BHARATHI'S VISION FOR WOMEN
+        </span>
+        <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-stone-100 mt-2">
+          பாரதியின் 5 பெண் விடுதலைக் கட்டளைகள்
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 hover:border-amber-500/50 transition-all">
+          <span class="text-2xl mb-3 block">👑</span>
+          <h3 class="font-tamil text-lg font-bold text-amber-400 mb-2">1. நிமிர்ந்த நன்னடை &amp; தன்னம்பிக்கை</h3>
+          <p class="font-tamil text-xs text-stone-400 leading-relaxed">
+            அச்சமும் மடமையும் இன்றி, நிமிர்ந்த நன்னடையோடும் நேர்கொண்ட பார்வையோடும் தைரியமாக வாழ வேண்டும்.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 hover:border-amber-500/50 transition-all">
+          <span class="text-2xl mb-3 block">📚</span>
+          <h3 class="font-tamil text-lg font-bold text-amber-400 mb-2">2. கல்வி &amp; சம உரிமை</h3>
+          <p class="font-tamil text-xs text-stone-400 leading-relaxed">
+            பெண்களுக்கு நிகரான உயர்கல்வியும், சமூக மற்றும் சட்ட ரீதியான முழு சுதந்திரமும் அளிக்கப்பட வேண்டும்.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 hover:border-amber-500/50 transition-all">
+          <span class="text-2xl mb-3 block">🥋</span>
+          <h3 class="font-tamil text-lg font-bold text-amber-400 mb-2">3. உடற்பயிற்சி &amp; தற்காப்பு</h3>
+          <p class="font-tamil text-xs text-stone-400 leading-relaxed">
+            பெண்கள் உடல் உறுதியும் தற்காப்புக் கலைகளும் கற்றுத் தங்களைத் தாங்களே பாதுகாத்துக் கொள்ளும் திறன் பெற வேண்டும்.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 hover:border-amber-500/50 transition-all">
+          <span class="text-2xl mb-3 block">💼</span>
+          <h3 class="font-tamil text-lg font-bold text-amber-400 mb-2">4. பொருளாதார சுதந்திரம்</h3>
+          <p class="font-tamil text-xs text-stone-400 leading-relaxed">
+            சுய தொழில் மற்றும் வேலைவாய்ப்புகள் மூலம் பெண்கள் சொந்தக் காலில் நிற்கும் பொருளாதாரச் சுதந்திரம் பெற வேண்டும்.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-900 border border-stone-800 hover:border-amber-500/50 transition-all col-span-1 sm:col-span-2 lg:col-span-2">
+          <span class="text-2xl mb-3 block">✊</span>
+          <h3 class="font-tamil text-lg font-bold text-amber-400 mb-2">5. கொடுமைகளை எதிர்த்துப் போராடுதல்</h3>
+          <p class="font-tamil text-xs text-stone-400 leading-relaxed">
+            “மாதர் தம்மை இழிவு செய்யும் மடமையை கொளுத்துவோம்” — பெண்களுக்கு எதிரான வன்முறைகளையும் அநீதிகளையும் எதிர்த்து உரக்கக் குரல் கொடுக்க வேண்டும்.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EMERGENCY HELPLINES CARDS -->
+    <div class="bg-gradient-to-r from-red-950/60 via-stone-900 to-amber-950/60 border border-stone-800 rounded-3xl p-6 sm:p-8">
+      <div class="text-center mb-6">
+        <h2 class="font-cinzel text-xl sm:text-2xl font-bold text-stone-100">
+          24/7 National Emergency Safety Helplines (அவசர உதவி எண்கள்)
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <div class="p-4 rounded-xl bg-black/60 border border-red-500/40 text-center">
+          <span class="text-amber-400 font-mono text-2xl font-bold block mb-1">1091</span>
+          <span class="font-tamil text-xs text-stone-300 font-bold block">பெண்கள் உதவி எண்</span>
+          <span class="text-[10px] text-stone-500 font-mono">National Women Helpline</span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/60 border border-red-500/40 text-center">
+          <span class="text-amber-400 font-mono text-2xl font-bold block mb-1">112</span>
+          <span class="font-tamil text-xs text-stone-300 font-bold block">அகில இந்திய அவசர எண்</span>
+          <span class="text-[10px] text-stone-500 font-mono">All-India Emergency Helpline</span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/60 border border-amber-500/40 text-center">
+          <span class="text-amber-400 font-mono text-2xl font-bold block mb-1">181</span>
+          <span class="font-tamil text-xs text-stone-300 font-bold block">பெண்கள் ஆதரவு மையம்</span>
+          <span class="text-[10px] text-stone-500 font-mono">Domestic &amp; Safety Line</span>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/60 border border-emerald-500/40 text-center">
+          <span class="text-emerald-400 font-mono text-2xl font-bold block mb-1">KAVALAN SOS</span>
+          <span class="font-tamil text-xs text-stone-300 font-bold block">காவலன் செயலி</span>
+          <span class="text-[10px] text-stone-500 font-mono">TN Police Safety App</span>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SCRIPT LOGIC FOR CCTV SIMULATOR -->
+  <script>
+    let currentCam = 1;
+    let activeRule = 'NORMAL';
+    let sosAudioCtx = null;
+
+    const canvas = document.getElementById('cctv-canvas');
+    const ctx = canvas ? canvas.getContext('2d') : null;
+
+    // 3 Women Characters Coordinates
+    let women = [
+      { x: 220, y: 260, r: 18, color: '#f59e0b', label: 'Woman 1' },
+      { x: 280, y: 240, r: 18, color: '#ec4899', label: 'Woman 2' },
+      { x: 340, y: 270, r: 18, color: '#8b5cf6', label: 'Woman 3' }
+    ];
+
+    let timestampEl = document.getElementById('cctv-timestamp');
+    setInterval(() => {
+      if (timestampEl) {
+        const now = new Date();
+        timestampEl.textContent = now.toISOString().replace('T', ' ').substring(0, 19) + ' LIVE';
+      }
+    }, 1000);
+
+    function switchCCTVCamera(camId) {
+      currentCam = camId;
+      [1,2,3].forEach(id => {
+        const btn = document.getElementById('cctv-btn-' + id);
+        if (btn) {
+          if (id === camId) {
+            btn.className = 'px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-amber-500 text-stone-950 border border-amber-400 transition-all';
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-800 text-stone-400 border border-stone-700 hover:text-amber-300 transition-all';
+          }
+        }
+      });
+
+      const titleEl = document.getElementById('cctv-cam-title');
+      if (titleEl) {
+        if (camId === 1) titleEl.textContent = 'CAM 01: NIGHT STREET WALKWAY';
+        if (camId === 2) titleEl.textContent = 'CAM 02: METRO STATION PLATFORM';
+        if (camId === 3) titleEl.textContent = 'CAM 03: CAMPUS AVENUE WALK';
+      }
+    }
+
+    function triggerRuleSOS() {
+      activeRule = 'SOS';
+      const statusEl = document.getElementById('cctv-rule-status');
+      if (statusEl) statusEl.textContent = 'MODE: RULE 1 - SOS SIREN & GPS BROADCAST';
+
+      const flashEl = document.getElementById('cctv-alarm-flash');
+      if (flashEl) {
+        flashEl.classList.remove('opacity-0');
+        setTimeout(() => flashEl.classList.add('opacity-0'), 2500);
+      }
+
+      // Play Web Audio Emergency Alarm Siren Sound
+      try {
+        if (!sosAudioCtx) sosAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = sosAudioCtx.createOscillator();
+        const gain = sosAudioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(880, sosAudioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(440, sosAudioCtx.currentTime + 0.5);
+        osc.frequency.exponentialRampToValueAtTime(880, sosAudioCtx.currentTime + 1.0);
+        gain.gain.setValueAtTime(0.15, sosAudioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.01, sosAudioCtx.currentTime + 1.2);
+        osc.connect(gain);
+        gain.connect(sosAudioCtx.destination);
+        osc.start();
+        osc.stop(sosAudioCtx.currentTime + 1.2);
+      } catch(e) {}
+    }
+
+    function triggerRulePerimeter() {
+      activeRule = 'RADAR';
+      const statusEl = document.getElementById('cctv-rule-status');
+      if (statusEl) statusEl.textContent = 'MODE: RULE 2 - 360° SAFE PERIMETER RADAR ACTIVE';
+    }
+
+    function triggerRuleBuddyDefense() {
+      activeRule = 'DEFENSE';
+      const statusEl = document.getElementById('cctv-rule-status');
+      if (statusEl) statusEl.textContent = 'MODE: RULE 3 - BUDDY SYSTEM DEFENSE FORMATION';
+    }
+
+    function renderCCTV() {
+      if (!ctx) return;
+
+      ctx.fillStyle = currentCam === 1 ? '#080c10' : (currentCam === 2 ? '#0b1320' : '#0a100d');
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Render CCTV Grid Lines
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < canvas.width; x += 40) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += 40) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+      }
+
+      // Render 3 Women Characters & Movements
+      women.forEach((w, idx) => {
+        w.x += Math.sin(Date.now() / 800 + idx) * 0.4;
+        w.y += Math.cos(Date.now() / 900 + idx) * 0.3;
+
+        // Render Safe Distance Radar Circle (Rule 2)
+        if (activeRule === 'RADAR') {
+          ctx.beginPath();
+          ctx.arc(w.x, w.y, 65, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(16, 185, 129, 0.12)';
+          ctx.fill();
+          ctx.strokeStyle = '#10b981';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        }
+
+        // Render Buddy System Defense Lines (Rule 3)
+        if (activeRule === 'DEFENSE') {
+          women.forEach((wOther, oIdx) => {
+            if (idx !== oIdx) {
+              ctx.beginPath();
+              ctx.moveTo(w.x, w.y);
+              ctx.lineTo(wOther.x, wOther.y);
+              ctx.strokeStyle = '#f59e0b';
+              ctx.lineWidth = 2;
+              ctx.setLineDash([4, 4]);
+              ctx.stroke();
+              ctx.setLineDash([]);
+            }
+          });
+        }
+
+        // Character Circle
+        ctx.beginPath();
+        ctx.arc(w.x, w.y, w.r, 0, Math.PI * 2);
+        ctx.fillStyle = w.color;
+        ctx.fill();
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Label
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '10px monospace';
+        ctx.fillText(`Woman ${idx+1}`, w.x - 22, w.y + 32);
+      });
+
+      // Render Camera Viewfinder Center Crosshair
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(canvas.width/2 - 15, canvas.height/2); ctx.lineTo(canvas.width/2 + 15, canvas.height/2);
+      ctx.moveTo(canvas.width/2, canvas.height/2 - 15); ctx.lineTo(canvas.width/2, canvas.height/2 + 15);
+      ctx.stroke();
+
+      requestAnimationFrame(renderCCTV);
+    }
+
+    renderCCTV();
+  </script>
+
+  <!-- Modular Voice Assistant Services & Components -->
+  <script src="../assets/js/services/bharathiAssets.js"></script>
+  <script src="../assets/js/services/speechRecognitionService.js"></script>
+  <script src="../assets/js/services/speechSynthesisService.js"></script>
+  <script src="../assets/js/services/voiceService.js"></script>
+  <script src="../assets/js/services/bharathiMusicPlayer.js"></script>
+  <script src="../assets/js/services/aiKnowledgeService.js"></script>
+  <script src="../assets/js/components/BharathiCharacter.js"></script>
+  <script src="../assets/js/components/VoiceButton.js"></script>
+  <script src="../assets/js/components/VoiceWaveform.js"></script>
+  <script src="../assets/js/components/AssistantStatus.js"></script>
+  <script src="../assets/js/components/BharathiIntroModal.js"></script>
+  <script src="../assets/js/services/i18nService.js"></script>
+  <script src="../assets/js/voice-assistant.js"></script>
+</body>
+</html>
