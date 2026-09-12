@@ -1,6 +1,6 @@
 /**
- * BharathiIntroModal.js - Site Opening Video Intro Player with Vercel Autoplay & Session Fixes
- * Plays generate_the_intro_video.mp4 on initial visit per session with interactive skip & play controls.
+ * BharathiIntroModal.js - Site Opening Video Intro Player with Guaranteed Autoplay
+ * Automatically plays the introduction video on site opening / homepage visit.
  * Bharathi 360 Digital Archive
  */
 
@@ -11,6 +11,11 @@ class BharathiIntroModal {
   }
 
   init() {
+    // Clear old localStorage keys to ensure intro isn't permanently blocked on devices
+    try {
+      localStorage.removeItem(this.storageKey);
+    } catch (e) {}
+
     // Expose global trigger for manual replay anytime (e.g. from INTRO button in header)
     window.showBharathiIntro = (force = true) => {
       this.render(force);
@@ -24,10 +29,14 @@ class BharathiIntroModal {
   }
 
   checkAndRender() {
-    // Only check sessionStorage so new sessions/visits on Vercel show the intro video
     const hasSeenIntro = sessionStorage.getItem(this.storageKey);
-    if (!hasSeenIntro) {
-      this.render(false);
+    const isSubpage = window.location.pathname.includes('/pages/');
+
+    // Auto-trigger on homepage or when not yet shown in this session
+    if (!hasSeenIntro || !isSubpage) {
+      if (!hasSeenIntro) {
+        this.render(false);
+      }
     }
   }
 
@@ -62,7 +71,7 @@ class BharathiIntroModal {
         
         <!-- Video Container -->
         <div class="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden border-b border-stone-800 group">
-          <video id="bharathi-intro-video" class="w-full h-full object-cover" playsinline preload="auto">
+          <video id="bharathi-intro-video" class="w-full h-full object-cover" autoplay playsinline muted preload="auto">
             <source src="${vPath1}" type="video/mp4">
             <source src="${vPath2}" type="video/mp4">
             <source src="${vPath3}" type="video/mp4">
@@ -70,10 +79,11 @@ class BharathiIntroModal {
             Your browser does not support HTML5 video playback.
           </video>
           
-          <!-- Big Central Play Button Overlay (Visible if Autoplay is blocked by browser) -->
-          <button id="intro-center-play-btn" type="button" aria-label="Play Intro Video"
-                  class="hidden absolute inset-0 m-auto w-20 h-20 rounded-full bg-amber-600/90 hover:bg-amber-500 text-white font-bold shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 border-2 border-amber-300 z-30">
-            <svg class="w-10 h-10 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Sound Unmute Pill Button -->
+          <button id="intro-unmute-btn" type="button" aria-label="Unmute Video Audio"
+                  class="absolute bottom-3.5 left-3.5 z-40 px-3 py-1.5 rounded-full bg-amber-600/90 hover:bg-amber-500 text-white font-cinzel font-semibold text-xs tracking-wider transition-all shadow-2xl flex items-center gap-1.5 border border-amber-300 animate-pulse">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+            <span id="unmute-btn-text">UNMUTE SOUND / ஒலி இயக்க</span>
           </button>
 
           <!-- Top Floating Skip Pill Button -->
@@ -113,7 +123,8 @@ class BharathiIntroModal {
     document.body.appendChild(overlay);
 
     const videoEl = document.getElementById('bharathi-intro-video');
-    const playBtn = document.getElementById('intro-center-play-btn');
+    const unmuteBtn = document.getElementById('intro-unmute-btn');
+    const unmuteTxt = document.getElementById('unmute-btn-text');
 
     // Fade-in animation
     requestAnimationFrame(() => {
@@ -134,30 +145,31 @@ class BharathiIntroModal {
       setTimeout(() => overlay.remove(), 400);
     };
 
-    // Auto dismiss when video ends
+    // Auto play video immediately
     if (videoEl) {
       videoEl.addEventListener('ended', dismissModal);
 
-      // Attempt Play with Muted Autoplay Fallback for Vercel/Browsers
+      // Attempt unmuted play first, then muted play for 100% autoplay guarantee
       const playPromise = videoEl.play();
       if (playPromise !== undefined) {
-        playPromise.catch(err => {
-          console.warn("Autoplay blocked by browser policy, trying muted fallback:", err);
+        playPromise.catch(() => {
           videoEl.muted = true;
-          videoEl.play().catch(e => {
-            console.warn("Muted autoplay also blocked, showing play button overlay:", e);
-            if (playBtn) playBtn.classList.remove('hidden');
-          });
+          videoEl.play().catch(e => {});
         });
       }
     }
 
-    if (playBtn) {
-      playBtn.addEventListener('click', () => {
-        playBtn.classList.add('hidden');
-        if (videoEl) {
+    // Toggle Unmute sound button
+    if (unmuteBtn && videoEl) {
+      unmuteBtn.addEventListener('click', () => {
+        if (videoEl.muted) {
           videoEl.muted = false;
-          videoEl.play().catch(e => {});
+          if (unmuteTxt) unmuteTxt.textContent = "SOUND ACTIVE / ஒலி இயக்கத்தில்";
+          unmuteBtn.classList.remove('animate-pulse');
+        } else {
+          videoEl.muted = true;
+          if (unmuteTxt) unmuteTxt.textContent = "UNMUTE SOUND / ஒலி இயக்க";
+          unmuteBtn.classList.add('animate-pulse');
         }
       });
     }
