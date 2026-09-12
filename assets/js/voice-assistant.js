@@ -187,12 +187,11 @@ class VoiceAssistant {
           }
         });
       } else if (result.type === 'MUSIC') {
-        this.updateState('HAPPY', result.response);
-        this.ttsService.speak(result.response, () => {
-          if (typeof window.playBharathiSong === 'function') {
-            window.playBharathiSong(result.songKey);
-          }
-        });
+        this.updateState('HAPPY', '🎵 அசல் இசைப் பாடல் ஒலிக்கிறது...');
+        if (this.ttsService) this.ttsService.stopSpeaking();
+        if (typeof window.playBharathiSong === 'function') {
+          window.playBharathiSong(result.songKey);
+        }
       } else if (result.type === 'SPEAK') {
         this.updateState('SPEAKING', result.response);
         this.ttsService.speak(result.response, () => {
