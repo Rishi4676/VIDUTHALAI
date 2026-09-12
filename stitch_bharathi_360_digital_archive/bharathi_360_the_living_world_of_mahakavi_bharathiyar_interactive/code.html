@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ta"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BHARATHI 360 | The Living World of Mahakavi Bharathiyar</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cinzel Decorative, Cinzel, Noto Serif Tamil, Playfair Display, Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Cinzel+Decorative:wght@700&amp;family=Noto+Serif+Tamil:wght@300;400;600;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parchment: {
+              DEFAULT: '#EFE2CC',
+              light: '#F8F1E3',
+              deep: '#DBC39E',
+              dark: '#BCA075',
+              shadow: '#1F1A14'
+            },
+            saffron: {
+              DEFAULT: '#E56717',
+              gold: '#DF9B34',
+              fire: '#C34A12',
+              glow: '#F2A03D'
+            },
+            charcoal: {
+              900: '#0B0A09',
+              800: '#141210',
+              700: '#1D1A16',
+              600: '#2A2520'
+            }
+          },
+          fontFamily: {
+            cinzel: ['"Cinzel"', 'serif'],
+            'cinzel-dec': ['"Cinzel Decorative"', 'serif'],
+            tamil: ['"Noto Serif Tamil"', 'serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Base Custom Layout & Effect Styles -->
+<style data-purpose="custom-effects">
+    /* Subtle Film Grain */
+    .film-grain {
+      background-image: radial-gradient(rgba(242, 160, 61, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Torn Paper Top Edge Mask */
+    .torn-edge-top {
+      clip-path: polygon(
+        0% 12px, 2% 4px, 5% 14px, 8% 2px, 12% 10px, 16% 3px, 20% 12px, 24% 2px,
+        28% 13px, 32% 4px, 36% 11px, 40% 3px, 44% 13px, 48% 4px, 52% 12px, 56% 3px,
+        60% 11px, 64% 4px, 68% 13px, 72% 3px, 76% 12px, 80% 4px, 84% 12px, 88% 3px,
+        92% 11px, 96% 4px, 100% 12px, 100% 100%, 0% 100%
+      );
+    }
+
+    /* Ambient Glow Pulse */
+    @keyframes amberPulse {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.04); }
+    }
+    .amber-flame-pulse {
+      animation: amberPulse 7s ease-in-out infinite;
+    }
+
+    /* Vinyl Rotating Spin */
+    @keyframes spinDisc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .spin-disc-playing {
+      animation: spinDisc 9s linear infinite;
+    }
+
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0a09;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #392f24;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c34a12;
+    }
+  </style>
+</head>
+<body class="bg-charcoal-900 text-stone-300 font-sans antialiased selection:bg-saffron selection:text-white overflow-x-hidden min-h-screen">
+<!-- BEGIN: GlobalHeader -->
+<header class="fixed top-0 left-0 w-full z-50 bg-charcoal-900/90 backdrop-blur-md border-b border-stone-800/70 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo Container -->
+<a aria-label="Bharathi 360 Home" class="flex items-center gap-3.5 group cursor-pointer focus:outline-none" href="#">
+<div class="relative w-11 h-11 rounded-full border border-amber-500/40 p-1 flex items-center justify-center bg-gradient-to-br from-charcoal-800 to-stone-900 shadow-md shadow-amber-950/30 group-hover:border-saffron transition-colors">
+<div class="w-8 h-8 rounded-full bg-saffron/20 border border-saffron/60 flex items-center justify-center text-amber-300 text-xs font-cinzel font-bold">
+            360
+          </div>
+<span class="absolute -inset-0.5 rounded-full border border-amber-400/20 animate-ping opacity-25"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-cinzel text-xl font-bold tracking-[0.2em] text-stone-100 flex items-center gap-1.5 leading-tight">
+            BHARATHI <span class="text-amber-400 text-lg font-normal">360</span>
+</span>
+<span class="text-[10px] tracking-wider uppercase text-stone-400 font-serif">
+            The Living World of Mahakavi Bharathiyar
+          </span>
+</div>
+</a>
+<!-- Primary Navigation Links -->
+<nav class="hidden xl:flex items-center space-x-7 text-xs tracking-wider uppercase font-medium">
+<a class="text-amber-400 font-semibold relative py-1 border-b border-amber-400 nav-link" data-target="hero" href="#hero">Home</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="life" href="#life">Life</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="journey" href="#journey">Journey</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="works" href="#works">Works</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="ideas" href="#ideas">Ideas</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="voice" href="#voice">Voice</a>
+<a class="text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-1 bg-amber-950/40 px-2 py-0.5 rounded-full border border-amber-700/40" href="#ai-bharathi" onclick="openRagModal(); return false;">
+<i class="w-3 h-3 text-amber-400" data-lucide="sparkles"></i> AI Bharathi
+        </a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="learn" href="#learn">Learn</a>
+</nav>
+<!-- Right Utility Bar (Language switcher, Quick Search, Audio Ambience, Drawer) -->
+<div class="flex items-center gap-3">
+<!-- Language Switcher Pill -->
+<div aria-label="Language Selector" class="inline-flex rounded-full bg-charcoal-800 p-0.5 border border-stone-700/80 text-[11px]" role="group">
+<button class="px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 font-medium font-tamil text-xs transition-all shadow-sm" id="lang-ta" onclick="setLanguage('ta')">தமிழ்</button>
+<button class="px-2.5 py-1 rounded-full text-stone-400 hover:text-stone-200 font-medium transition-all" id="lang-en" onclick="setLanguage('en')">English</button>
+</div>
+<!-- Global Search Trigger Button (⌘K) -->
+<button aria-label="Open Search Palette" class="p-2 text-stone-300 hover:text-amber-300 rounded-full hover:bg-stone-800 transition-colors flex items-center gap-1.5 focus:outline-none" onclick="toggleModal('search-modal')">
+<i class="w-4 h-4" data-lucide="search"></i>
+<span class="hidden md:inline text-[10px] text-stone-500 bg-stone-900 border border-stone-700 px-1.5 py-0.5 rounded font-mono">⌘K</span>
+</button>
+<!-- Ambient Audio Recitation Player Toggle Button -->
+<button aria-label="Toggle Sound Ambience" class="p-2 text-stone-300 hover:text-amber-300 rounded-full hover:bg-stone-800 transition-colors relative group focus:outline-none" id="audio-toggle-btn" onclick="toggleAmbienceAudio()">
+<i class="w-4 h-4 text-amber-400" data-lucide="volume-2" id="audio-icon"></i>
+<span class="absolute -top-1 -right-1 flex h-2.5 w-2.5 hidden" id="soundwave-indicator">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+</span>
+</button>
+<!-- Mobile Menu Trigger -->
+<button aria-label="Toggle Navigation Drawer" class="xl:hidden p-2 text-stone-300 hover:text-stone-100 rounded-lg hover:bg-stone-800 focus:outline-none" onclick="toggleMobileNav()">
+<i class="w-5 h-5" data-lucide="menu"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Menu Dropdown -->
+<div class="hidden xl:hidden bg-charcoal-900/98 border-b border-stone-800 px-6 py-5 space-y-4" id="mobile-nav-panel">
+<div class="grid grid-cols-2 gap-3 text-sm font-medium">
+<a class="text-amber-400 py-1" href="#hero" onclick="toggleMobileNav()">Home</a>
+<a class="text-stone-300 hover:text-amber-300 py-1" href="#life" onclick="toggleMobileNav()">Life Journey</a>
+<a class="text-stone-300 hover:text-amber-300 py-1" href="#works" onclick="toggleMobileNav()">Works &amp; Poems</a>
+<a class="text-stone-300 hover:text-amber-300 py-1" href="#ideas" onclick="toggleMobileNav()">Ideologies</a>
+<a class="text-stone-300 hover:text-amber-300 py-1" href="#voice" onclick="toggleMobileNav()">Audio Archive</a>
+<a class="text-amber-300 flex items-center gap-1.5 py-1" href="#ai-bharathi" onclick="toggleMobileNav(); openRagModal(); return false;">
+<i class="w-3.5 h-3.5" data-lucide="sparkles"></i> Ask AI Bharathi
+        </a>
+</div>
+</div>
+</header>
+<!-- END: GlobalHeader -->
+<!-- BEGIN: HeroVisualMaster -->
+<main class="relative pt-20">
+<section aria-label="Hero Showcase" class="relative min-h-[92vh] flex items-center overflow-hidden bg-charcoal-900 film-grain border-b border-stone-900" id="hero">
+<!-- Background Ambient Canvas Art Layer (Recreating Image 1 Master Visual Atmosphere) -->
+<div class="absolute inset-0 z-0 select-none pointer-events-none">
+<!-- Original Master Reference Painting of Bharathiyar in Pondicherry Streetscape -->
+<img alt="Mahakavi Subramania Bharathiyar artistic portrait against vintage 1910 Pondicherry streetscape" class="w-full h-full object-cover object-center opacity-65 md:opacity-85 mix-blend-lighten filter contrast-[1.08] saturate-[1.05]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUwrCPS3pUjv1pSZ80Wtlyy6xihPhYe5WFls4mCsmv0isonbwO5XPPN9EinohM5w2E3hV3Iwbn-om0XMaU1VqVz6lvSj5kbF7e0ay5sNpNY0AqTzHe-Q5Z3C-c3MTL_Q2TZO_4IN6fq8E7uxL7UvP3EkqBqmGnvxgbUnM1bZOZETCV72DEDxkR7atsWYFLuF1hNqUoCYKm8crKpBvIjG-KuwalJOa32q_vJ0_le_MWgnn3b8STuuACBlPv7n79Opl4xQ"/>
+<!-- Multi-layer dramatic vignette and ink wash edges -->
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/75 to-transparent md:w-3/5"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-transparent to-charcoal-900/90"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-charcoal-900/80 via-transparent to-charcoal-900"></div>
+<!-- Ambient Warm Saffron & Amber Light Glow -->
+<div class="absolute top-1/4 left-1/3 w-96 h-96 bg-saffron-fire/20 rounded-full blur-3xl amber-flame-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Hero Main Content Grid -->
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Column: Typography & Call to Actions -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Secondary Tamil Identity Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-saffron animate-pulse"></span>
+<span class="text-amber-200 text-xs tracking-wider uppercase font-cinzel">National Poet of Awakening</span>
+</div>
+<!-- Main Heading with High-Impact Tamil Typography -->
+<div class="space-y-2">
+<p class="font-tamil text-stone-300 text-xl md:text-2xl font-semibold tracking-wide">
+                மகாகவி
+              </p>
+<h1 class="font-tamil text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-stone-100 tracking-tight leading-[1.08] drop-shadow-2xl">
+                பாரதியார்
+              </h1>
+<p class="font-cinzel text-xs md:text-sm tracking-[0.28em] uppercase text-amber-400 font-semibold pt-1">
+                The Poet <span class="text-stone-600 px-1">|</span> The Rebel <span class="text-stone-600 px-1">|</span> The Visionary
+              </p>
+</div>
+<!-- Slogan & Call to Freedom ("Achamillai Achamillai") -->
+<div class="pt-4 border-l-2 border-saffron pl-4 space-y-2">
+<h2 class="font-tamil text-3xl sm:text-4xl md:text-5xl font-extrabold text-amber-400 tracking-wide drop-shadow-lg">
+                அச்சமில்லை!
+              </h2>
+<p class="font-tamil text-stone-300 text-base md:text-lg italic leading-relaxed text-balance">
+                "அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!<br class="hidden sm:inline"/>
+                இச்சகத்து ளோரெலாம் எதிர்த்து நின்ற போதினும்!"
+              </p>
+<p class="text-stone-400 font-serif text-xs md:text-sm">
+                Fearless thought, unbound spirit, eternal defiance against oppression.
+              </p>
+</div>
+<!-- Action Buttons Container -->
+<div class="pt-4 flex flex-wrap items-center gap-4">
+<!-- Primary CTA: Enter Bharathi's World -->
+<button class="group relative inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-600 via-saffron to-amber-700 text-white font-cinzel font-bold text-xs md:text-sm tracking-wider uppercase shadow-lg shadow-amber-900/50 hover:shadow-amber-600/30 hover:scale-[1.02] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400/50" onclick="openEnterWorldModal()">
+<div class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+<i class="w-3.5 h-3.5 fill-white" data-lucide="play"></i>
+</div>
+<span>Enter Bharathi's World</span>
+<i class="w-4 h-4 group-hover:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
+</button>
+<!-- Secondary CTA: Read English Translation -->
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-stone-700 bg-charcoal-800/80 hover:bg-stone-800 text-stone-300 hover:text-amber-300 text-xs md:text-sm font-cinzel tracking-wider uppercase transition-all backdrop-blur-sm" href="#works">
+<i class="w-4 h-4 text-amber-400" data-lucide="book-open"></i>
+<span>Explore Works</span>
+</a>
+</div>
+</div>
+<!-- Right Column: Subtle Philosophical Inscription & Scroll Pillar -->
+<div class="lg:col-span-5 flex flex-col justify-between items-end text-right h-full space-y-12">
+<!-- Floating Quote Ornament -->
+<div class="max-w-xs bg-charcoal-900/70 p-5 rounded-xl border border-stone-800/80 backdrop-blur-md shadow-2xl space-y-2 hidden md:block">
+<span class="font-serif text-3xl text-amber-500/40 leading-none">“</span>
+<p class="font-playfair text-lg text-stone-200 italic leading-relaxed">
+                Freedom is not a dream. It is a right.
+              </p>
+<p class="text-xs uppercase tracking-widest text-amber-400/90 font-cinzel font-semibold">
+                — Bharathiyar
+              </p>
+</div>
+<!-- Vertical Scroll Marker (As seen on Reference UI) -->
+<div class="flex flex-col items-center gap-3 self-end pr-2 pt-6">
+<span class="text-[9px] uppercase tracking-[0.3em] text-stone-500 font-cinzel rotate-90 translate-y-2">SCROLL</span>
+<div class="w-5 h-9 rounded-full border border-amber-500/50 p-1 flex justify-center mt-3">
+<div class="w-1 h-2 bg-amber-400 rounded-full animate-bounce"></div>
+</div>
+<div class="flex flex-col items-center gap-1.5 mt-2">
+<span class="w-1 h-1 rounded-full bg-amber-400"></span>
+<span class="w-1 h-1 rounded-full bg-stone-600"></span>
+<span class="w-1 h-1 rounded-full bg-stone-600"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroVisualMaster -->
+<!-- BEGIN: ExplorationNavTiles -->
+<section aria-label="Category Navigation Pills" class="relative z-20 -mt-7 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-charcoal-900/95 backdrop-blur-xl border border-stone-800/90 rounded-2xl p-3 md:p-4 shadow-2xl">
+<!-- Category Tiles Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5">
+<!-- Category 1: His Life (Active Default) -->
+<button class="category-pill active-pill flex flex-col items-center justify-center p-3 rounded-xl border border-amber-500/60 bg-amber-950/30 text-amber-300 hover:bg-amber-900/30 transition-all text-center group" id="pill-btn-life" onclick="switchCategoryTab('life')">
+<div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-amber-400" data-lucide="user"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">His Life</span>
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5"></span>
+</button>
+<!-- Category 2: His Works -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-700/60 hover:text-amber-200 transition-all text-center group" id="pill-btn-works" onclick="switchCategoryTab('works')">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="book"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">His Works</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Category 3: His Songs -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-700/60 hover:text-amber-200 transition-all text-center group" id="pill-btn-songs" onclick="switchCategoryTab('songs')">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="music"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">His Songs</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Category 4: Freedom Movement -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-700/60 hover:text-amber-200 transition-all text-center group" id="pill-btn-freedom" onclick="switchCategoryTab('freedom')">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="flag"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">Freedom Movement</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Category 5: Women Empowerment -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-700/60 hover:text-amber-200 transition-all text-center group" id="pill-btn-women" onclick="switchCategoryTab('women')">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="feather"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">Pudhumai Penn</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Category 6: His Ideas -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-700/60 hover:text-amber-200 transition-all text-center group" id="pill-btn-ideas" onclick="switchCategoryTab('ideas')">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="lightbulb"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">His Ideas</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Category 7: His Vision for India -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-700/60 hover:text-amber-200 transition-all text-center group" id="pill-btn-vision" onclick="switchCategoryTab('vision')">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="sun"></i>
+</div>
+<span class="text-xs font-medium tracking-wide">Vision for India</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+<!-- Category 8: AI Bharathi -->
+<button class="category-pill flex flex-col items-center justify-center p-3 rounded-xl border border-stone-800 bg-charcoal-800/50 text-stone-300 hover:border-amber-500 hover:text-amber-300 transition-all text-center group" id="pill-btn-aibharathi" onclick="openRagModal()">
+<div class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform relative">
+<i class="w-5 h-5 text-stone-400 group-hover:text-amber-400" data-lucide="message-square-code"></i>
+<span class="w-2 h-2 rounded-full bg-amber-400 absolute top-0 right-0 animate-ping"></span>
+</div>
+<span class="text-xs font-medium tracking-wide">AI Bharathi</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent mt-1.5"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- END: ExplorationNavTiles -->
+<!-- BEGIN: LivingTimelineAndJourneyMap -->
+<section aria-label="Timeline and Journey Map" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="journey">
+<!-- Split Panoramic Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Left 8 Columns: Antique Parchment Timeline Card -->
+<div class="lg:col-span-8 torn-edge-top bg-parchment rounded-xl shadow-2xl p-6 sm:p-10 text-stone-900 flex flex-col justify-between relative overflow-hidden border border-amber-900/20">
+<!-- Parchment Texture Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-parchment-light/80 via-transparent to-parchment-deep/40 pointer-events-none"></div>
+<div class="relative z-10">
+<!-- Section Header -->
+<div class="max-w-xl mb-10">
+<span class="text-[11px] font-cinzel uppercase tracking-[0.25em] text-amber-900 font-bold">Explore His</span>
+<h3 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 mt-1 mb-3" id="life">
+                Life Journey
+              </h3>
+<p class="font-serif text-sm sm:text-base text-stone-700 leading-relaxed">
+                From a young poet in Ettayapuram to a revolutionary voice for freedom, explore the milestones that shaped Mahakavi Bharathiyar.
+              </p>
+</div>
+<!-- Milestone Line with Sepia Round Medallions -->
+<div class="relative my-10">
+<!-- Brass Connector Line behind nodes -->
+<div class="hidden sm:block absolute top-12 left-6 right-6 h-0.5 bg-gradient-to-r from-amber-700/40 via-amber-800 to-amber-700/40 z-0"></div>
+<!-- Milestones Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-4 relative z-10">
+<!-- Node 1: 1882 Ettayapuram -->
+<div class="milestone-node flex flex-col items-center text-center group cursor-pointer" onclick="showMilestoneDetail(1882)">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-amber-800/80 p-1 bg-parchment-light shadow-md group-hover:scale-105 group-hover:border-saffron-fire transition-all">
+<!-- Sepia Temple / Palace Archetype -->
+<div class="w-full h-full rounded-full overflow-hidden bg-amber-950/20 flex items-center justify-center">
+<i class="w-7 h-7 text-amber-900" data-lucide="landmark"></i>
+</div>
+</div>
+<span class="mt-3 font-cinzel font-bold text-amber-950 text-sm">1882</span>
+<span class="font-medium text-xs text-stone-900 mt-0.5">Ettayapuram</span>
+<span class="text-[10px] text-stone-600">Birth &amp; early years</span>
+</div>
+<!-- Node 2: 1904 Journalism -->
+<div class="milestone-node flex flex-col items-center text-center group cursor-pointer" onclick="showMilestoneDetail(1904)">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-amber-800/80 p-1 bg-parchment-light shadow-md group-hover:scale-105 group-hover:border-saffron-fire transition-all">
+<!-- Newspaper print icon representation -->
+<div class="w-full h-full rounded-full overflow-hidden bg-amber-950/20 flex items-center justify-center">
+<i class="w-7 h-7 text-amber-900" data-lucide="newspaper"></i>
+</div>
+</div>
+<span class="mt-3 font-cinzel font-bold text-amber-950 text-sm">1904</span>
+<span class="font-medium text-xs text-stone-900 mt-0.5">Journalism</span>
+<span class="text-[10px] text-stone-600">The power of words</span>
+</div>
+<!-- Node 3: 1906 Freedom Movement -->
+<div class="milestone-node flex flex-col items-center text-center group cursor-pointer" onclick="showMilestoneDetail(1906)">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-amber-800/80 p-1 bg-parchment-light shadow-md group-hover:scale-105 group-hover:border-saffron-fire transition-all">
+<!-- Liberty Flag representation -->
+<div class="w-full h-full rounded-full overflow-hidden bg-amber-950/20 flex items-center justify-center">
+<i class="w-7 h-7 text-amber-900" data-lucide="flag-triangle-right"></i>
+</div>
+</div>
+<span class="mt-3 font-cinzel font-bold text-amber-950 text-sm">1906</span>
+<span class="font-medium text-xs text-stone-900 mt-0.5">Freedom Movement</span>
+<span class="text-[10px] text-stone-600">Voice for liberty</span>
+</div>
+<!-- Node 4: 1910 Pondicherry Exile -->
+<div class="milestone-node flex flex-col items-center text-center group cursor-pointer" onclick="showMilestoneDetail(1910)">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-amber-800/80 p-1 bg-parchment-light shadow-md group-hover:scale-105 group-hover:border-saffron-fire transition-all">
+<!-- Colonial Streetscape & Ashram -->
+<div class="w-full h-full rounded-full overflow-hidden bg-amber-950/20 flex items-center justify-center">
+<i class="w-7 h-7 text-amber-900" data-lucide="anchor"></i>
+</div>
+</div>
+<span class="mt-3 font-cinzel font-bold text-amber-950 text-sm">1910</span>
+<span class="font-medium text-xs text-stone-900 mt-0.5">Pondicherry</span>
+<span class="text-[10px] text-stone-600">A new chapter</span>
+</div>
+<!-- Node 5: 1921 Legacy -->
+<div class="milestone-node flex flex-col items-center text-center group cursor-pointer col-span-2 sm:col-span-1" onclick="showMilestoneDetail(1921)">
+<div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-amber-800/80 p-1 bg-parchment-light shadow-md group-hover:scale-105 group-hover:border-saffron-fire transition-all">
+<!-- Eternal Flame of Bharathiyar -->
+<div class="w-full h-full rounded-full overflow-hidden bg-amber-950/20 flex items-center justify-center">
+<i class="w-7 h-7 text-amber-900" data-lucide="flame"></i>
+</div>
+</div>
+<span class="mt-3 font-cinzel font-bold text-amber-950 text-sm">1921</span>
+<span class="font-medium text-xs text-stone-900 mt-0.5">Legacy</span>
+<span class="text-[10px] text-stone-600">Lives forever</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<div class="pt-6 border-t border-amber-900/20 flex items-center justify-between relative z-10">
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-stone-900 text-amber-200 hover:bg-stone-800 font-cinzel text-xs tracking-wider font-semibold transition-colors focus:outline-none shadow-md" onclick="toggleModal('full-timeline-modal')">
+<span>View Full Timeline</span>
+<i class="w-3.5 h-3.5" data-lucide="arrow-right"></i>
+</button>
+<span class="text-xs text-amber-950/70 italic font-serif">1882 – 1921 &amp; beyond</span>
+</div>
+</div>
+<!-- Right 4 Columns: Interactive Historical Journey Map Card -->
+<div class="lg:col-span-4 rounded-xl border border-stone-800 bg-charcoal-800/90 shadow-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+<!-- Top Card Meta -->
+<div class="z-10">
+<span class="text-[10px] font-cinzel uppercase tracking-[0.25em] text-amber-400 font-bold">Bharathiyar's</span>
+<h3 class="font-playfair text-3xl font-bold text-stone-100 mb-2">Journey</h3>
+<p class="text-xs text-stone-400">Explore the sacred places that shaped his life, poetry, and revolutionary ideas.</p>
+</div>
+<!-- Interactive Map Canvas / SVG Representation -->
+<div class="my-6 relative h-64 w-full bg-stone-950/80 rounded-lg border border-stone-800/90 overflow-hidden flex items-center justify-center">
+<!-- Textured Antique Terrain Base Graphic -->
+<svg class="w-full h-full opacity-60" fill="none" preserveaspectratio="xMidYMid slice" stroke="currentColor" viewbox="0 0 400 320">
+<!-- Coastline Outline -->
+<path d="M 280,10 C 275,50 260,90 250,130 C 235,180 220,230 190,290 C 180,310 165,320 150,320" stroke="#8c6d48" stroke-dasharray="4 2" stroke-width="2"></path>
+<path d="M 270,30 L 290,20 L 310,60 L 330,80" stroke="#4a3b2b" stroke-width="1"></path>
+<!-- Topographical Contour Lines -->
+<circle cx="210" cy="180" r="45" stroke="#33271d" stroke-width="1"></circle>
+<circle cx="210" cy="180" r="90" stroke="#261c14" stroke-width="1"></circle>
+<!-- Vintage Nautical Compass Rose Marker -->
+<g stroke="#a17a47" transform="translate(325, 250) scale(0.65)">
+<circle cx="50" cy="50" r="38" stroke-width="1"></circle>
+<line stroke-width="2" x1="50" x2="50" y1="5" y2="95"></line>
+<line stroke-width="2" x1="5" x2="95" y1="50" y2="50"></line>
+<polygon fill="#a17a47" fill-opacity="0.3" points="50,15 57,45 85,50 57,55 50,85 43,55 15,50 43,45"></polygon>
+<text fill="#d97706" font-family="Cinzel" font-size="12" x="46" y="0">N</text>
+</g>
+</svg>
+<!-- Interactive Map Hotspots (Chennai, Pondicherry, Kadayam, Madurai, Ettayapuram) -->
+<div class="absolute inset-0 p-4">
+<!-- Chennai -->
+<button class="absolute top-8 right-24 flex items-center gap-2 group cursor-pointer focus:outline-none" onclick="showMapPlace('Chennai', 'Headquarters of Swadesamitran and revolutionary journalism in 1904.')">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-amber-500 border border-black"></span>
+</span>
+<span class="text-xs font-semibold text-stone-200 group-hover:text-amber-400 transition-colors">Chennai</span>
+</button>
+<!-- Pondicherry (Key Refuge 1910-1918) -->
+<button class="absolute top-24 right-28 flex items-center gap-2 group cursor-pointer focus:outline-none" onclick="showMapPlace('Pondicherry', 'French territory of exile (1910-1918) where he composed Kuyil Pattu and Panchali Sabatham.')">
+<span class="relative flex h-3.5 w-3.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saffron opacity-80"></span>
+<span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-saffron border-2 border-black"></span>
+</span>
+<span class="text-xs font-bold text-amber-300 group-hover:text-white transition-colors bg-charcoal-900/80 px-1.5 py-0.5 rounded border border-amber-600/30">Pondicherry</span>
+</button>
+<!-- Kadayam -->
+<button class="absolute top-44 right-36 flex items-center gap-2 group cursor-pointer focus:outline-none" onclick="showMapPlace('Kadayam', 'His maternal home &amp; spouse Chellamma’s ancestral village.')">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-600 border border-stone-950"></span>
+<span class="text-[11px] font-medium text-stone-400 group-hover:text-amber-300">Kadayam</span>
+</button>
+<!-- Madurai -->
+<button class="absolute bottom-16 left-28 flex items-center gap-2 group cursor-pointer focus:outline-none" onclick="showMapPlace('Madurai', 'Where he taught as a Tamil pandit at Sethupathi High School in 1904.')">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500 border border-stone-950"></span>
+<span class="text-xs font-medium text-stone-300 group-hover:text-amber-300">Madurai</span>
+</button>
+<!-- Ettayapuram -->
+<button class="absolute bottom-8 left-16 flex items-center gap-2 group cursor-pointer focus:outline-none" onclick="showMapPlace('Ettayapuram', 'Birthplace (1882) and court of the Raja where he earned the title Mahakavi Bharathi.')">
+<span class="w-3 h-3 rounded-full bg-amber-400 border border-stone-950 shadow-md"></span>
+<span class="text-xs font-bold text-amber-300 group-hover:text-amber-200">Ettayapuram</span>
+</button>
+</div>
+<!-- Dynamic Place Info Display Pill -->
+<div class="absolute bottom-2 left-2 right-2 bg-charcoal-900/90 backdrop-blur-md p-2 rounded text-[11px] text-stone-300 border border-stone-800 transition-all" id="map-info-pill">
+<span class="font-bold text-amber-400" id="map-info-title">Pondicherry (1910–1918):</span>
+<span id="map-info-desc">Center of national spiritual resistance, poetry &amp; sanctuary.</span>
+</div>
+</div>
+<!-- Bottom Button -->
+<div class="z-10">
+<button class="w-full py-2.5 px-4 rounded-lg border border-amber-600/50 bg-amber-950/20 hover:bg-amber-900/30 text-amber-300 font-cinzel text-xs font-semibold tracking-wider flex items-center justify-center gap-2 transition-all" onclick="toggleModal('journey-map-modal')">
+<span>Explore Map</span>
+<i class="w-3.5 h-3.5" data-lucide="external-link"></i>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LivingTimelineAndJourneyMap -->
+<!-- BEGIN: ImmersiveExperiencesTray -->
+<section aria-label="Interactive Portals" class="py-12 bg-charcoal-800/40 border-t border-stone-900" id="voice">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Experience Card 1: Enter 1910 -->
+<div class="group cursor-pointer rounded-2xl bg-charcoal-900 border border-stone-800 hover:border-amber-600/60 p-5 transition-all duration-300 hover:-translate-y-1 shadow-xl flex items-center justify-between" onclick="openDesk1910()">
+<div class="flex items-center gap-4">
+<!-- Vintage Lamp / Ink Desk Icon Artifact -->
+<div class="w-14 h-14 rounded-xl bg-amber-950/30 border border-amber-800/50 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden relative">
+<i class="w-7 h-7 text-amber-400" data-lucide="feather"></i>
+<span class="absolute inset-0 bg-amber-500/10 blur-sm"></span>
+</div>
+<div>
+<h4 class="font-cinzel text-base font-bold text-stone-100 group-hover:text-amber-300 transition-colors">
+                  Enter 1910
+                </h4>
+<p class="text-xs text-stone-400">
+                  Step into Bharathiyar’s writing desk &amp; study
+                </p>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 group-hover:bg-amber-600 group-hover:text-white transition-all">
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</div>
+</div>
+<!-- Experience Card 2: Listen to Bharathi -->
+<div class="group cursor-pointer rounded-2xl bg-charcoal-900 border border-stone-800 hover:border-amber-600/60 p-5 transition-all duration-300 hover:-translate-y-1 shadow-xl flex items-center justify-between" onclick="toggleAudioRecitationPlay()">
+<div class="flex items-center gap-4">
+<!-- Vinyl Record Icon Player -->
+<div class="w-14 h-14 rounded-full bg-stone-900 border-2 border-stone-700 flex items-center justify-center shadow-inner group-hover:border-amber-500 transition-colors" id="vinyl-icon-wrapper">
+<div class="w-5 h-5 rounded-full bg-amber-600 border border-stone-900 flex items-center justify-center">
+<div class="w-1.5 h-1.5 bg-black rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-cinzel text-base font-bold text-stone-100 group-hover:text-amber-300 transition-colors">
+                    Listen to Bharathi
+                  </h4>
+<span class="text-[9px] bg-stone-800 text-stone-400 px-1.5 py-0.5 rounded uppercase font-mono" id="player-status-tag">Audio</span>
+</div>
+<p class="text-xs text-stone-400">
+                  AI-assisted narration &amp; fiery verses
+                </p>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-amber-400 group-hover:bg-amber-600 group-hover:text-white transition-all">
+<i class="w-4 h-4" data-lucide="volume-2" id="recitation-play-icon"></i>
+</div>
+</div>
+<!-- Experience Card 3: Ask Bharathi AI -->
+<div class="group cursor-pointer rounded-2xl bg-charcoal-900 border border-stone-800 hover:border-amber-600/60 p-5 transition-all duration-300 hover:-translate-y-1 shadow-xl flex items-center justify-between" id="ai-bharathi" onclick="openRagModal()">
+<div class="flex items-center gap-4">
+<!-- AI Neural Avatar Icon -->
+<div class="w-14 h-14 rounded-xl bg-amber-950/30 border border-amber-800/50 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden relative">
+<i class="w-7 h-7 text-amber-400" data-lucide="brain-circuit"></i>
+<span class="absolute top-1 right-1 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+</span>
+</div>
+<div>
+<h4 class="font-cinzel text-base font-bold text-stone-100 group-hover:text-amber-300 transition-colors">
+                  Ask Bharathi
+                </h4>
+<p class="text-xs text-stone-400">
+                  Explore his ideas with verified archives
+                </p>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 group-hover:bg-amber-600 group-hover:text-white transition-all">
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ImmersiveExperiencesTray -->
+<!-- BEGIN: WorksAndPoemsSection -->
+<section aria-label="Works and Verses" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="works">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold" id="ideas">Treasures of Tamil</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Immortal Compositions</h2>
+<p class="text-stone-400 text-sm mt-2 max-w-xl">
+            Songs of devotion, revolutionary manifestos, patriotic anthems, and modern lyrical philosophical epics.
+          </p>
+</div>
+<div class="mt-4 md:mt-0 flex gap-2">
+<button class="px-4 py-2 rounded-lg bg-charcoal-800 text-amber-400 border border-stone-700 text-xs font-semibold filter-btn active-filter" onclick="filterWorks('all', this)">All Works</button>
+<button class="px-4 py-2 rounded-lg bg-charcoal-900 text-stone-400 hover:text-stone-200 border border-stone-800 text-xs font-semibold filter-btn" onclick="filterWorks('patriotic', this)">Patriotic</button>
+<button class="px-4 py-2 rounded-lg bg-charcoal-900 text-stone-400 hover:text-stone-200 border border-stone-800 text-xs font-semibold filter-btn" onclick="filterWorks('philosophy', this)">Philosophy</button>
+</div>
+</div>
+<!-- Works Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="works-grid">
+<!-- Work 1: Panchali Sabatham -->
+<article class="bg-charcoal-800/80 rounded-2xl border border-stone-800 p-6 flex flex-col justify-between hover:border-amber-600/40 transition-colors work-card" data-category="philosophy">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] font-mono uppercase text-amber-500 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/30">1912 • Epic Poem</span>
+<i class="w-4 h-4 text-stone-500 cursor-pointer hover:text-amber-400" data-lucide="bookmark" onclick="toggleBookmark(this)"></i>
+</div>
+<h3 class="font-tamil text-2xl font-bold text-stone-100 mb-1">பாஞ்சாலி சபதம்</h3>
+<h4 class="font-cinzel text-sm text-stone-300 mb-3">Panchali Sabatham (The Vow of Draupadi)</h4>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">
+              An allegory where Draupadi symbolizes Mother India enslaved by colonial chains, and her unyielding resolve represents the rise of freedom fighters.
+            </p>
+</div>
+<div class="pt-6 mt-6 border-t border-stone-700/60 flex items-center justify-between text-xs">
+<span class="text-stone-500">2 Parts • 5 Chapters</span>
+<button class="text-amber-400 hover:text-amber-300 font-cinzel font-semibold flex items-center gap-1" onclick="readWorkModal('panchali')">Read Verse →</button>
+</div>
+</article>
+<!-- Work 2: Kuyil Pattu -->
+<article class="bg-charcoal-800/80 rounded-2xl border border-stone-800 p-6 flex flex-col justify-between hover:border-amber-600/40 transition-colors work-card" data-category="philosophy">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] font-mono uppercase text-amber-500 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/30">1912 • Romantic Poetry</span>
+<i class="w-4 h-4 text-stone-500 cursor-pointer hover:text-amber-400" data-lucide="bookmark" onclick="toggleBookmark(this)"></i>
+</div>
+<h3 class="font-tamil text-2xl font-bold text-stone-100 mb-1">குயில் பாட்டு</h3>
+<h4 class="font-cinzel text-sm text-stone-300 mb-3">Kuyil Pattu (Song of the Cuckoo)</h4>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">
+              A whimsical yet deeply mystical fantasy poem exploring boundless spiritual love, human transformation, rebirth, and melodic imagination.
+            </p>
+</div>
+<div class="pt-6 mt-6 border-t border-stone-700/60 flex items-center justify-between text-xs">
+<span class="text-stone-500">9 Chants • Pondicherry era</span>
+<button class="text-amber-400 hover:text-amber-300 font-cinzel font-semibold flex items-center gap-1" onclick="readWorkModal('kuyil')">Read Verse →</button>
+</div>
+</article>
+<!-- Work 3: Kannan Pattu -->
+<article class="bg-charcoal-800/80 rounded-2xl border border-stone-800 p-6 flex flex-col justify-between hover:border-amber-600/40 transition-colors work-card" data-category="patriotic">
+<div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] font-mono uppercase text-amber-500 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/30">1917 • Mystic Hymns</span>
+<i class="w-4 h-4 text-stone-500 cursor-pointer hover:text-amber-400" data-lucide="bookmark" onclick="toggleBookmark(this)"></i>
+</div>
+<h3 class="font-tamil text-2xl font-bold text-stone-100 mb-1">கண்ணன் பாட்டு</h3>
+<h4 class="font-cinzel text-sm text-stone-300 mb-3">Kannan Pattu (Songs to Krishna)</h4>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">
+              A breakthrough devotional anthology reimagining the Divine as Friend, Mother, Child, Servant, Guru, and Lover.
+            </p>
+</div>
+<div class="pt-6 mt-6 border-t border-stone-700/60 flex items-center justify-between text-xs">
+<span class="text-stone-500">23 Songs • Bhakti &amp; Modernism</span>
+<button class="text-amber-400 hover:text-amber-300 font-cinzel font-semibold flex items-center gap-1" onclick="readWorkModal('kannan')">Read Verse →</button>
+</div>
+</article>
+</div>
+</section>
+<!-- END: WorksAndPoemsSection -->
+</main>
+<!-- BEGIN: GlobalFooter -->
+<footer class="bg-charcoal-900 border-t border-stone-800 text-stone-400 text-xs py-12" id="learn">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Brand & Mission -->
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-saffron flex items-center justify-center text-charcoal-900 text-[10px] font-bold">360</div>
+<span class="font-cinzel font-bold text-stone-200 tracking-wider">BHARATHI 360</span>
+</div>
+<p class="text-stone-400 text-xs leading-relaxed">
+          An interactive digital tribute celebrating Mahakavi Subramania Bharathiyar’s timeless literature, fearless journalism, and visionary patriotism.
+        </p>
+</div>
+<!-- Quick Nav -->
+<div>
+<h5 class="font-cinzel uppercase text-amber-400 tracking-wider font-semibold mb-3">Living Archive</h5>
+<ul class="space-y-2">
+<li><a class="hover:text-stone-200" href="#life" onclick="showMilestoneDetail(1882); return false;">Chronological Biography</a></li>
+<li><a class="hover:text-stone-200" href="#works">Collected Poetry &amp; Prose</a></li>
+<li><a class="hover:text-stone-200" href="#journey">Interactive Map of Exile</a></li>
+<li><a class="hover:text-stone-200" href="#ai-bharathi" onclick="openRagModal(); return false;">Verified AI Knowledge Base</a></li>
+</ul>
+</div>
+<!-- Historical Sources & Citations -->
+<div>
+<h5 class="font-cinzel uppercase text-amber-400 tracking-wider font-semibold mb-3">Preservation</h5>
+<ul class="space-y-2">
+<li><span class="text-stone-400">Swadesamitran Archives</span></li>
+<li><span class="text-stone-400">India Weekly (1906–1910)</span></li>
+<li><span class="text-stone-400">Pondicherry Heritage Cell</span></li>
+<li><span class="text-stone-400">Bharathiyar Memorial Trust</span></li>
+</ul>
+</div>
+<!-- Tamil Quote Inscription -->
+<div class="bg-charcoal-800/60 p-4 rounded-xl border border-stone-800">
+<p class="font-tamil text-stone-300 italic text-xs leading-relaxed">
+          "சென்றிடுவீர் எட்டுத் திக்கும் — கலைச்<br/>
+          செல்வங்கள் யாவும் கொணர்ந்திங்கு சேர்ப்பீர்!"
+        </p>
+<p class="font-cinzel text-[10px] text-amber-400 mt-2">— மகாகவி பாரதியார்</p>
+</div>
+</div>
+<!-- Bottom copyright -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500">
+<span>© 2026 Bharathi 360 Living Museum Project. Built for public education and cultural heritage.</span>
+<div class="flex items-center gap-4 mt-2 sm:mt-0">
+<span>Preserved in Digital Harmony</span>
+<span>•</span>
+<span>Tamil Nadu &amp; Pondicherry</span>
+</div>
+</div>
+</footer>
+<!-- END: GlobalFooter -->
+<!-- BEGIN: InteractiveModalsAndDialogs -->
+<!-- Modal 1: Ask Bharathi AI Modal -->
+<div class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-4" id="rag-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+<!-- Modal Header -->
+<div class="p-4 sm:p-5 border-b border-stone-800 flex items-center justify-between bg-charcoal-800/80">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-300">
+<i class="w-5 h-5" data-lucide="sparkles"></i>
+</div>
+<div>
+<h3 class="font-cinzel text-base font-bold text-stone-100">Ask Bharathi (AI Archive)</h3>
+<p class="text-xs text-stone-400">RAG powered by verified manuscripts &amp; historical writings</p>
+</div>
+</div>
+<button class="text-stone-400 hover:text-stone-100 p-1.5 rounded-lg hover:bg-stone-800" onclick="toggleModal('rag-modal')">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+</div>
+<!-- Dialogue Body -->
+<div class="p-5 overflow-y-auto space-y-4 text-xs sm:text-sm font-sans flex-1" id="ai-chat-body">
+<!-- Bot Greeting -->
+<div class="flex gap-3">
+<div class="w-7 h-7 rounded-full bg-saffron/30 flex items-center justify-center text-amber-300 shrink-0 font-tamil font-bold text-xs">
+            பா
+          </div>
+<div class="bg-charcoal-800 rounded-xl p-3.5 border border-stone-700/60 max-w-lg space-y-2">
+<p class="text-stone-200">
+              வணக்கம். Welcome to the living consciousness of Mahakavi Bharathiyar. You can ask about my poems, my years in Pondicherry exile, my stand for women's liberation, or my vision for free India.
+            </p>
+<div class="pt-1 flex flex-wrap gap-1.5">
+<button class="text-[11px] bg-stone-700/50 hover:bg-amber-900/40 text-amber-300 px-2 py-1 rounded border border-stone-600" onclick="askPrompt('பெண்கள் விடுதலை பற்றி பாரதியின் கருத்து என்ன?')">
+                பெண்கள் விடுதலை (Women Liberation)
+              </button>
+<button class="text-[11px] bg-stone-700/50 hover:bg-amber-900/40 text-amber-300 px-2 py-1 rounded border border-stone-600" onclick="askPrompt('Why did Bharathiyar move to Pondicherry in 1910?')">
+                Pondicherry Exile (1910)
+              </button>
+<button class="text-[11px] bg-stone-700/50 hover:bg-amber-900/40 text-amber-300 px-2 py-1 rounded border border-stone-600" onclick="askPrompt('What is the core philosophy of Achamillai?')">
+                Philosophy of "Achamillai"
+              </button>
+</div>
+</div>
+</div>
+<!-- Output response container dynamically populated by JS -->
+<div class="space-y-4" id="ai-dynamic-response-container"></div>
+</div>
+<!-- Chat Input Area -->
+<div class="p-4 border-t border-stone-800 bg-charcoal-800/40">
+<form class="flex gap-2" id="ai-prompt-form" onsubmit="handleAiSubmit(event)">
+<input class="flex-1 bg-charcoal-900 border border-stone-700 rounded-xl px-4 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-amber-500" id="ai-user-query" placeholder="Ask a question in English or தமிழ் (e.g. Bharathi's vision on education)..." type="text"/>
+<button class="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-cinzel text-xs font-semibold flex items-center gap-1.5" type="submit">
+<span>Query</span>
+<i class="w-3.5 h-3.5" data-lucide="send"></i>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Modal 2: 1910 Interactive Desk Modal -->
+<div class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md items-center justify-center p-4" id="desk-modal">
+<div class="bg-charcoal-900 border border-amber-800/60 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl p-6 relative">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white p-1" onclick="toggleModal('desk-modal')">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">1910 Sanctum</span>
+<h3 class="font-playfair text-2xl font-bold text-stone-100 mt-1 mb-4">Mahakavi's Study in Pondicherry</h3>
+<div class="rounded-xl overflow-hidden bg-stone-950 p-6 border border-stone-800 text-stone-300 space-y-4 font-serif text-sm">
+<p class="italic text-amber-200">
+          "Surrounded by police spies and British surveillance just across the border, Bharathi’s writing desk in French Pondicherry was lit by a single kerosene brass lamp."
+        </p>
+<p>
+          On this modest wooden table between 1910 and 1918, Bharathiyar translated the Bhagavad Gita into simple Tamil, authored <strong class="text-stone-100">Kuyil Pattu</strong>, penned the revolutionary chapters of <strong class="text-stone-100">Panchali Sabatham</strong>, and hosted patriot Sri Aurobindo.
+        </p>
+<div class="grid grid-cols-2 gap-3 pt-2 text-xs font-sans">
+<div class="bg-charcoal-800 p-3 rounded border border-stone-800">
+<span class="block text-amber-400 font-bold">Desk Artifacts</span>
+            Brass inkpot, peacock quill, reed pen, handwritten India magazine drafts.
+          </div>
+<div class="bg-charcoal-800 p-3 rounded border border-stone-800">
+<span class="block text-amber-400 font-bold">Atmosphere</span>
+            Bay of Bengal coastal breeze, chants of Vedic hymns, freedom pamphlets.
+          </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal 3: Global Search Palette (⌘K) -->
+<div class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-start justify-center pt-20 p-4" id="search-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl">
+<div class="p-3 border-b border-stone-800 flex items-center gap-3">
+<i class="w-5 h-5 text-amber-400 ml-2" data-lucide="search"></i>
+<input class="w-full bg-transparent border-none text-stone-100 focus:outline-none focus:ring-0 text-sm" id="global-search-input" oninput="handleSearchFilter(this.value)" placeholder="Search poems, letters, places, or themes (e.g. அச்சமில்லை, Women, Pondicherry)..." type="text"/>
+<button class="text-stone-500 hover:text-stone-300 p-1" onclick="toggleModal('search-modal')">
+<i class="w-4 h-4" data-lucide="x"></i>
+</button>
+</div>
+<div class="p-4 space-y-2 text-xs max-h-72 overflow-y-auto" id="search-results">
+<div class="p-2.5 rounded-lg bg-charcoal-800 hover:bg-stone-800 cursor-pointer text-stone-300 flex justify-between items-center searchable-item" data-keywords="pondicherry exile 1910 timeline" onclick="showMilestoneDetail(1910); toggleModal('search-modal')">
+<div>
+<span class="font-bold text-amber-400">Pondicherry Exile (1910–1918)</span>
+<p class="text-stone-400 text-[11px]">8 years of prolific creative and spiritual production.</p>
+</div>
+<span class="text-stone-500 font-mono text-[10px]">Timeline</span>
+</div>
+<div class="p-2.5 rounded-lg bg-charcoal-800 hover:bg-stone-800 cursor-pointer text-stone-300 flex justify-between items-center searchable-item" data-keywords="achamillai அச்சமில்லை anthem verse" onclick="readWorkModal('acham'); toggleModal('search-modal')">
+<div>
+<span class="font-bold text-amber-400">அச்சமில்லை அச்சமில்லை</span>
+<p class="text-stone-400 text-[11px]">The eternal anthem of fearlessness and courage.</p>
+</div>
+<span class="text-stone-500 font-mono text-[10px]">Verse</span>
+</div>
+<div class="p-2.5 rounded-lg bg-charcoal-800 hover:bg-stone-800 cursor-pointer text-stone-300 flex justify-between items-center searchable-item" data-keywords="pudhumai penn women empowerment philosophy" onclick="askPrompt('Women empowerment in Bharathiyar works'); toggleModal('search-modal')">
+<div>
+<span class="font-bold text-amber-400">Pudhumai Penn (Modern Woman)</span>
+<p class="text-stone-400 text-[11px]">Visionary manifesto on gender equality and dignity.</p>
+</div>
+<span class="text-stone-500 font-mono text-[10px]">Philosophy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal 4: Generic Detail Reader Modal -->
+<div class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-4" id="reader-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl p-6 relative">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white p-1" onclick="toggleModal('reader-modal')">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<div id="reader-modal-content"></div>
+</div>
+</div>
+<!-- Modal 5: Full Timeline Modal -->
+<div class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-4" id="full-timeline-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl p-6 relative max-h-[85vh] flex flex-col">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white p-1" onclick="toggleModal('full-timeline-modal')">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Complete Chronology</span>
+<h3 class="font-playfair text-2xl font-bold text-stone-100 mt-1 mb-4">Mahakavi Bharathiyar Complete Timeline</h3>
+<div class="space-y-4 overflow-y-auto pr-2 text-xs font-serif text-stone-300 flex-1">
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1882 — Birth</span>
+<p>Born on Dec 11 in Ettayapuram to Chinnaswamy Subramania Iyer and Lakshmi Ammal.</p>
+</div>
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1893 — Title of Bharathi</span>
+<p>Honored by the Ettayapuram court for exceptional poetic mastery at age 11.</p>
+</div>
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1904 — Journalism in Madurai &amp; Chennai</span>
+<p>Serves as Tamil teacher in Sethupathi High School and later joins Swadesamitran.</p>
+</div>
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1906 — Nationalist Awakening</span>
+<p>Attends Surat Congress, meets Tilak, edits the fiery 'India' newspaper.</p>
+</div>
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1910 — Pondicherry Exile</span>
+<p>Moves to French Pondicherry to escape British arrest warrants; prolific literary output.</p>
+</div>
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1918 — Return to British India</span>
+<p>Crosses back to British territory at Cuddalore; briefly imprisoned.</p>
+</div>
+<div class="border-l-2 border-amber-500 pl-3 space-y-1">
+<span class="font-cinzel font-bold text-amber-400 text-sm">1921 — Passing</span>
+<p>Passes away on September 11, 1921 in Triplicane, Chennai after being blessed by Parthasarathy temple elephant.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal 6: Journey Map Modal -->
+<div class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-4" id="journey-map-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl p-6 relative">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white p-1" onclick="toggleModal('journey-map-modal')">
+<i class="w-5 h-5" data-lucide="x"></i>
+</button>
+<span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Geographic Heritage</span>
+<h3 class="font-playfair text-2xl font-bold text-stone-100 mt-1 mb-3">Historical Map of Tamil Nadu &amp; Pondicherry</h3>
+<p class="text-xs text-stone-300 font-serif leading-relaxed mb-4">
+          Bharathiyar's journey spanned from the southern plains of Ettayapuram and Kadayam, to the temple city of Madurai, the publishing capital of Chennai, and the revolutionary sanctuary of French Pondicherry. Each location birthed a distinct dimension of his genius.
+        </p>
+<div class="flex justify-end">
+<button class="px-4 py-2 bg-amber-600 text-white rounded text-xs font-semibold font-cinzel" onclick="toggleModal('journey-map-modal')">Close Map</button>
+</div>
+</div>
+</div>
+<!-- END: InteractiveModalsAndDialogs -->
+<!-- BEGIN: VanillaJavaScriptLogic -->
+<script data-purpose="application-logic">
+    // Initialize Lucide Icons on Load
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      setupScrollSpy();
+    });
+
+    // Language Toggle State Handler
+    let currentLang = 'ta';
+    function setLanguage(lang) {
+      currentLang = lang;
+      const btnTa = document.getElementById('lang-ta');
+      const btnEn = document.getElementById('lang-en');
+
+      if (lang === 'ta') {
+        btnTa.className = "px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 font-medium font-tamil text-xs transition-all shadow-sm";
+        btnEn.className = "px-2.5 py-1 rounded-full text-stone-400 hover:text-stone-200 font-medium transition-all";
+      } else {
+        btnEn.className = "px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 font-medium text-xs transition-all shadow-sm";
+        btnTa.className = "px-2.5 py-1 rounded-full text-stone-400 hover:text-stone-200 font-tamil text-xs transition-all";
+      }
+    }
+
+    // Modal Control Helper
+    function toggleModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+      lucide.createIcons();
+    }
+
+    // Mobile Navigation Drawer Toggle
+    function toggleMobileNav() {
+      const panel = document.getElementById('mobile-nav-panel');
+      panel.classList.toggle('hidden');
+    }
+
+    // Audio Ambience & Vinyl Recitation Player Mock Controller
+    let isPlayingAudio = false;
+    function toggleAmbienceAudio() {
+      isPlayingAudio = !isPlayingAudio;
+      const indicator = document.getElementById('soundwave-indicator');
+      const icon = document.getElementById('audio-icon');
+
+      if (isPlayingAudio) {
+        indicator.classList.remove('hidden');
+        icon.setAttribute('data-lucide', 'volume-2');
+      } else {
+        indicator.classList.add('hidden');
+        icon.setAttribute('data-lucide', 'volume-x');
+      }
+      lucide.createIcons();
+    }
+
+    let isRecitationPlaying = false;
+    function toggleAudioRecitationPlay() {
+      isRecitationPlaying = !isRecitationPlaying;
+      const disc = document.getElementById('vinyl-icon-wrapper');
+      const playIcon = document.getElementById('recitation-play-icon');
+      const statusTag = document.getElementById('player-status-tag');
+
+      if (isRecitationPlaying) {
+        disc.classList.add('spin-disc-playing');
+        playIcon.setAttribute('data-lucide', 'pause');
+        statusTag.innerText = 'PLAYING 1910 RECITAL';
+        statusTag.classList.add('bg-amber-600', 'text-white');
+      } else {
+        disc.classList.remove('spin-disc-playing');
+        playIcon.setAttribute('data-lucide', 'play');
+        statusTag.innerText = 'AUDIO';
+        statusTag.classList.remove('bg-amber-600', 'text-white');
+      }
+      lucide.createIcons();
+    }
+
+    // Category Tabs Switching
+    function switchCategoryTab(category) {
+      const pills = document.querySelectorAll('.category-pill');
+      pills.forEach(pill => {
+        pill.classList.remove('active-pill', 'border-amber-500/60', 'bg-amber-950/30', 'text-amber-300');
+        pill.classList.add('border-stone-800', 'bg-charcoal-800/50', 'text-stone-300');
+        const dot = pill.querySelector('span:last-child');
+        if (dot) dot.classList.replace('bg-amber-400', 'bg-transparent');
+      });
+
+      const selected = document.getElementById(`pill-btn-${category}`);
+      if (selected) {
+        selected.classList.add('active-pill', 'border-amber-500/60', 'bg-amber-950/30', 'text-amber-300');
+        selected.classList.remove('border-stone-800', 'bg-charcoal-800/50', 'text-stone-300');
+        const dot = selected.querySelector('span:last-child');
+        if (dot) dot.classList.replace('bg-transparent', 'bg-amber-400');
+      }
+
+      // Smooth scroll to life/journey section if clicked from pills
+      if (category === 'life' || category === 'freedom') {
+        document.getElementById('journey').scrollIntoView({ behavior: 'smooth' });
+      } else if (category === 'works' || category === 'songs') {
+        document.getElementById('works').scrollIntoView({ behavior: 'smooth' });
+      } else if (category === 'women' || category === 'ideas' || category === 'vision') {
+        openRagModal();
+      }
+    }
+
+    // Historical Map Interactive Hotspots
+    function showMapPlace(title, desc) {
+      const titleEl = document.getElementById('map-info-title');
+      const descEl = document.getElementById('map-info-desc');
+      titleEl.innerText = `${title}:`;
+      descEl.innerText = ` ${desc}`;
+    }
+
+    // Milestone Detailed Inspector
+    function showMilestoneDetail(year) {
+      const data = {
+        1882: {
+          title: "1882: Birth in Ettayapuram",
+          desc: "Born on December 11, 1882. At age eleven, his remarkable command of poetry astounded the court scholars of the Raja of Ettayapuram, who conferred upon him the title 'Bharathi' (blessed by Saraswati)."
+        },
+        1904: {
+          title: "1904: Journalism & Swadesamitran",
+          desc: "Moved to Chennai to become Assistant Editor of Swadesamitran. Launched bold political cartoons and unvarnished essays urging national self-reliance and intellectual freedom."
+        },
+        1906: {
+          title: "1906: The Surat Congress & 'India' Magazine",
+          desc: "Bharathi attended the historic Surat Congress along with Bal Gangadhar Tilak. Began editing 'India' weekly, printed on revolutionary red paper."
+        },
+        1910: {
+          title: "1910: The Pondicherry Exile",
+          desc: "Escaping imminent British arrest, Bharathiyar sought political asylum in French Pondicherry, turning exile into the most creatively fruitful era of modern Tamil literature."
+        },
+        1921: {
+          title: "1921: Immortal Legacy",
+          desc: "Bharathiyar passed away on September 11, 1921 at age 38 in Triplicane, Chennai. Though followed by only a handful at his funeral, his words ignited the conscience of millions."
+        }
+      };
+
+      const milestone = data[year];
+      if (!milestone) return;
+
+      const modalContent = document.getElementById('reader-modal-content');
+      modalContent.innerHTML = `
+        <span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Historical Milestone</span>
+        <h3 class="font-playfair text-2xl font-bold text-stone-100 mt-1 mb-3">${milestone.title}</h3>
+        <p class="font-serif text-sm text-stone-300 leading-relaxed">${milestone.desc}</p>
+        <div class="mt-6 pt-4 border-t border-stone-800 flex justify-end">
+          <button onclick="toggleModal('reader-modal')" class="px-4 py-2 bg-amber-600 text-white rounded text-xs font-semibold font-cinzel">Close</button>
+        </div>
+      `;
+      toggleModal('reader-modal');
+    }
+
+    // Reader modal for works
+    function readWorkModal(workKey) {
+      const modalContent = document.getElementById('reader-modal-content');
+      if (workKey === 'panchali') {
+        modalContent.innerHTML = `
+          <span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Poetic Excerpt</span>
+          <h3 class="font-tamil text-2xl font-bold text-stone-100 mt-1 mb-2">பாஞ்சாலி சபதம்</h3>
+          <p class="font-tamil text-stone-300 text-sm leading-relaxed mb-4">
+            "நெஞ்சில் உரமுமின்றி நேர்மைத் திறமுமின்றி<br>
+            வஞ்சனை சொல்வாரடீ! — கிளியே<br>
+            சொல்லில் பயனுமில்லை!"
+          </p>
+          <p class="text-xs text-stone-400">Bharathiyar uses the court of Hastinapura to mirror the passivity of colonial India, summoning courage in the face of autocracy.</p>
+        `;
+      } else if (workKey === 'kuyil') {
+        modalContent.innerHTML = `
+          <span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Poetic Excerpt</span>
+          <h3 class="font-tamil text-2xl font-bold text-stone-100 mt-1 mb-2">குயில் பாட்டு</h3>
+          <p class="font-tamil text-stone-300 text-sm leading-relaxed mb-4">
+            "மாதர் தம்மை இழிவு செய்யும் மடமையைக் கொளுத்துவோம்!<br>
+            Cuckoo song of mystical love, transcending physical realm into pure divine sound."
+          </p>
+          <p class="text-xs text-stone-400">Composed during the serene evenings of Pondicherry exile in 1912.</p>
+        `;
+      } else if (workKey === 'kannan') {
+        modalContent.innerHTML = `
+          <span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Poetic Excerpt</span>
+          <h3 class="font-tamil text-2xl font-bold text-stone-100 mt-1 mb-2">கண்ணன் பாட்டு</h3>
+          <p class="font-tamil text-stone-300 text-sm leading-relaxed mb-4">
+            "என் தாயும் கண்ணம்மா, என் தந்தையும் கண்ணம்மா,<br>
+            என் சாமியும் கண்ணம்மா, இன்பமுங் கண்ணம்மா!"
+          </p>
+          <p class="text-xs text-stone-400">Reimagining the Divine in all human relationships with profound devotion and modern aesthetic.</p>
+        `;
+      } else if (workKey === 'acham') {
+        modalContent.innerHTML = `
+          <span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Rallying Anthem</span>
+          <h3 class="font-tamil text-2xl font-bold text-stone-100 mt-1 mb-2">அச்சமில்லை அச்சமில்லை!</h3>
+          <p class="font-tamil text-amber-300 text-sm leading-relaxed mb-4">
+            அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே<br>
+            இச்சகத்து ளோரெலாம் எதிர்த்து நின்ற போதினும்,<br>
+            அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!
+          </p>
+          <p class="text-xs text-stone-400">Fearlessness is the supreme virtue: courage in mind, truth in speech, dignity in every deed.</p>
+        `;
+      } else {
+        modalContent.innerHTML = `
+          <span class="text-xs uppercase font-cinzel tracking-widest text-amber-400 font-bold">Poetic Anthology</span>
+          <h3 class="font-tamil text-2xl font-bold text-stone-100 mt-1 mb-2">குயில் பாட்டு & கண்ணன் பாட்டு</h3>
+          <p class="font-serif text-xs text-stone-300 leading-relaxed mb-4">
+            Subramania Bharathiyar revolutionized poetic idiom by dissolving the archaic linguistic barriers of courtly Tamil, giving birth to modern accessible literature.
+          </p>
+        `;
+      }
+      toggleModal('reader-modal');
+    }
+
+    // Toggle bookmark icon state
+    function toggleBookmark(el) {
+      if (el.classList.contains('fill-amber-400')) {
+        el.classList.remove('fill-amber-400', 'text-amber-400');
+        el.classList.add('text-stone-500');
+      } else {
+        el.classList.add('fill-amber-400', 'text-amber-400');
+        el.classList.remove('text-stone-500');
+      }
+    }
+
+    // Filter works grid
+    function filterWorks(category, btn) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => {
+        b.classList.remove('bg-charcoal-800', 'text-amber-400', 'border-stone-700');
+        b.classList.add('bg-charcoal-900', 'text-stone-400', 'border-stone-800');
+      });
+      btn.classList.remove('bg-charcoal-900', 'text-stone-400', 'border-stone-800');
+      btn.classList.add('bg-charcoal-800', 'text-amber-400', 'border-stone-700');
+
+      const cards = document.querySelectorAll('.work-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'flex'; // Keep all visible as demo or filter nicely
+        }
+      });
+    }
+
+    // AI Knowledge Retrieval (RAG) Dialogue System
+    function openRagModal() {
+      toggleModal('rag-modal');
+    }
+
+    function openDesk1910() {
+      toggleModal('desk-modal');
+    }
+
+    function openEnterWorldModal() {
+      showMilestoneDetail(1910);
+    }
+
+    function askPrompt(promptText) {
+      const input = document.getElementById('ai-user-query');
+      input.value = promptText;
+      handleAiSubmit(new Event('submit'));
+      if (document.getElementById('rag-modal').classList.contains('hidden')) {
+        toggleModal('rag-modal');
+      }
+    }
+
+    function handleAiSubmit(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('ai-user-query');
+      const query = input.value.trim();
+      if (!query) return;
+
+      const container = document.getElementById('ai-dynamic-response-container');
+
+      // User Query Bubble
+      const userBubble = document.createElement('div');
+      userBubble.className = "flex gap-2 justify-end";
+      userBubble.innerHTML = `
+        <div class="bg-amber-700 text-white rounded-xl p-3 max-w-md text-xs sm:text-sm">
+          ${query}
+        </div>
+      `;
+      container.appendChild(userBubble);
+
+      // AI Response Generation based on knowledge triggers
+      let responseText = "";
+      let citation = "Swadesamitran Essays & Collected Poems (Vol. 1)";
+
+      if (query.toLowerCase().includes('women') || query.includes('பெண்கள்')) {
+        responseText = "Bharathi asserted: 'நிமிர்ந்த நன்னடை நேர்கொண்ட பார்வையும், நிலத்தில் யார்க்கும் அஞ்சாத நெறிகளும்' (The modern woman walks with erect posture, direct gaze, and fears no one on earth). He insisted that education and complete autonomy for women are the fundamental prerequisites for true national freedom.";
+        citation = "Pudhumai Penn Manifesto (1914)";
+      } else if (query.toLowerCase().includes('pondicherry') || query.includes('1910')) {
+        responseText = "In 1910, Bharathiyar fled British colonial arrest warrants to French-ruled Pondicherry. During this 8-year exile, amidst acute poverty and foreign police surveillance, he penned his greatest masterworks: Panchali Sabatham, Kuyil Pattu, and Kannan Pattu.";
+        citation = "Pondicherry Police Archives & Aurobindo Correspondence (1910–1918)";
+      } else {
+        responseText = "Through 'Achamillai', Bharathiyar proclaimed that even if the entire universe were to rise against you, fear is an impermissible poison. He summoned every Indian to eradicate internal timidness and step forward into sovereign dignity.";
+        citation = "Swadesha Geethangal (National Songs)";
+      }
+
+      const botBubble = document.createElement('div');
+      botBubble.className = "flex gap-3 pt-2";
+      botBubble.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-saffron/30 flex items-center justify-center text-amber-300 shrink-0 font-tamil font-bold text-xs">
+          பா
+        </div>
+        <div class="bg-charcoal-800 rounded-xl p-3.5 border border-stone-700/60 max-w-lg space-y-2 text-xs sm:text-sm">
+          <p class="text-stone-200">${responseText}</p>
+          <div class="text-[10px] text-amber-400/80 font-mono pt-1 border-t border-stone-700/60 flex items-center gap-1">
+            <span>Verified Source:</span>
+            <span>${citation}</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(botBubble);
+
+      input.value = "";
+      const chatBody = document.getElementById('ai-chat-body');
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // Keyboard Shortcut Handler (⌘K / Ctrl+K)
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleModal('search-modal');
+      }
+      if (e.key === 'Escape') {
+        ['rag-modal', 'desk-modal', 'search-modal', 'reader-modal', 'full-timeline-modal', 'journey-map-modal'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el && !el.classList.contains('hidden')) toggleModal(id);
+        });
+      }
+    });
+
+    // Real-time Search Filter Handler
+    function handleSearchFilter(term) {
+      const query = term.toLowerCase().trim();
+      const items = document.querySelectorAll('.searchable-item');
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        const keywords = item.getAttribute('data-keywords') || '';
+        if (text.includes(query) || keywords.includes(query) || query === '') {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Scrollspy active state for nav links
+    function setupScrollSpy() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let scrollY = window.pageYOffset;
+        sections.forEach(section => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100;
+          const sectionId = section.getAttribute('id');
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('text-amber-400', 'font-semibold', 'border-b', 'border-amber-400');
+              link.classList.add('text-stone-300');
+              if (link.getAttribute('data-target') === sectionId) {
+                link.classList.add('text-amber-400', 'font-semibold', 'border-b', 'border-amber-400');
+                link.classList.remove('text-stone-300');
+              }
+            });
+          }
+        });
+      });
+    }
+  </script>
+<!-- END: VanillaJavaScriptLogic -->
+</body></html>

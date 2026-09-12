@@ -1,0 +1,650 @@
+/* ==========================================================================
+   BHARATHI 360 - DIGITAL BHARATHIYAR AI VOICE ASSISTANT STYLES
+   Features:
+   - Section 19: Entrance Animation (Slight upward movement + soft glow -> IDLE)
+   - Section 20: Cohesive Single Character Interaction States
+   - Section 21: Mobile Bottom Sheet & Mini-Card Behavior
+   ========================================================================== */
+
+:root {
+  --bharathi-saffron: #d96a27;
+  --bharathi-saffron-glow: rgba(217, 106, 39, 0.4);
+  --bharathi-gold: #d4af37;
+  --bharathi-gold-glow: rgba(212, 175, 55, 0.35);
+  --bharathi-green: #4caf50;
+  --bharathi-green-glow: rgba(76, 175, 80, 0.4);
+  --bharathi-ink: #0d0d0f;
+  --bharathi-surface: #141316;
+  --bharathi-parchment: #efe7d8;
+  --bharathi-ivory: #f5efe6;
+  --bharathi-muted: #dec1b4;
+  --bharathi-border: rgba(212, 175, 55, 0.25);
+  --bharathi-radius: 16px;
+  --bharathi-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   SECTION 19: CHARACTER ENTRANCE ANIMATION (SLIGHT UPWARD + SOFT GLOW)
+   ========================================================================== */
+.bharathi-voice-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9990;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  touch-action: manipulation;
+  box-sizing: border-box;
+  animation: bharathi-entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bharathi-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    filter: drop-shadow(0 0 8px var(--bharathi-saffron-glow));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+/* Floating Avatar Button (Inactive State) */
+.bharathi-avatar-btn {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--bharathi-surface);
+  border: 2.5px solid var(--bharathi-gold);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px var(--bharathi-saffron-glow);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  overflow: visible;
+  outline: none;
+}
+
+/* Section 20: Character Interaction - On Hover */
+.bharathi-avatar-btn:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 24px var(--bharathi-saffron-glow);
+}
+
+/* Section 20: Character Interaction - On Click Press */
+.bharathi-avatar-btn:active {
+  transform: scale(0.94);
+}
+
+.bharathi-avatar-btn:focus-visible {
+  outline: 3px solid var(--bharathi-saffron);
+  outline-offset: 4px;
+}
+
+.bharathi-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+}
+
+/* Breathing animation for idle state */
+.bharathi-avatar-btn.state-idle .bharathi-avatar-img {
+  animation: bharathi-breath 4s ease-in-out infinite;
+}
+
+@keyframes bharathi-breath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* Hover Tooltip Label */
+.bharathi-tooltip {
+  position: absolute;
+  right: 76px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  background: var(--bharathi-surface);
+  color: var(--bharathi-ivory);
+  border: 1px solid var(--bharathi-border);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.bharathi-avatar-btn:hover .bharathi-tooltip,
+.bharathi-avatar-btn:focus-visible .bharathi-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Pulse rings for listening state */
+.bharathi-pulse-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--bharathi-saffron);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.state-listening .bharathi-pulse-ring {
+  animation: bharathi-ring-pulse 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes bharathi-ring-pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Floating Speech Bubble Attached to Floating Character (NO BOX CONTAINER) */
+.bharathi-floating-speech-bubble {
+  position: absolute;
+  right: 96px;
+  bottom: 12px;
+  min-width: 180px;
+  max-width: 320px;
+  background: rgba(18, 17, 20, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--bharathi-ivory);
+  border: 1.5px solid var(--bharathi-gold);
+  border-radius: 16px;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 16px var(--bharathi-gold-glow);
+  pointer-events: none;
+  opacity: 0.95;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+}
+
+.bharathi-avatar-btn.state-idle .bharathi-floating-speech-bubble {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.95);
+}
+
+.bharathi-avatar-btn:hover .bharathi-floating-speech-bubble,
+.bharathi-avatar-btn.state-listening .bharathi-floating-speech-bubble,
+.bharathi-avatar-btn.state-thinking .bharathi-floating-speech-bubble,
+.bharathi-avatar-btn.state-speaking .bharathi-floating-speech-bubble,
+.bharathi-avatar-btn.state-greeting .bharathi-floating-speech-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Hide Rectangular Box Panel Completely */
+.bharathi-panel {
+  display: none !important;
+}
+
+/* Panel Header */
+.bharathi-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: rgba(14, 14, 16, 0.7);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.bharathi-character-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bharathi-header-avatar {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--bharathi-gold);
+  overflow: visible;
+  background: #000;
+  flex-shrink: 0;
+}
+
+.bharathi-header-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* SECTION 20: CHARACTER STATE ANIMATIONS */
+.state-greeting .bharathi-header-avatar img {
+  animation: bharathi-greeting-glow 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 16px var(--bharathi-gold-glow);
+}
+
+@keyframes bharathi-greeting-glow {
+  0% { transform: scale(1) rotate(-1deg); }
+  100% { transform: scale(1.05) rotate(1deg); }
+}
+
+.state-listening .bharathi-header-avatar img {
+  transform: scale(1.04);
+  box-shadow: 0 0 18px var(--bharathi-saffron-glow);
+}
+
+.state-thinking .bharathi-header-avatar img {
+  animation: bharathi-think-sway 2.4s ease-in-out infinite alternate;
+  box-shadow: 0 0 16px var(--bharathi-gold-glow);
+}
+
+@keyframes bharathi-think-sway {
+  0% { transform: rotate(-4deg) scale(0.98); }
+  50% { transform: rotate(0deg) scale(1.02); }
+  100% { transform: rotate(4deg) scale(0.98); }
+}
+
+.bharathi-thinking-particles {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  pointer-events: none;
+  overflow: visible;
+  display: none;
+}
+
+.state-thinking .bharathi-thinking-particles {
+  display: block;
+}
+
+.bharathi-particle {
+  position: absolute;
+  color: var(--bharathi-gold);
+  font-size: 11px;
+  opacity: 0;
+  animation: bharathi-float-particle 2s ease-out infinite;
+}
+
+.bharathi-particle:nth-child(1) { left: 10%; top: 80%; animation-delay: 0s; }
+.bharathi-particle:nth-child(2) { right: 15%; top: 70%; animation-delay: 0.6s; }
+.bharathi-particle:nth-child(3) { left: 50%; top: 90%; animation-delay: 1.2s; }
+
+@keyframes bharathi-float-particle {
+  0% { opacity: 0; transform: translateY(0) scale(0.6) rotate(0deg); }
+  30% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(-28px) scale(1.2) rotate(15deg); }
+}
+
+.state-speaking .bharathi-header-avatar img {
+  animation: bharathi-speak-bounce 0.6s ease-in-out infinite alternate;
+  box-shadow: 0 0 20px var(--bharathi-green-glow);
+}
+
+@keyframes bharathi-speak-bounce {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.06) translateY(-3px); }
+}
+
+.bharathi-speech-wave-ring {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--bharathi-green);
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.state-speaking .bharathi-speech-wave-ring {
+  display: block;
+  animation: bharathi-speech-wave 1.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes bharathi-speech-wave {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* SECTION 20: HAPPY / SUCCESS STATE GOLDEN SPARKLE */
+.state-happy .bharathi-header-avatar img {
+  animation: bharathi-happy-sparkle 1.2s ease-in-out infinite alternate;
+  box-shadow: 0 0 24px var(--bharathi-gold-glow);
+}
+
+@keyframes bharathi-happy-sparkle {
+  0% { transform: scale(1) rotate(0deg); box-shadow: 0 0 12px var(--bharathi-gold); }
+  100% { transform: scale(1.08) rotate(3deg); box-shadow: 0 0 28px var(--bharathi-gold); }
+}
+
+.bharathi-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bharathi-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--bharathi-ivory);
+  line-height: 1.2;
+}
+
+.bharathi-subtitle {
+  font-size: 11px;
+  color: var(--bharathi-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Header Close & Sound Action Buttons */
+.bharathi-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bharathi-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: var(--bharathi-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  outline: none;
+}
+
+.bharathi-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--bharathi-ivory);
+}
+
+.bharathi-icon-btn:focus-visible {
+  outline: 2px solid var(--bharathi-saffron);
+}
+
+/* Panel Body & Speech Interaction Area */
+.bharathi-panel-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+/* Status Banner */
+.bharathi-status-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.bharathi-status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bharathi-gold);
+  flex-shrink: 0;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.state-idle .bharathi-status-indicator { background: var(--bharathi-gold); }
+.state-greeting .bharathi-status-indicator { background: var(--bharathi-gold); box-shadow: 0 0 10px var(--bharathi-gold); animation: bharathi-dot-blink 1s ease-in-out infinite; }
+.state-listening .bharathi-status-indicator { background: var(--bharathi-saffron); box-shadow: 0 0 8px var(--bharathi-saffron); animation: bharathi-dot-blink 1s ease-in-out infinite; }
+.state-thinking .bharathi-status-indicator { background: #e9c349; box-shadow: 0 0 10px #e9c349; animation: bharathi-dot-blink 0.5s ease-in-out infinite; }
+.state-speaking .bharathi-status-indicator { background: var(--bharathi-green); box-shadow: 0 0 10px var(--bharathi-green); }
+.state-happy .bharathi-status-indicator { background: var(--bharathi-gold); box-shadow: 0 0 12px var(--bharathi-gold); }
+
+@keyframes bharathi-dot-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.bharathi-status-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bharathi-ivory);
+}
+
+.bharathi-transcript-box {
+  background: rgba(14, 14, 16, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: 'Newsreader', serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--bharathi-ivory);
+  min-height: 54px;
+  max-height: 110px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.bharathi-transcript-user {
+  color: var(--bharathi-muted);
+  font-style: italic;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.bharathi-transcript-ai {
+  color: var(--bharathi-ivory);
+  font-size: 14px;
+}
+
+/* Mic Action Section */
+.bharathi-mic-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0 4px 0;
+  gap: 8px;
+}
+
+.bharathi-main-mic-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e2712e 0%, #d96a27 100%);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 20px rgba(217, 106, 39, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  outline: none;
+}
+
+.bharathi-main-mic-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 26px rgba(217, 106, 39, 0.7);
+}
+
+.bharathi-main-mic-btn:focus-visible {
+  outline: 3px solid var(--bharathi-gold);
+  outline-offset: 4px;
+}
+
+.state-listening .bharathi-main-mic-btn {
+  background: linear-gradient(135deg, #e86960 0%, #d96a27 100%);
+  animation: bharathi-mic-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes bharathi-mic-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(217, 106, 39, 0.6); }
+  50% { transform: scale(1.08); box-shadow: 0 0 28px rgba(217, 106, 39, 0.9); }
+}
+
+.bharathi-mic-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bharathi-muted);
+}
+
+/* Quick Voice Commands Chips Bar */
+.bharathi-chips-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--bharathi-gold);
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.bharathi-chips-list {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.bharathi-chip-btn {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--bharathi-ivory);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  outline: none;
+}
+
+.bharathi-chip-btn:hover {
+  background: rgba(217, 106, 39, 0.2);
+  border-color: var(--bharathi-saffron);
+}
+
+.bharathi-chip-btn:focus-visible {
+  outline: 2px solid var(--bharathi-gold);
+}
+
+/* Mic Help Banner */
+.bharathi-mic-help {
+  background: rgba(232, 105, 96, 0.1);
+  border: 1px solid rgba(232, 105, 96, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #ffdad6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Read Aloud Injectable Button Style */
+.bharathi-read-aloud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--bharathi-gold);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.bharathi-read-aloud-btn:hover {
+  background: var(--bharathi-saffron);
+  border-color: var(--bharathi-saffron);
+  color: #fff;
+}
+
+.bharathi-read-aloud-btn:focus-visible {
+  outline: 2px solid var(--bharathi-gold);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   SECTION 21: MOBILE BEHAVIOR (FLOATING MINI-CARD & THUMB-ZONE FIT)
+   ========================================================================== */
+
+/* Mobile Ultra Small (320px - 374px) */
+@media (max-width: 374px) {
+  .bharathi-voice-container { bottom: 16px; right: 16px; }
+  .bharathi-avatar-btn { width: 54px; height: 54px; }
+  .bharathi-panel {
+    bottom: 76px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - 100px);
+  }
+  .bharathi-main-mic-btn { width: 60px; height: 60px; }
+  .bharathi-tooltip { display: none; }
+}
+
+/* Mobile Standard (375px - 767px) */
+@media (min-width: 375px) and (max-width: 767px) {
+  .bharathi-voice-container { bottom: 20px; right: 20px; }
+  .bharathi-panel {
+    bottom: 88px;
+    right: 16px;
+    left: 16px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bharathi-panel { width: 360px; right: 24px; }
+}
+
+/* Desktop & Large Screens (1024px, 1440px+) */
+@media (min-width: 1024px) {
+  .bharathi-voice-container { bottom: 28px; right: 28px; }
+  .bharathi-panel { width: 390px; bottom: 100px; right: 28px; }
+}

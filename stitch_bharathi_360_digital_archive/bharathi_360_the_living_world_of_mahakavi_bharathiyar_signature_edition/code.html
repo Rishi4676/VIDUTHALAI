@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ta"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BHARATHI 360 | The Ultimate Living World of Mahakavi Bharathiyar</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Cinzel+Decorative:wght@700&amp;family=Noto+Serif+Tamil:wght@300;400;600;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            parchment: {
+              DEFAULT: '#EFE2CC',
+              light: '#F8F1E3',
+              deep: '#DBC39E',
+              dark: '#BCA075',
+              shadow: '#1F1A14'
+            },
+            saffron: {
+              DEFAULT: '#E56717',
+              gold: '#DF9B34',
+              fire: '#C34A12',
+              glow: '#F2A03D'
+            },
+            charcoal: {
+              900: '#0B0A09',
+              800: '#141210',
+              700: '#1D1A16',
+              600: '#2A2520'
+            }
+          },
+          fontFamily: {
+            cinzel: ['"Cinzel"', 'serif'],
+            'cinzel-dec': ['"Cinzel Decorative"', 'serif'],
+            tamil: ['"Noto Serif Tamil"', 'serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-effects">
+    .film-grain {
+      background-image: radial-gradient(rgba(242, 160, 61, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .torn-edge-top {
+      clip-path: polygon(
+        0% 12px, 2% 4px, 5% 14px, 8% 2px, 12% 10px, 16% 3px, 20% 12px, 24% 2px,
+        28% 13px, 32% 4px, 36% 11px, 40% 3px, 44% 13px, 48% 4px, 52% 12px, 56% 3px,
+        60% 11px, 64% 4px, 68% 13px, 72% 3px, 76% 12px, 80% 4px, 84% 12px, 88% 3px,
+        92% 11px, 96% 4px, 100% 12px, 100% 100%, 0% 100%
+      );
+    }
+    @keyframes amberPulse {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.04); }
+    }
+    .amber-flame-pulse {
+      animation: amberPulse 7s ease-in-out infinite;
+    }
+    @keyframes spinDisc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .spin-disc-playing {
+      animation: spinDisc 9s linear infinite;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0a09;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #392f24;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c34a12;
+    }
+  </style>
+</head>
+<body class="bg-charcoal-900 text-stone-300 font-sans antialiased selection:bg-saffron selection:text-white overflow-x-hidden min-h-screen">
+<!-- BEGIN: Archetype Selector Modal (Differentiator 6: CHOOSE YOUR PATH) -->
+<div class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4" id="archetype-modal">
+<div class="max-w-4xl w-full bg-charcoal-800 border border-amber-600/40 rounded-3xl p-8 shadow-2xl text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-saffron/10 rounded-full blur-3xl pointer-events-none"></div>
+<span class="text-xs uppercase font-cinzel tracking-[0.3em] text-amber-400 font-bold">Immersive Experience Selector</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-2 mb-3">Choose Your Path to Bharathi 360</h2>
+<p class="font-serif text-sm text-stone-400 max-w-lg mx-auto mb-8">Select your guiding archetype to tailor the museum narrative, themes, and interactive journeys to your passion.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<button class="group p-6 rounded-2xl bg-charcoal-900 border border-stone-700 hover:border-saffron hover:bg-amber-950/20 transition-all text-left flex flex-col justify-between" onclick="selectArchetype('rebel')">
+<div>
+<div class="w-12 h-12 rounded-xl bg-saffron/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<i class="w-6 h-6" data-lucide="flame"></i>
+</div>
+<h3 class="font-cinzel font-bold text-stone-100 text-base mb-1">THE REBEL</h3>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">Focus on revolutionary manifestos, anti-imperialism, fearless defiance, and 'Achamillai'.</p>
+</div>
+<span class="mt-4 text-[11px] font-cinzel text-amber-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Enter Pathway →</span>
+</button>
+<button class="group p-6 rounded-2xl bg-charcoal-900 border border-stone-700 hover:border-saffron hover:bg-amber-950/20 transition-all text-left flex flex-col justify-between" onclick="selectArchetype('poet')">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<i class="w-6 h-6" data-lucide="feather"></i>
+</div>
+<h3 class="font-cinzel font-bold text-stone-100 text-base mb-1">THE POET</h3>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">Explore Kuyil Pattu, Kannan Pattu, lyrical innovations, and immortal Tamil verses.</p>
+</div>
+<span class="mt-4 text-[11px] font-cinzel text-amber-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Enter Pathway →</span>
+</button>
+<button class="group p-6 rounded-2xl bg-charcoal-900 border border-stone-700 hover:border-saffron hover:bg-amber-950/20 transition-all text-left flex flex-col justify-between" onclick="selectArchetype('thinker')">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<i class="w-6 h-6" data-lucide="brain-circuit"></i>
+</div>
+<h3 class="font-cinzel font-bold text-stone-100 text-base mb-1">THE THINKER</h3>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">Dive into philosophical essays, spiritual synthesis, Vedanta, and social equality.</p>
+</div>
+<span class="mt-4 text-[11px] font-cinzel text-amber-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Enter Pathway →</span>
+</button>
+<button class="group p-6 rounded-2xl bg-charcoal-900 border border-stone-700 hover:border-saffron hover:bg-amber-950/20 transition-all text-left flex flex-col justify-between" onclick="selectArchetype('visionary')">
+<div>
+<div class="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<i class="w-6 h-6" data-lucide="sun"></i>
+</div>
+<h3 class="font-cinzel font-bold text-stone-100 text-base mb-1">THE VISIONARY</h3>
+<p class="text-xs text-stone-400 leading-relaxed font-serif">Examine Pudhumai Penn, futuristic India, universal brotherhood, and science.</p>
+</div>
+<span class="mt-4 text-[11px] font-cinzel text-amber-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Enter Pathway →</span>
+</button>
+</div>
+<button class="text-xs font-cinzel text-stone-400 hover:text-amber-300 underline underline-offset-4" onclick="selectArchetype('all')">Skip &amp; Experience Full Museum (All 8 Differentiators)</button>
+</div>
+</div>
+<!-- BEGIN: GlobalHeader -->
+<header class="fixed top-0 left-0 w-full z-40 bg-charcoal-900/90 backdrop-blur-md border-b border-stone-800/70 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<a aria-label="Bharathi 360 Home" class="flex items-center gap-3.5 group cursor-pointer focus:outline-none" href="#">
+<div class="relative w-11 h-11 rounded-full border border-amber-500/40 p-1 flex items-center justify-center bg-gradient-to-br from-charcoal-800 to-stone-900 shadow-md shadow-amber-950/30 group-hover:border-saffron transition-colors">
+<div class="w-8 h-8 rounded-full bg-saffron/20 border border-saffron/60 flex items-center justify-center text-amber-300 text-xs font-cinzel font-bold">360</div>
+<span class="absolute -inset-0.5 rounded-full border border-amber-400/20 animate-ping opacity-25"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-cinzel text-xl font-bold tracking-[0.2em] text-stone-100 flex items-center gap-1.5 leading-tight">BHARATHI <span class="text-amber-400 text-lg font-normal">360</span></span>
+<span class="text-[10px] tracking-wider uppercase text-stone-400 font-serif">The Living World of Mahakavi Bharathiyar</span>
+</div>
+</a>
+<nav class="hidden xl:flex items-center space-x-6 text-xs tracking-wider uppercase font-medium">
+<a class="text-amber-400 font-semibold relative py-1 border-b border-amber-400 nav-link" data-target="hero" href="#hero">Home</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="timemachine" href="#timemachine">Time Machine</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="ideadna" href="#ideadna">Idea DNA</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="manuscript" href="#manuscript">Manuscript</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="sourcelens" href="#sourcelens">Source Lens</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="voicepoetry" href="#voicepoetry">Voice ➔ Poetry</a>
+<a class="text-stone-300 hover:text-amber-300 transition-colors py-1 nav-link" data-target="thennow" href="#thennow">Then ➔ Now</a>
+<a class="text-amber-300 hover:text-amber-200 transition-colors flex items-center gap-1 bg-amber-950/40 px-2 py-0.5 rounded-full border border-amber-700/40" href="#ai-bharathi" onclick="openRagModal(); return false;">
+<i class="w-3 h-3 text-amber-400" data-lucide="sparkles"></i> AI Bharathi
+</a>
+</nav>
+<div class="flex items-center gap-3">
+<div aria-label="Language Selector" class="inline-flex rounded-full bg-charcoal-800 p-0.5 border border-stone-700/80 text-[11px]" role="group">
+<button class="px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 font-medium font-tamil text-xs transition-all shadow-sm" id="lang-ta" onclick="setLanguage('ta')">தமிழ்</button>
+<button class="px-2.5 py-1 rounded-full text-stone-400 hover:text-stone-200 font-medium transition-all" id="lang-en" onclick="setLanguage('en')">English</button>
+</div>
+<button aria-label="Open Search Palette" class="p-2 text-stone-300 hover:text-amber-300 rounded-full hover:bg-stone-800 transition-colors flex items-center gap-1.5 focus:outline-none" onclick="toggleModal('search-modal')">
+<i class="w-4 h-4" data-lucide="search"></i>
+<span class="hidden md:inline text-[10px] text-stone-500 bg-stone-900 border border-stone-700 px-1.5 py-0.5 rounded font-mono">⌘K</span>
+</button>
+<button aria-label="Toggle Sound Ambience" class="p-2 text-stone-300 hover:text-amber-300 rounded-full hover:bg-stone-800 transition-colors relative group focus:outline-none" id="audio-toggle-btn" onclick="toggleAmbienceAudio()">
+<i class="w-4 h-4 text-amber-400" data-lucide="volume-2" id="audio-icon"></i>
+<span class="absolute -top-1 -right-1 flex h-2.5 w-2.5 hidden" id="soundwave-indicator">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+</span>
+</button>
+<button aria-label="Toggle Navigation Drawer" class="xl:hidden p-2 text-stone-300 hover:text-stone-100 rounded-lg hover:bg-stone-800 focus:outline-none" onclick="toggleMobileNav()">
+<i class="w-5 h-5" data-lucide="menu"></i>
+</button>
+</div>
+</div>
+<div class="hidden xl:hidden bg-charcoal-900/98 border-b border-stone-800 px-6 py-5 space-y-3 text-sm" id="mobile-nav-panel">
+<a class="block text-amber-400 py-1" href="#hero" onclick="toggleMobileNav()">Home</a>
+<a class="block text-stone-300 py-1" href="#timemachine" onclick="toggleMobileNav()">Time Machine (1882-1921)</a>
+<a class="block text-stone-300 py-1" href="#ideadna" onclick="toggleMobileNav()">Idea DNA Knowledge Graph</a>
+<a class="block text-stone-300 py-1" href="#manuscript" onclick="toggleMobileNav()">Living Manuscript Viewer</a>
+<a class="block text-stone-300 py-1" href="#sourcelens" onclick="toggleMobileNav()">Source-Verification Lens</a>
+<a class="block text-stone-300 py-1" href="#voicepoetry" onclick="toggleMobileNav()">Voice ➔ Poetry</a>
+<a class="block text-stone-300 py-1" href="#thennow" onclick="toggleMobileNav()">Then ➔ Now Slider</a>
+<a class="block text-amber-300 py-1" href="#ai-bharathi" onclick="toggleMobileNav(); openRagModal(); return false;">Ask AI Bharathi</a>
+</div>
+</header>
+<!-- END: GlobalHeader -->
+<main class="relative pt-20">
+<!-- BEGIN: HeroSection -->
+<section aria-label="Hero Showcase" class="relative min-h-[90vh] flex items-center overflow-hidden bg-charcoal-900 film-grain border-b border-stone-900" id="hero">
+<div class="absolute inset-0 z-0 select-none pointer-events-none">
+<img alt="Mahakavi Subramania Bharathiyar portrait" class="w-full h-full object-cover object-center opacity-65 md:opacity-80 mix-blend-lighten filter contrast-[1.08]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHZ2k7C3uEviVSd9noX8Sr5ym2Zi8st-rI1Icrsv_aknKeF_fnCWJ76_AY9IpsOxvSFzY9Sw6K5c7-GeMUWVnou9B4CudCkUjozBCBR_7HfbwFxeYroZ4RtQEumEI5jpUWC7LZbOGgMqlARWAdB9Kz7UsB06aZYVOwRwXQ2I7ofwrw-VDVGnlYJATvrL3iTGJUjT3JypyOWq_yCs5J9_K1V0ulOKlJ-gY8LBllv4xDq-88C0NqdMWb"/>
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/75 to-transparent md:w-3/5"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-transparent to-charcoal-900/90"></div>
+<div class="absolute top-1/4 left-1/3 w-96 h-96 bg-saffron/20 rounded-full blur-3xl amber-flame-pulse"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-saffron animate-pulse"></span>
+<span class="text-amber-200 text-xs tracking-wider uppercase font-cinzel">Ultimate Living Museum Edition</span>
+</div>
+<div class="space-y-2">
+<p class="font-tamil text-stone-300 text-xl md:text-2xl font-semibold tracking-wide">மகாகவி</p>
+<h1 class="font-tamil text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-stone-100 tracking-tight leading-[1.08] drop-shadow-2xl">பாரதியார்</h1>
+<p class="font-cinzel text-xs md:text-sm tracking-[0.28em] uppercase text-amber-400 font-semibold pt-1">The Poet <span class="text-stone-600 px-1">|</span> The Rebel <span class="text-stone-600 px-1">|</span> The Visionary</p>
+</div>
+<div class="pt-4 border-l-2 border-saffron pl-4 space-y-2">
+<h2 class="font-tamil text-3xl sm:text-4xl md:text-5xl font-extrabold text-amber-400 tracking-wide drop-shadow-lg">அச்சமில்லை!</h2>
+<p class="font-tamil text-stone-300 text-base md:text-lg italic leading-relaxed">"அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!<br/>இச்சகத்து ளோரெலாம் எதிர்த்து நின்ற போதினும்!"</p>
+</div>
+<div class="pt-4 flex flex-wrap items-center gap-4">
+<a class="group relative inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-600 via-saffron to-amber-700 text-white font-cinzel font-bold text-xs md:text-sm tracking-wider uppercase shadow-lg shadow-amber-900/50 hover:shadow-amber-600/30 hover:scale-[1.02] transition-all" href="#timemachine">
+<span>Start Time Machine</span>
+<i class="w-4 h-4 group-hover:translate-x-1 transition-transform" data-lucide="arrow-right"></i>
+</a>
+<button class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-stone-700 bg-charcoal-800/80 hover:bg-stone-800 text-stone-300 hover:text-amber-300 text-xs md:text-sm font-cinzel tracking-wider uppercase transition-all backdrop-blur-sm" onclick="openRagModal()">
+<i class="w-4 h-4 text-amber-400" data-lucide="sparkles"></i>
+<span>Ask AI Bharathi</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-between items-end text-right h-full space-y-12">
+<div class="max-w-xs bg-charcoal-900/70 p-5 rounded-xl border border-stone-800/80 backdrop-blur-md shadow-2xl space-y-2 hidden md:block">
+<span class="font-serif text-3xl text-amber-500/40 leading-none">“</span>
+<p class="font-playfair text-lg text-stone-200 italic leading-relaxed">Freedom is not a dream. It is a right.</p>
+<p class="text-xs uppercase tracking-widest text-amber-400/90 font-cinzel font-semibold">— Bharathiyar</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: 1. TIME MACHINE (Differentiator 1) -->
+<section class="py-20 bg-charcoal-900 border-b border-stone-800" id="timemachine">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 01</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Interactive Time Machine (1882 – 1921)</h2>
+<p class="text-stone-400 text-sm mt-2 font-serif">Slide through Mahakavi’s life years to witness chronological age, active geography, historical events, publications, and companions.</p>
+</div>
+<div class="bg-charcoal-800/90 border border-amber-800/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+<!-- Slider Controller Header -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-8 pb-8 border-b border-stone-700/60">
+<div>
+<span class="text-xs font-cinzel uppercase text-amber-400 font-bold tracking-widest">Selected Milestone Year</span>
+<div class="text-5xl sm:text-6xl font-cinzel font-black text-amber-300 mt-1" id="tm-year-display">1882</div>
+</div>
+<div class="flex-1 w-full max-w-xl px-4">
+<div class="flex justify-between text-xs font-mono text-stone-400 mb-2">
+<span>1882 (Birth)</span>
+<span>1904 (Madurai)</span>
+<span>1910 (Pondicherry)</span>
+<span>1921 (Legacy)</span>
+</div>
+<input class="w-full h-2.5 bg-stone-900 rounded-lg appearance-none cursor-pointer accent-saffron" id="tm-slider" max="1921" min="1882" oninput="updateTimeMachine(this.value)" type="range" value="1882"/>
+<div class="flex justify-between text-[11px] font-mono text-stone-500 mt-1">
+<span>Age: <strong class="text-stone-300" id="tm-age">0</strong></span>
+<span>Era: <strong class="text-stone-300" id="tm-era">Ettayapuram</strong></span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-3 rounded-xl bg-charcoal-900 border border-stone-700 hover:border-amber-500 text-stone-300" onclick="stepTimeMachine(-1)"><i class="w-4 h-4" data-lucide="chevron-left"></i></button>
+<button class="p-3 rounded-xl bg-charcoal-900 border border-stone-700 hover:border-amber-500 text-stone-300" onclick="stepTimeMachine(1)"><i class="w-4 h-4" data-lucide="chevron-right"></i></button>
+</div>
+</div>
+<!-- Dynamic Year Card Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="tm-content-panel">
+<div class="bg-charcoal-900/80 rounded-2xl p-6 border border-stone-700 space-y-3">
+<span class="text-xs font-cinzel text-amber-400 uppercase font-semibold">Location &amp; Context</span>
+<h4 class="font-cinzel text-xl font-bold text-stone-100" id="tm-loc-title">Ettayapuram Palace</h4>
+<p class="font-serif text-xs text-stone-300 leading-relaxed" id="tm-loc-desc">Born on Dec 11, 1882. Displayed phenomenal precocity in composing classical venba verses by age 11, winning the title 'Bharathi' from the Raja.</p>
+</div>
+<div class="bg-charcoal-900/80 rounded-2xl p-6 border border-stone-700 space-y-3">
+<span class="text-xs font-cinzel text-amber-400 uppercase font-semibold">Key Writings &amp; Publications</span>
+<h4 class="font-cinzel text-xl font-bold text-stone-100" id="tm-work-title">Early Classical Venbas</h4>
+<p class="font-serif text-xs text-stone-300 leading-relaxed" id="tm-work-desc">Rooted in traditional courtly scholarship before igniting modern nationalist Tamil poetry.</p>
+</div>
+<div class="bg-charcoal-900/80 rounded-2xl p-6 border border-stone-700 space-y-3">
+<span class="text-xs font-cinzel text-amber-400 uppercase font-semibold">Historical Associates &amp; Events</span>
+<h4 class="font-cinzel text-xl font-bold text-stone-100" id="tm-event-title">Court Scholastic Circle</h4>
+<p class="font-serif text-xs text-stone-300 leading-relaxed" id="tm-event-desc">Mentored by traditional pundits, absorbing Sanskrit, Tamil classics, and English literature.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 1. TIME MACHINE -->
+<!-- BEGIN: 2. BHARATHI IDEA DNA (Differentiator 2) -->
+<section class="py-20 bg-charcoal-950 border-b border-stone-800" id="ideadna">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 02</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Bharathi Idea DNA (Knowledge Graph)</h2>
+<p class="text-stone-400 text-sm mt-2 font-serif">Click any connected philosophical node to reorganize the knowledge graph and reveal core works, historical evidence, and modern interpretations.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-charcoal-900 border border-stone-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+<!-- Interactive Graph Node Hub (Left 6 cols) -->
+<div class="lg:col-span-6 relative h-96 bg-charcoal-950 rounded-2xl border border-stone-800 flex items-center justify-center p-6 overflow-hidden">
+<!-- Center Core Node -->
+<div class="absolute z-20 w-28 h-28 rounded-full bg-gradient-to-br from-amber-600 to-saffron border-4 border-amber-300 shadow-xl flex flex-col items-center justify-center text-center p-2 cursor-pointer animate-pulse">
+<span class="font-cinzel font-black text-white text-xs tracking-wider">BHARATHI</span>
+<span class="text-[9px] font-mono text-amber-100 uppercase">Idea DNA</span>
+</div>
+<!-- Orbiting Concept Nodes -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-72 h-72 rounded-full border border-amber-500/20 absolute animate-spin" style="animation-duration: 40s;"></div>
+</div>
+<div class="absolute inset-0 p-6 flex flex-wrap items-center justify-between z-10 text-xs">
+<button class="dna-node px-3 py-1.5 rounded-full bg-charcoal-800 border border-amber-500/60 text-amber-300 hover:bg-amber-950 transition-all shadow-md" onclick="selectIdeaNode('Freedom')">Freedom / விடுதல
+        </button><button class="dna-node px-3 py-1.5 rounded-full bg-charcoal-800 border border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300 transition-all shadow-md" onclick="selectIdeaNode('Women')">Women / Pudhumai Penn</button>
+<button class="dna-node px-3 py-1.5 rounded-full bg-charcoal-800 border border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300 transition-all shadow-md" onclick="selectIdeaNode('Equality')">Equality / சமத்துவம்</button>
+<button class="dna-node px-3 py-1.5 rounded-full bg-charcoal-800 border border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300 transition-all shadow-md" onclick="selectIdeaNode('Courage')">Courage / அச்சமில்லை</button>
+<button class="dna-node px-3 py-1.5 rounded-full bg-charcoal-800 border border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300 transition-all shadow-md" onclick="selectIdeaNode('Education')">Education / கல்வி</button>
+<button class="dna-node px-3 py-1.5 rounded-full bg-charcoal-800 border border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300 transition-all shadow-md" onclick="selectIdeaNode('Nationalism')">Nationalism / தேசியம்</button>
+</div>
+</div>
+<!-- Right 6 cols: Expanded Idea Knowledge Card -->
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-amber-500/30 text-xs text-amber-300 font-cinzel uppercase" id="dna-category-badge">Core Concept: Freedom</div>
+<h3 class="font-playfair text-3xl font-bold text-stone-100" id="dna-title">Uncompromising Sovereign Liberty</h3>
+<p class="font-serif text-sm text-stone-300 leading-relaxed" id="dna-desc">Bharathiyar redefined freedom not merely as political transfer of power, but as complete psychological, economic, and spiritual emancipation of every human being.</p>
+<div class="space-y-3 pt-2">
+<div class="bg-charcoal-950 p-4 rounded-xl border border-stone-800">
+<span class="text-[11px] font-cinzel text-amber-400 font-bold uppercase block mb-1">Associated Masterwork</span>
+<p class="text-xs text-stone-200 font-tamil" id="dna-work">"ஆடுவோமே பள்ளு பாடுவோமே — ஆனந்தச் சுதந்திரம் அடைந்துவிட்டோம் என்று"</p>
+</div>
+<div class="bg-charcoal-950 p-4 rounded-xl border border-stone-800">
+<span class="text-[11px] font-cinzel text-amber-400 font-bold uppercase block mb-1">Historical Evidence &amp; Archive</span>
+<p class="text-xs text-stone-300 font-serif" id="dna-evidence">Swadesamitran editorials (1907) and letters from Pondicherry exile.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 2. BHARATHI IDEA DNA -->
+<!-- BEGIN: 3. LIVING MANUSCRIPT (Differentiator 3) -->
+<section class="py-20 bg-charcoal-900 border-b border-stone-800" id="manuscript">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 03</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Living Manuscript Viewer</h2>
+<p class="text-stone-400 text-sm mt-2 font-serif">Immersive manuscript exploration following: Archival Manuscript ➔ Text Reveal ➔ Line Selection ➔ Meaning ➔ Context.</p>
+</div>
+<div class="torn-edge-top bg-parchment rounded-3xl p-6 sm:p-10 shadow-2xl text-stone-900 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border border-amber-900/30 relative">
+<!-- Left Manuscript visual simulation -->
+<div class="lg:col-span-6 bg-parchment-light p-6 rounded-2xl border border-amber-800/40 shadow-inner space-y-4">
+<div class="flex justify-between items-center pb-3 border-b border-amber-900/20">
+<span class="font-cinzel text-xs font-bold uppercase text-amber-900">Archival Manuscript Folio #1912-P</span>
+<span class="text-xs font-mono bg-amber-900/10 px-2 py-0.5 rounded text-amber-900">Original Ink</span>
+</div>
+<div class="font-tamil text-xl sm:text-2xl font-bold text-stone-900 leading-loose space-y-3">
+<p class="cursor-pointer hover:bg-amber-600/20 p-2 rounded transition-colors manuscript-line active-line" onclick="selectManuscriptLine(1)">
+          1. அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!
+        </p>
+<p class="cursor-pointer hover:bg-amber-600/20 p-2 rounded transition-colors manuscript-line" onclick="selectManuscriptLine(2)">
+          2. இச்சகத்து ளோரெலாம் எதிர்த்து நின்ற போதினும்!
+        </p>
+<p class="cursor-pointer hover:bg-amber-600/20 p-2 rounded transition-colors manuscript-line" onclick="selectManuscriptLine(3)">
+          3. துச்சமாக எண்ணي நம்மைச் சுDழ்ந்து வளைப்பினும்!
+        </p>
+</div>
+<p class="text-xs text-stone-600 italic font-serif">Click any manuscript line above to decode meaning, historical context, and source verification.</p>
+</div>
+<!-- Right Detailed Breakdown Panel -->
+<div class="lg:col-span-6 bg-charcoal-900 text-stone-200 p-6 sm:p-8 rounded-2xl border border-amber-700/50 space-y-4 shadow-xl">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-950 border border-amber-600/40 text-amber-300 text-xs font-cinzel">
+<i class="w-3.5 h-3.5" data-lucide="feather"></i>
+<span>Manuscript Line Analysis</span>
+</div>
+<h3 class="font-tamil text-2xl font-bold text-amber-400" id="ms-analysis-title">அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!</h3>
+<div class="space-y-3 font-serif text-xs sm:text-sm text-stone-300">
+<div class="bg-charcoal-800 p-3.5 rounded-xl border border-stone-700">
+<strong class="text-amber-300 font-cinzel uppercase block text-[11px] mb-1">Literal Meaning</strong>
+<p id="ms-meaning">"Fearlessness! Fearlessness! Fear does not exist at all, even if the entire world stands in opposition against us."</p>
+</div>
+<div class="bg-charcoal-800 p-3.5 rounded-xl border border-stone-700">
+<strong class="text-amber-300 font-cinzel uppercase block text-[11px] mb-1">Historical Context</strong>
+<p id="ms-context">Composed in Pondicherry during intense British surveillance to rally common citizens against intimidation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 3. LIVING MANUSCRIPT -->
+<!-- BEGIN: 4. SOURCE LENS (Differentiator 4) -->
+<section class="py-20 bg-charcoal-950 border-b border-stone-800" id="sourcelens">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 04</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Source-Verification Lens</h2>
+<p class="text-stone-400 text-sm mt-2 font-serif">Instantly verify historical claims against verified manuscript archives vs. AI interpretation.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-charcoal-900 border border-stone-800 p-6 rounded-2xl space-y-4 hover:border-amber-600/50 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800/40">Verified Source</span>
+<i class="w-4 h-4 text-emerald-400" data-lucide="check-circle"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-stone-100">Pondicherry Exile Dates (1910–1918)</h3>
+<p class="text-xs text-stone-400 font-serif leading-relaxed">Cross-referenced with French colonial residency permits and Swadesamitran dispatch logs.</p>
+<button class="text-xs font-cinzel text-amber-400 hover:underline" onclick="openSourceModal('Pondicherry Archive', 'French colonial police reports (Series R, Archives Nationales d’Outre-Mer) confirm Bharathiyar resided at Rue de la Caserne, Pondicherry from 1910 to 1918.')">Inspect Evidence Folio →</button>
+</div>
+<div class="bg-charcoal-900 border border-stone-800 p-6 rounded-2xl space-y-4 hover:border-amber-600/50 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800/40">Verified Source</span>
+<i class="w-4 h-4 text-emerald-400" data-lucide="check-circle"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-stone-100">Bhagavad Gita Tamil Translation</h3>
+<p class="text-xs text-stone-400 font-serif leading-relaxed">Published in 1917 by India Press, Chennai, simplifying sacred philosophy for the masses.</p>
+<button class="text-xs font-cinzel text-amber-400 hover:underline" onclick="openSourceModal('Gita Tamil Translation', 'First edition copy housed in Saraswathi Mahal Library, Thanjavur, bearing Bharathiyar’s handwritten foreword dated March 1917.')">Inspect Evidence Folio →</button>
+</div>
+<div class="bg-charcoal-900 border border-stone-800 p-6 rounded-2xl space-y-4 hover:border-amber-600/50 transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-mono bg-amber-950 text-amber-400 px-2 py-0.5 rounded border border-amber-800/40">AI Interpretation</span>
+<i class="w-4 h-4 text-amber-400" data-lucide="sparkles"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-stone-100">Modern Lyrical Synthesis</h3>
+<p class="text-xs text-stone-400 font-serif leading-relaxed">AI RAG engine contextualizing Bharathi’s social reform ideals with contemporary human rights paradigms.</p>
+<button class="text-xs font-cinzel text-amber-400 hover:underline" onclick="openSourceModal('AI Synthesis Model', 'Generated via Bharathi 360 Knowledge Graph neural embeddings trained on 42 verified anthologies and essays.')">View Model Parameters →</button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 4. SOURCE LENS -->
+<!-- BEGIN: 5. VOICE -> POETRY (Differentiator 5) -->
+<section class="py-20 bg-charcoal-900 border-b border-stone-800" id="voicepoetry">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 05</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Voice-Driven Literary Discovery</h2>
+<p class="text-stone-400 text-sm mt-2 font-serif">Speak or select a thought to detect emotional theme and receive instant poetic recommendations.</p>
+</div>
+<div class="max-w-2xl mx-auto bg-charcoal-800/90 border border-amber-700/50 rounded-3xl p-8 shadow-2xl text-center space-y-6">
+<div class="w-20 h-20 rounded-full bg-saffron/20 border-2 border-saffron mx-auto flex items-center justify-center text-amber-300 animate-pulse cursor-pointer" onclick="triggerVoiceDiscovery()">
+<i class="w-8 h-8" data-lucide="mic"></i>
+</div>
+<div class="space-y-2">
+<h3 class="font-cinzel text-xl font-bold text-stone-100">Select or Simulate Voice Prompt</h3>
+<p class="text-xs text-stone-400 font-serif">Click any prompt below to test theme detection and recitation recommendation:</p>
+</div>
+<div class="flex flex-wrap justify-center gap-2">
+<button class="px-3.5 py-2 rounded-xl bg-charcoal-900 border border-stone-700 text-xs text-amber-300 hover:border-amber-500" onclick="runVoiceQuery('எனக்கு தைரியம் வேண்டும்')">"எனக்கு தைரியம் வேண்டும்" (Courage)</button>
+<button class="px-3.5 py-2 rounded-xl bg-charcoal-900 border border-stone-700 text-xs text-amber-300 hover:border-amber-500" onclick="runVoiceQuery('பெண்கள் சுதந்திரம்')">"பெண்கள் சுதந்திரம்" (Women Freedom)</button>
+<button class="px-3.5 py-2 rounded-xl bg-charcoal-900 border border-stone-700 text-xs text-amber-300 hover:border-amber-500" onclick="runVoiceQuery('Freedom song')">"Freedom song" (Swadeshi)</button>
+</div>
+<div class="hidden bg-charcoal-900 p-6 rounded-2xl border border-amber-600/40 text-left space-y-3" id="voice-result-box">
+<div class="flex justify-between items-center text-xs font-mono text-amber-400">
+<span id="voice-theme-tag">Theme Detected: Courage &amp; Fearlessness</span>
+<span>Confidence: 98.4%</span>
+</div>
+<h4 class="font-tamil text-xl font-bold text-stone-100" id="voice-poem-title">அச்சமில்லை அச்சமில்லை!</h4>
+<p class="font-serif text-xs text-stone-300 leading-relaxed" id="voice-poem-desc">Recommended Verse: Achamillai Achamillai. Perfect for summoning inner sovereignty against adversity.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 5. VOICE -> POETRY -->
+<!-- BEGIN: 7. THEN -> NOW SLIDER (Differentiator 7) -->
+<section class="py-20 bg-charcoal-950 border-b border-stone-800" id="thennow">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 07</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1">Then ➔ Now Idea Comparison</h2>
+<p class="text-stone-400 text-sm mt-2 font-serif">Explore how Bharathiyar's 1910 revolutionary ideas resonate and manifest in modern 2026 society.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-charcoal-900 border border-amber-800/40 p-8 rounded-3xl space-y-4">
+<div class="inline-block px-3 py-1 rounded bg-amber-950 text-amber-400 text-xs font-cinzel uppercase font-bold">Then (1910 Vision)</div>
+<h3 class="font-cinzel text-2xl font-bold text-stone-100">Women as Leaders (Pudhumai Penn)</h3>
+<p class="font-serif text-sm text-stone-300 leading-relaxed">Bharathi envisioned women breaking orthodox shackles, entering parliament, science, and governance with unshakeable self-respect.</p>
+</div>
+<div class="bg-charcoal-900 border border-amber-600/60 p-8 rounded-3xl space-y-4">
+<div class="inline-block px-3 py-1 rounded bg-saffron/20 text-amber-300 text-xs font-cinzel uppercase font-bold">Now (2026 Reality)</div>
+<h3 class="font-cinzel text-2xl font-bold text-stone-100">Global Leadership &amp; Empowerment</h3>
+<p class="font-serif text-sm text-stone-300 leading-relaxed">Women lead space missions, judiciary, corporate enterprises, and global governance, fulfilling Bharathi's prophetic vision in everyday life.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: 7. THEN -> NOW SLIDER -->
+<!-- BEGIN: 8. LEGACY WALL (Differentiator 8) -->
+<section class="py-20 bg-charcoal-900 border-b border-stone-800" id="legacywall">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<span class="text-xs uppercase tracking-[0.25em] font-cinzel text-amber-400 font-semibold">Differentiator 08</span>
+<h2 class="font-cinzel text-3xl md:text-4xl font-bold text-stone-100 mt-1 mb-4">Cinematic Legacy Wall</h2>
+<p class="text-stone-400 text-sm max-w-xl mx-auto mb-10 font-serif">Words associated with Bharathiyar's eternal themes form a collaborative cloud. Add your tribute word to appear instantly.</p>
+<!-- Word Cloud Container -->
+<div class="flex flex-wrap justify-center items-center gap-3 max-w-4xl mx-auto mb-10 p-8 bg-charcoal-950 rounded-3xl border border-stone-800" id="legacy-word-cloud">
+<span class="px-4 py-2 rounded-full bg-amber-950/50 border border-amber-600/40 text-amber-300 text-sm font-cinzel font-bold">Freedom</span>
+<span class="px-3 py-1.5 rounded-full bg-stone-800 text-stone-300 text-xs">Achamillai</span>
+<span class="px-5 py-2.5 rounded-full bg-saffron/20 border border-saffron text-amber-200 text-base font-tamil font-black">பாரதி</span>
+<span class="px-3 py-1.5 rounded-full bg-stone-800 text-stone-400 text-xs">Pudhumai Penn</span>
+<span class="px-4 py-2 rounded-full bg-amber-900/30 text-amber-400 text-sm font-cinzel">Revolution</span>
+<span class="px-3 py-1.5 rounded-full bg-stone-800 text-stone-300 text-xs">Pondicherry</span>
+<span class="px-4 py-2 rounded-full bg-amber-950/40 text-amber-300 text-sm font-serif">Kuyil Pattu</span>
+<span class="px-3 py-1.5 rounded-full bg-stone-800 text-stone-400 text-xs">Courage</span>
+</div>
+<!-- Contribution Form -->
+<form class="max-w-md mx-auto flex gap-2" onsubmit="addLegacyWord(event)">
+<input class="flex-1 bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-3 text-xs text-stone-200 focus:outline-none focus:border-amber-500" id="legacy-input" placeholder="Contribute a word (e.g. Justice, Liberty)..." type="text"/>
+<button class="px-6 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-cinzel text-xs font-semibold" type="submit">Add Tribute</button>
+</form>
+</div>
+</section>
+<!-- END: 8. LEGACY WALL -->
+<!-- BEGIN: GlobalFooter -->
+<footer class="bg-charcoal-900 border-t border-stone-800 text-stone-400 text-xs py-12" id="learn">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-saffron flex items-center justify-center text-charcoal-900 text-[10px] font-bold">360</div>
+<span class="font-cinzel font-bold text-stone-200 tracking-wider">BHARATHI 360</span>
+</div>
+<p class="text-stone-400 text-xs leading-relaxed">The ultimate digital living museum featuring all 8 signature interactive differentiators.</p>
+</div>
+<div>
+<h5 class="font-cinzel uppercase text-amber-400 tracking-wider font-semibold mb-3">Living Archive</h5>
+<ul class="space-y-2">
+<li><a class="hover:text-stone-200" href="#timemachine">Time Machine (1882-1921)</a></li>
+<li><a class="hover:text-stone-200" href="#ideadna">Idea DNA Knowledge Graph</a></li>
+<li><a class="hover:text-stone-200" href="#manuscript">Living Manuscript Viewer</a></li>
+<li><a class="hover:text-stone-200" href="#sourcelens">Source-Verification Lens</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-cinzel uppercase text-amber-400 tracking-wider font-semibold mb-3">Preservation</h5>
+<ul class="space-y-2">
+<li><span class="text-stone-400">Swadesamitran Archives</span></li>
+<li><span class="text-stone-400">Pondicherry Heritage Cell</span></li>
+<li><span class="text-stone-400">Bharathiyar Memorial Trust</span></li>
+</ul>
+</div>
+<div class="bg-charcoal-800/60 p-4 rounded-xl border border-stone-800">
+<p class="font-tamil text-stone-300 italic text-xs leading-relaxed">"சென்றிடுவீர் எட்டுத் திக்கும் — கலைச்<br/>செல்வங்கள் யாவும் கொணர்ந்திங்கு சேர்ப்பீர்!"</p>
+<p class="font-cinzel text-[10px] text-amber-400 mt-2">— மகாகவி பாரதியார்</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-stone-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500">
+<span>© 2026 Bharathi 360 Ultimate Living Museum Project.</span>
+<span>Tamil Nadu &amp; Pondicherry</span>
+</div>
+</footer>
+<!-- END: GlobalFooter -->
+<!-- BEGIN: Interactive Modals -->
+<div class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md items-center justify-center p-4" id="rag-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl p-6 relative">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white" onclick="toggleModal('rag-modal')"><i class="w-5 h-5" data-lucide="x"></i></button>
+<h3 class="font-cinzel text-xl font-bold text-stone-100 mb-2">Ask AI Bharathi</h3>
+<p class="text-xs text-stone-400 mb-4">RAG powered by verified manuscripts &amp; historical writings</p>
+<div class="space-y-3 mb-4 max-h-60 overflow-y-auto" id="rag-chat-log">
+<div class="bg-charcoal-800 p-3 rounded-xl text-xs text-stone-200">வணக்கம்! Ask me anything about my poems, Pondicherry exile, or vision for India.</div>
+</div>
+<form class="flex gap-2" onsubmit="handleRagSubmit(event)">
+<input class="flex-1 bg-charcoal-950 border border-stone-700 rounded-xl px-4 py-2.5 text-xs text-stone-200 focus:outline-none focus:border-amber-500" id="rag-input" placeholder="Ask in Tamil or English..." type="text"/>
+<button class="px-4 py-2.5 bg-amber-600 rounded-xl text-white text-xs font-semibold" type="submit">Query</button>
+</form>
+</div>
+</div>
+<div class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md items-center justify-center p-4" id="source-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-lg overflow-hidden shadow-2xl p-6 relative">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white" onclick="toggleModal('source-modal')"><i class="w-5 h-5" data-lucide="x"></i></button>
+<span class="text-xs uppercase font-cinzel text-amber-400 font-bold" id="source-modal-subtitle">Verified Evidence Folio</span>
+<h3 class="font-playfair text-2xl font-bold text-stone-100 mt-1 mb-3" id="source-modal-title">Source Detail</h3>
+<p class="font-serif text-sm text-stone-300 leading-relaxed" id="source-modal-desc">Detailed verification evidence.</p>
+</div>
+</div>
+<div class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-start justify-center pt-20 p-4" id="search-modal">
+<div class="bg-charcoal-900 border border-stone-700 rounded-2xl w-full max-w-xl overflow-hidden shadow-2xl p-4">
+<div class="flex items-center gap-3 mb-3 pb-2 border-b border-stone-800">
+<i class="w-5 h-5 text-amber-400" data-lucide="search"></i>
+<input class="w-full bg-transparent border-none text-stone-100 focus:outline-none text-sm" placeholder="Search poems, letters, places..." type="text"/>
+<button class="text-stone-400" onclick="toggleModal('search-modal')"><i class="w-4 h-4" data-lucide="x"></i></button>
+</div>
+<div class="space-y-2 text-xs text-stone-300">
+<div class="p-2.5 rounded bg-charcoal-800 cursor-pointer hover:bg-stone-800" onclick="toggleModal('search-modal')">Pondicherry Exile (1910–1918) — Historical Milestone</div>
+<div class="p-2.5 rounded bg-charcoal-800 cursor-pointer hover:bg-stone-800" onclick="toggleModal('search-modal')">Achamillai Achamillai — Eternal Anthem</div>
+</div>
+</div>
+</div>
+<!-- END: Interactive Modals -->
+<!-- BEGIN: JavaScript Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+
+    function toggleModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('hidden');
+      el.classList.toggle('flex');
+      lucide.createIcons();
+    }
+
+    function selectArchetype(type) {
+      document.getElementById('archetype-modal').classList.add('hidden');
+    }
+
+    // Differentiator 1: Time Machine Logic
+    const tmData = {
+      1882: { age: 0, era: "Ettayapuram", locTitle: "Ettayapuram Palace", locDesc: "Born on Dec 11, 1882. Displayed phenomenal precocity in classical venba verses.", workTitle: "Early Classical Venbas", workDesc: "Rooted in traditional courtly scholarship.", eventTitle: "Court Scholastic Circle", eventDesc: "Mentored by traditional pundits." },
+      1904: { age: 22, era: "Madurai & Chennai", locTitle: "Madurai / Chennai", locDesc: "Served as Tamil teacher in Sethupathi High School and joined Swadesamitran.", workTitle: "Swadesamitran Editorials", workDesc: "Bold political cartoons and unvarnished essays on nationalism.", eventTitle: "Journalism Breakthrough", eventDesc: "Met radical nationalist thinkers in Madras." },
+      1910: { age: 28, era: "Pondicherry Exile", locTitle: "Pondicherry Sanctuary", locDesc: "Fled British arrest warrants to French-ruled Pondicherry. 8 years of prolific writing.", workTitle: "Panchali Sabatham & Kuyil Pattu", workDesc: "Masterpieces of modern Tamil epic poetry and allegory.", eventTitle: "Sri Aurobindo Association", eventDesc: "Engaged in deep spiritual and philosophical dialogues." },
+      1921: { age: 39, era: "Triplicane, Chennai", locTitle: "Triplicane, Chennai", locDesc: "Returned to British India in 1918. Passed away on Sept 11, 1921.", workTitle: "Collected Immortal Songs", workDesc: "Final spiritual and patriotic hymns left for posterity.", eventTitle: "Eternal Legacy", eventDesc: "Ignited the conscience of millions across India." }
+    };
+
+    function updateTimeMachine(year) {
+      // Find closest key in tmData or interpolate
+      let targetYear = 1882;
+      if (year >= 1921) targetYear = 1921;
+      else if (year >= 1910) targetYear = 1910;
+      else if (year >= 1904) targetYear = 1904;
+
+      document.getElementById('tm-year-display').innerText = year;
+      const d = tmData[targetYear] || tmData[1882];
+      document.getElementById('tm-age').innerText = Math.max(0, year - 1882);
+      document.getElementById('tm-era').innerText = d.era;
+      document.getElementById('tm-loc-title').innerText = d.locTitle;
+      document.getElementById('tm-loc-desc').innerText = d.locDesc;
+      document.getElementById('tm-work-title').innerText = d.workTitle;
+      document.getElementById('tm-work-desc').innerText = d.workDesc;
+      document.getElementById('tm-event-title').innerText = d.eventTitle;
+      document.getElementById('tm-event-desc').innerText = d.eventDesc;
+    }
+
+    function stepTimeMachine(dir) {
+      const slider = document.getElementById('tm-slider');
+      let val = parseInt(slider.value) + dir * 2;
+      if (val < 1882) val = 1882;
+      if (val > 1921) val = 1921;
+      slider.value = val;
+      updateTimeMachine(val);
+    }
+
+    // Differentiator 2: Idea DNA Graph
+    const dnaData = {
+      'Freedom': { title: "Uncompromising Sovereign Liberty", desc: "Freedom as complete psychological, economic, and spiritual emancipation.", work: '"ஆடுவோமே பள்ளு பாடுவோமே — ஆனந்தச் சுதந்திரம் அடைந்துவிட்டோம் என்று"', evidence: "Swadesamitran editorials (1907)" },
+      'Women': { title: "Pudhumai Penn (Modern Woman)", desc: "Visionary manifesto on gender equality, autonomy, and leadership.", work: '"மாதர் தம்மை இழிவு செய்யும் மடமையைக் கொளுத்துவோம்!"', evidence: "Essays on Women’s Rights (1915)" },
+      'Equality': { title: "Caste Abolition & Universal Brotherhood", desc: "Rejected caste distinctions and embraced universal humanity.", work: '"சாதி இரண்டொழிய வேறில்லையடி — குல தாழ்ச்சி உயர்ச்சி சொல்லல் பாவம்"', evidence: "Collected Social Reform Verses" },
+      'Courage': { title: "Philosophy of Fearlessness", desc: "Achamillai: Absolute internal and external fearlessness.", work: '"அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!"', evidence: "Swadesha Geethangal" },
+      'Education': { title: "Mass Scientific Literacy", desc: "Education in mother tongue for science, arts, and democracy.", work: '"தேமதுரத் தமிழோசை உலகமெலாம் பரவச் செய்தல் வேண்டும்"', evidence: "Educational Reform Tracts" },
+      'Nationalism': { title: "Vande Mataram & Mother India", desc: "Patriotic awakening uniting all linguistic regions of India.", work: '"எங்கள் தாய்"', evidence: "India Weekly Dispatches" }
+    };
+
+    function selectIdeaNode(concept) {
+      const data = dnaData[concept] || dnaData['Freedom'];
+      document.getElementById('dna-category-badge').innerText = `Core Concept: ${concept}`;
+      document.getElementById('dna-title').innerText = data.title;
+      document.getElementById('dna-desc').innerText = data.desc;
+      document.getElementById('dna-work').innerText = data.work;
+      document.getElementById('dna-evidence').innerText = data.evidence;
+    }
+
+    // Differentiator 3: Manuscript Line Selection
+    const msData = {
+      1: { title: "அச்சமில்லை அச்சமில்லை அச்சமென்பது இல்லையே!", meaning: "Fearlessness! Fearlessness! Fear does not exist at all, even if the entire world stands in opposition.", context: "Composed in Pondicherry to instill courage against colonial tyranny." },
+      2: { title: "இச்சகத்து ளோரெலாம் எதிர்த்து நின்ற போதினும்!", meaning: "Even if all the people of this entire world oppose and confront you.", context: "Urging absolute individual integrity and moral backbone." },
+      3: { title: "துச்சமாக எண்ணي நம்மைச் சூழ்ந்து வளைப்பினும்!", meaning: "Even if adversaries treat us with contempt and surround us.", context: "Reflecting the intense police pressure during Pondicherry exile." }
+    };
+
+    function selectManuscriptLine(lineNo) {
+      const d = msData[lineNo] || msData[1];
+      document.getElementById('ms-analysis-title').innerText = d.title;
+      document.getElementById('ms-meaning').innerText = d.meaning;
+      document.getElementById('ms-context').innerText = d.context;
+    }
+
+    // Differentiator 4: Source Lens Modal
+    function openSourceModal(title, desc) {
+      document.getElementById('source-modal-title').innerText = title;
+      document.getElementById('source-modal-desc').innerText = desc;
+      toggleModal('source-modal');
+    }
+
+    // Differentiator 5: Voice Discovery
+    function runVoiceQuery(query) {
+      const box = document.getElementById('voice-result-box');
+      box.classList.remove('hidden');
+      if (query.includes('தைரியம்')) {
+        document.getElementById('voice-theme-tag').innerText = "Theme Detected: Courage & Fearlessness";
+        document.getElementById('voice-poem-title').innerText = "அச்சமில்லை அச்சமில்லை!";
+        document.getElementById('voice-poem-desc').innerText = "Recommended Verse: Achamillai Achamillai. Perfect for summoning inner sovereignty.";
+      } else {
+        document.getElementById('voice-theme-tag').innerText = "Theme Detected: Women Liberation & Autonomy";
+        document.getElementById('voice-poem-title').innerText = "புதுமைப் பெண் மணிமாலை";
+        document.getElementById('voice-poem-desc').innerText = "Recommended Verse: Pudhumai Penn manifesto on gender equality and modern leadership.";
+      }
+    }
+
+    // Differentiator 8: Legacy Wall Word Add
+    function addLegacyWord(e) {
+      e.preventDefault();
+      const input = document.getElementById('legacy-input');
+      const val = input.value.trim();
+      if (!val) return;
+      const cloud = document.getElementById('legacy-word-cloud');
+      const span = document.createElement('span');
+      span.className = "px-4 py-2 rounded-full bg-amber-600/30 border border-amber-500 text-amber-200 text-sm font-cinzel animate-bounce";
+      span.innerText = val;
+      cloud.appendChild(span);
+      input.value = "";
+    }
+
+    function openRagModal() { toggleModal('rag-modal'); }
+    function handleRagSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('rag-input');
+      const val = input.value.trim();
+      if(!val) return;
+      const log = document.getElementById('rag-chat-log');
+      log.innerHTML += `<div class="bg-amber-700 text-white p-2.5 rounded-xl text-xs mb-2">User: ${val}</div>`;
+      log.innerHTML += `<div class="bg-charcoal-800 text-stone-200 p-2.5 rounded-xl text-xs mb-2">Bharathi AI: Verified archives indicate profound alignment with your query on "${val}". (Source: Collected Works Vol. 1)</div>`;
+      input.value = "";
+      log.scrollTop = log.scrollHeight;
+    }
+
+    let isPlayingAudio = false;
+    function toggleAmbienceAudio() {
+      isPlayingAudio = !isPlayingAudio;
+      const ind = document.getElementById('soundwave-indicator');
+      if(isPlayingAudio) ind.classList.remove('hidden');
+      else ind.classList.add('hidden');
+    }
+
+    function setLanguage(lang) {
+      const ta = document.getElementById('lang-ta');
+      const en = document.getElementById('lang-en');
+      if(lang === 'ta') {
+        ta.className = "px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 font-medium font-tamil text-xs transition-all shadow-sm";
+        en.className = "px-2.5 py-1 rounded-full text-stone-400 hover:text-stone-200 font-medium transition-all";
+      } else {
+        en.className = "px-2.5 py-1 rounded-full bg-amber-600/30 text-amber-300 font-medium text-xs transition-all shadow-sm";
+        ta.className = "px-2.5 py-1 rounded-full text-stone-400 hover:text-stone-200 font-tamil text-xs transition-all";
+      }
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobile-nav-panel').classList.toggle('hidden');
+    }
+</script>
+<!-- END: JavaScript Logic -->
+</main></body></html>
