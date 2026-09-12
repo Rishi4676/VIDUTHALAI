@@ -111,7 +111,7 @@ class VoiceAssistant {
 
     // Turn ON -> Greet & Start Listening Immediately
     this.updateState('GREETING', 'வணக்கம்! கேளுங்கள்...');
-    const greetingMsg = "வணக்கம்! அன்புடன் வரவேற்கிறேன். தங்களுக்கு உதவக் காத்திருக்கிறேன், தயவுசெய்து கேளுங்கள்.";
+    const greetingMsg = "வணக்கம்! அன்பான நல்வரவு. மகாகவி பாரதியாரின் சிந்தனைகளால் இயங்கும் AI உதவியாளன் நான். கனிவுடன் கேளுங்கள்.";
     
     this.ttsService.speak(greetingMsg, () => {
       if (this.isOn) {

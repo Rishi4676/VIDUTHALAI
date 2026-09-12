@@ -1,14 +1,14 @@
 /**
- * speechSynthesisService.js - Text-to-Speech Provider Abstraction Layer
- * Supports Speak, Pause, Resume, Stop, Mute, and Multi-Tier Fallback.
- * Never crashes the website.
+ * speechSynthesisService.js - Ultra-Natural, Polite & Human-Like Tamil Text-to-Speech Engine
+ * Delivers warm, respectful, gentle, and clear Tamil/English speech with natural sentence pauses.
+ * Supports multi-tier voice scoring, instant cancellation on user input, and graceful fallbacks.
  */
 class SpeechSynthesisService {
   constructor(options = {}) {
     this.options = {
       lang: options.lang || 'ta-IN',
-      pitch: options.pitch || 1.0,  // Clear, confident, natural pitch
-      rate: options.rate || 0.92,   // Crisp, articulate, perfectly paced speech rate
+      pitch: options.pitch || 0.98, // Warm, gentle, humble human pitch
+      rate: options.rate || 0.85,   // Comfortable, slightly slower rate for crystal clear pronunciation
       volume: options.volume || 1.0,
       onStart: options.onStart || (() => {}),
       onPause: options.onPause || (() => {}),
@@ -19,8 +19,12 @@ class SpeechSynthesisService {
 
     this.fallbackProvider = window.speechSynthesis || null;
     this.selectedVoice = null;
+    this.selectedEnglishVoice = null;
     this.isSpeaking = false;
     this.isPaused = false;
+    this.sentenceQueue = [];
+    this.currentChunkIndex = 0;
+    this.lastSpokenText = '';
 
     this.availableVoices = [];
     this.initProviders();
@@ -36,34 +40,51 @@ class SpeechSynthesisService {
 
         this.availableVoices = voices;
 
-        // Score voices to prioritize ultra-polite Natural/Neural Tamil voices
-        let bestVoice = null;
-        let highestScore = -1;
+        let bestTamilVoice = null;
+        let highestTamilScore = -1;
+
+        let bestEnglishVoice = null;
+        let highestEnglishScore = -1;
 
         voices.forEach(voice => {
           let score = 0;
           const name = voice.name.toLowerCase();
           const lang = voice.lang.toLowerCase();
 
-          // High priority for Tamil language matches
-          if (lang === 'ta-IN' || lang.startsWith('ta')) score += 120;
+          // 1. High priority for Tamil language matches
+          if (lang === 'ta-IN' || lang.startsWith('ta')) score += 150;
+          else if (lang.includes('ta')) score += 100;
           else if (lang.includes('in')) score += 30;
 
-          // Prefer Natural & Neural voices on Windows/Edge/Chrome (Valluvar / Pallavi Natural / Google Tamil)
+          // 2. Prefer Natural, Neural, Online, and Human-sounding Tamil voices
           if (name.includes('natural')) score += 80;
           if (name.includes('neural')) score += 70;
+          if (name.includes('pallavi') || name.includes('valluvar') || name.includes('kani')) score += 60;
           if (name.includes('google')) score += 50;
           if (name.includes('online')) score += 40;
           if (name.includes('microsoft')) score += 35;
-          if (name.includes('valluvar') || name.includes('pallavi') || name.includes('male')) score += 30;
+          if (name.includes('apple') || name.includes('siri')) score += 30;
 
-          if (score > highestScore) {
-            highestScore = score;
-            bestVoice = voice;
+          if (score > highestTamilScore) {
+            highestTamilScore = score;
+            bestTamilVoice = voice;
+          }
+
+          // Score English Voices for English queries
+          if (lang.startsWith('en')) {
+            let enScore = 50;
+            if (lang === 'en-in') enScore += 60;
+            if (name.includes('natural') || name.includes('neural')) enScore += 40;
+            if (name.includes('google')) enScore += 30;
+            if (enScore > highestEnglishScore) {
+              highestEnglishScore = enScore;
+              bestEnglishVoice = voice;
+            }
           }
         });
 
-        this.selectedVoice = bestVoice || voices[0];
+        this.selectedVoice = bestTamilVoice || voices.find(v => v.lang.startsWith('ta')) || voices[0];
+        this.selectedEnglishVoice = bestEnglishVoice || voices.find(v => v.lang.startsWith('en')) || this.selectedVoice;
       } catch (e) {
         console.warn('SpeechSynthesisService voice selection error:', e);
       }
@@ -103,8 +124,6 @@ class SpeechSynthesisService {
       .replace(/AI/gi, 'ஏ ஐ')
       .trim();
 
-    // Add natural micro-pauses after sentences and clause breaks for crystal clear Tamil articulation
-    clean = clean.replace(/([.!?])/g, '$1 , ');
     return clean;
   }
 
@@ -116,44 +135,80 @@ class SpeechSynthesisService {
 
     this.lastSpokenText = text;
     this.stop();
+
+    const cleanText = this.normalizeText(text);
+    const hasTamilScript = /[\u0B80-\u0BFF]/.test(cleanText);
+
+    // Split text into natural sentence phrases for gentle, human-like cadence
+    const phrases = cleanText
+      .split(/(?<=[.!?;\n])\s+/)
+      .map(p => p.trim())
+      .filter(p => p.length > 0);
+
+    if (phrases.length === 0) {
+      if (onEndCallback) onEndCallback();
+      return;
+    }
+
+    this.sentenceQueue = phrases;
+    this.currentChunkIndex = 0;
     this.isSpeaking = true;
     this.isPaused = false;
     this.options.onStart();
 
-    const cleanText = this.normalizeText(text);
+    const targetVoice = hasTamilScript ? this.selectedVoice : (this.selectedEnglishVoice || this.selectedVoice);
+    const targetLang = hasTamilScript ? 'ta-IN' : 'en-IN';
 
-    if (this.fallbackProvider) {
-      try {
-        const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = this.options.lang;
-        utterance.rate = this.options.rate;
-        utterance.pitch = this.options.pitch;
-        utterance.volume = this.options.volume;
-
-        if (this.selectedVoice) {
-          utterance.voice = this.selectedVoice;
-        }
-
-        utterance.onend = () => {
-          this.isSpeaking = false;
-          this.isPaused = false;
-          this.options.onEnd();
-          if (onEndCallback) onEndCallback();
-        };
-
-        utterance.onerror = (err) => {
-          console.warn('SpeechSynthesisService Primary Error, invoking visual fallback:', err);
-          this.executeVisualFallback(onEndCallback);
-        };
-
-        this.fallbackProvider.speak(utterance);
+    const speakChunk = (index) => {
+      if (!this.isSpeaking || index >= this.sentenceQueue.length) {
+        this.isSpeaking = false;
+        this.isPaused = false;
+        this.options.onEnd();
+        if (onEndCallback) onEndCallback();
         return;
-      } catch (err) {
-        console.warn('SpeechSynthesisService Exception:', err);
       }
-    }
 
-    this.executeVisualFallback(onEndCallback);
+      const chunk = this.sentenceQueue[index];
+      if (!chunk) {
+        speakChunk(index + 1);
+        return;
+      }
+
+      if (this.fallbackProvider) {
+        try {
+          const utterance = new SpeechSynthesisUtterance(chunk);
+          utterance.lang = targetLang;
+          utterance.rate = hasTamilScript ? 0.85 : 0.90; // Gentle, clear speed so every word is understood
+          utterance.pitch = 0.98;                        // Calm, respectful, polite tone
+          utterance.volume = this.options.volume;
+
+          if (targetVoice) {
+            utterance.voice = targetVoice;
+          }
+
+          utterance.onend = () => {
+            if (this.isSpeaking) {
+              // Natural conversational micro-pause between sentences (180ms)
+              setTimeout(() => speakChunk(index + 1), 180);
+            }
+          };
+
+          utterance.onerror = (err) => {
+            console.warn('SpeechSynthesis chunk error:', err);
+            speakChunk(index + 1);
+          };
+
+          this.fallbackProvider.speak(utterance);
+          return;
+        } catch (err) {
+          console.warn('SpeechSynthesis Exception:', err);
+        }
+      }
+
+      this.executeVisualFallback(onEndCallback);
+    };
+
+    speakChunk(0);
   }
 
   pause() {
@@ -179,10 +234,10 @@ class SpeechSynthesisService {
   togglePause() {
     if (this.isPaused) {
       this.resume();
-      return false; // Not paused anymore
+      return false;
     } else if (this.isSpeaking) {
       this.pause();
-      return true; // Now paused
+      return true;
     }
     return false;
   }
@@ -196,11 +251,15 @@ class SpeechSynthesisService {
   }
 
   stop() {
-    if (this.fallbackProvider && (this.fallbackProvider.speaking || this.fallbackProvider.paused)) {
-      try { this.fallbackProvider.cancel(); } catch (e) {}
-    }
     this.isSpeaking = false;
     this.isPaused = false;
+    this.sentenceQueue = [];
+    this.currentChunkIndex = 0;
+    if (this.fallbackProvider) {
+      try {
+        this.fallbackProvider.cancel();
+      } catch (e) {}
+    }
   }
 
   executeVisualFallback(onEndCallback) {
