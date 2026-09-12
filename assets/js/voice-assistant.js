@@ -186,6 +186,13 @@ class VoiceAssistant {
             setTimeout(() => this.sttService.start(), 300);
           }
         });
+      } else if (result.type === 'MUSIC') {
+        this.updateState('HAPPY', result.response);
+        this.ttsService.speak(result.response, () => {
+          if (typeof window.playBharathiSong === 'function') {
+            window.playBharathiSong(result.songKey);
+          }
+        });
       } else if (result.type === 'SPEAK') {
         this.updateState('SPEAKING', result.response);
         this.ttsService.speak(result.response, () => {

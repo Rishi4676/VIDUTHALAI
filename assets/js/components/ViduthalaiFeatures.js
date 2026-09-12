@@ -1163,7 +1163,9 @@ class ViduthalaiSuite {
   }
 
   playSampleAudio(type) {
-    if ('speechSynthesis' in window) {
+    if (typeof window.playBharathiSong === 'function') {
+      window.playBharathiSong(type);
+    } else if ('speechSynthesis' in window) {
       const u = new SpeechSynthesisUtterance(type === 'nallathor' ? 'நல்லதோர் வீணை செய்தே' : 'அச்சமில்லை அச்சமில்லை');
       u.lang = 'ta-IN';
       window.speechSynthesis.speak(u);

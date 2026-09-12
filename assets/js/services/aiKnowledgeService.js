@@ -219,7 +219,29 @@ class AIKnowledgeService {
       return { type: 'NAVIGATE', target: this.routes.ai, response: 'AI பாரதி ஆய்வகத்திற்கு வழிகாட்டுகிறேன்.' };
     }
 
-    // 2. SITE INTRO VIDEO VOICE COMMAND
+    // 2. REAL MUSIC & YOUTUBE SONG PLAYER VOICE COMMAND
+    const songKeywords = ['play song', 'play music', 'sing song', 'paattu paadu', 'paattu', 'பாடலை இசை', 'பாட்டு பாடு', 'achamillai', 'nallathor', 'chinnanchiru', 'senthamizh', 'vande matharam', 'kuyil pattu', 'aaduvome'];
+    if (songKeywords.some(k => text.includes(k))) {
+      let songKey = 'achamillai';
+      if (text.includes('veenai') || text.includes('nallathor')) songKey = 'nallathor';
+      else if (text.includes('kiliye') || text.includes('chinnanchiru') || text.includes('kannamma')) songKey = 'chinnanchiru';
+      else if (text.includes('senthamizh') || text.includes('tamil')) songKey = 'senthamizh';
+      else if (text.includes('vande') || text.includes('matharam')) songKey = 'vande';
+      else if (text.includes('kuyil') || text.includes('cuckoo')) songKey = 'kuyil';
+      else if (text.includes('aadu') || text.includes('pallu')) songKey = 'aaduvome';
+      else if (text.includes('acham') || text.includes('achamillai')) songKey = 'achamillai';
+
+      if (typeof window.playBharathiSong === 'function') {
+        window.playBharathiSong(songKey);
+      }
+      return { 
+        type: 'MUSIC', 
+        songKey: songKey,
+        response: 'மகாகவி பாரதியாரின் அசல் இசைப் பதிவை ஒளிபரப்புகிறேன்...' 
+      };
+    }
+
+    // 3. SITE INTRO VIDEO VOICE COMMAND
     if (text.includes('intro video') || text.includes('play intro') || text.includes('show intro') || text.includes('அறிமுக வீடியோ')) {
       if (typeof window.showBharathiIntro === 'function') {
         window.showBharathiIntro();
