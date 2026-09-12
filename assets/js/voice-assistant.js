@@ -179,15 +179,29 @@ class VoiceAssistant {
         this.ttsService.speak(result.response, () => {
           window.location.href = result.target;
         });
+      } else if (result.type === 'FEATURE' || result.type === 'ACTION') {
+        this.updateState('HAPPY', result.response);
+        this.ttsService.speak(result.response, () => {
+          if (this.isOn && this.sttService) {
+            setTimeout(() => this.sttService.start(), 300);
+          }
+        });
       } else if (result.type === 'SPEAK') {
         this.updateState('SPEAKING', result.response);
-        this.ttsService.speak(result.response);
+        this.ttsService.speak(result.response, () => {
+          if (this.isOn && this.sttService) {
+            setTimeout(() => this.sttService.start(), 300);
+          }
+        });
       } else if (result.type === 'CONTROL' && result.action === 'STOP') {
         this.turnOff();
       } else {
         this.updateState('CONFUSED', 'மன்னிக்கவும், மீண்டும் கேட்கவும்.');
+        if (this.isOn && this.sttService) {
+          setTimeout(() => this.sttService.start(), 1000);
+        }
       }
-    }, 400);
+    }, 300);
   }
 
   handleError(errMsg) {

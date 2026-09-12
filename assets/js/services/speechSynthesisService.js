@@ -7,8 +7,8 @@ class SpeechSynthesisService {
   constructor(options = {}) {
     this.options = {
       lang: options.lang || 'ta-IN',
-      pitch: options.pitch || 0.96, // Soft, polite, natural pitch
-      rate: options.rate || 0.85,  // Relaxed, unhurried, gentle speaking rate
+      pitch: options.pitch || 1.0,  // Clear, confident, natural pitch
+      rate: options.rate || 0.92,   // Crisp, articulate, perfectly paced speech rate
       volume: options.volume || 1.0,
       onStart: options.onStart || (() => {}),
       onPause: options.onPause || (() => {}),
