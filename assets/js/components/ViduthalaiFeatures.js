@@ -83,6 +83,21 @@ class ViduthalaiSuite {
             <button onclick="window.viduthalaiSuite.switchTab('f10')" id="tab-btn-f10" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
               <span>10. MANUSCRIPT MAGNIFIER</span>
             </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f11')" id="tab-btn-f11" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>11. HANDWRITING STUDIO</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f12')" id="tab-btn-f12" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>12. VERSE ORACLE</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f13')" id="tab-btn-f13" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>13. 1910 CID CIPHER GAME</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f14')" id="tab-btn-f14" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>14. KUYIL BINAURAL RAGAS</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f15')" id="tab-btn-f15" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>15. 14-LANG POLYGLOT</span>
+            </button>
           </div>
 
           <!-- TAB PANELS CONTENT CONTAINER -->
@@ -458,6 +473,169 @@ class ViduthalaiSuite {
                   "வந்தே மாதரம் என்போம் - எங்கள் மாநிலத் தாயை வணங்குதும் என்போம்...<br/>
                   (பாரதியின் அசல் கையெழுத்துப் பிரதி நகல் - 1908)"
                 </div>
+              </div>
+            </div>
+
+            <!-- FEATURE 11: BHARATHI HANDWRITING STUDIO -->
+            <div id="feature-panel-f11" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• REAL-TIME INK STROKE & CALLIGRAPHY ENGINE</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Bharathi Handwriting Studio (பாரதியின் கையெழுத்துப் பயிலகம்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பாரதியாரின் அசல் 1910 கையெழுத்து பாணியில் உங்கள் வரிகளை அச்சு அப்பி எழுதிக் பாருங்கள். அசல் மை பேனா அழுத்தம் மற்றும் காகித அமைப்போடு இயங்குகிறது.
+                  </p>
+                  <div class="mb-4">
+                    <label class="block text-xs font-semibold text-amber-400 font-cinzel mb-1">TYPE YOUR TEXT / வாக்கியம்:</label>
+                    <input id="hw-input" type="text" value="சுதந்திரம் வென்றோம்!" class="w-full bg-stone-950 border border-amber-500/40 rounded-xl px-4 py-2 text-stone-100 font-tamil text-sm focus:outline-none focus:border-amber-400 mb-3"/>
+                    <button onclick="window.viduthalaiSuite.renderHandwriting()" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-cinzel text-xs font-bold transition-all shadow-md">
+                      ✍️ ANIMATE BHARATHI HANDWRITING
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-[#F4EAD3] border border-amber-900/40 rounded-xl p-6 text-stone-900 shadow-inner flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden">
+                <span class="text-[10px] text-amber-900/60 font-mono absolute top-3 left-4 uppercase tracking-widest">1910 DIPPED-INK PARCHMENT CANVAS</span>
+                <div id="hw-canvas-output" class="font-serif text-2xl sm:text-3xl font-bold tracking-widest text-amber-950 font-tamil text-center leading-relaxed py-8 my-auto transition-all transform scale-100">
+                  சுதந்திரம் வென்றோம்!
+                </div>
+                <div class="text-xs font-serif italic text-amber-900/80 mt-auto border-t border-amber-900/20 pt-2 w-full text-center">
+                  — சி. சுப்பிரமணிய பாரதி (மகா கவிஞர் அசல் கையொப்பப் பாணி)
+                </div>
+              </div>
+            </div>
+
+            <!-- FEATURE 12: VERSE ORACLE CARDS -->
+            <div id="feature-panel-f12" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• DYNAMIC WISDOM & PHILOSOPHICAL ORACLE</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Viduthalai Verse Oracle (விடுதலைக் கவிதை அசரீரி)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பாரதியாரின் கோட்பாடுகளைக் கொண்ட மெய்ஞ்ஞான அட்டையைத் தேர்ந்தெடுங்கள். உங்கள் அன்றாட வாழ்க்கைக்குத் தேவையான பாரதியின் கவிதை வழிகாட்டுதலைப் பெறுங்கள்.
+                  </p>
+                  <button onclick="window.viduthalaiSuite.drawOracleCard()" class="px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-cinzel font-bold text-xs rounded-xl shadow-lg transition-all flex items-center gap-2">
+                    <span>🔮 DRAW DAILY WISDOM CARD</span>
+                  </button>
+                </div>
+              </div>
+              <div class="lg:w-1/2 flex items-center justify-center">
+                <div id="oracle-card-display" class="w-full max-w-sm bg-gradient-to-br from-charcoal-800 to-stone-900 border-2 border-amber-500/60 rounded-2xl p-6 text-center shadow-2xl transition-all transform hover:scale-102">
+                  <div class="text-4xl mb-3">🔥</div>
+                  <span class="text-amber-400 font-cinzel text-xs font-bold tracking-widest block uppercase mb-1" id="oracle-topic">CARD I: FEARLESSNESS / அச்சமின்மை</span>
+                  <h4 class="font-tamil text-xl font-bold text-stone-100 mb-3" id="oracle-verse">"அச்சமில்லை அச்சமில்லை அச்சமென்பதில்லையே!"</h4>
+                  <p class="font-serif text-stone-300 text-xs leading-relaxed italic mb-4" id="oracle-desc">
+                    Do not harbor fear, even if the whole world turns against you. Courage is the foundation of true liberty.
+                  </p>
+                  <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-300 text-[10px] font-mono rounded-full border border-amber-500/40">WISDOM ORACLE CODE #01</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- FEATURE 13: 1910 BRITISH CID SECRET CIPHER GAME -->
+            <div id="feature-panel-f13" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• CONFIDENTIAL 1910 C.I.D. DOSSIER GAME</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">1910 Secret Press Cipher (சுதேசி உளவுக்கோப்பு)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    1910 புதுச்சேரி ரகசிய அச்சுக்கூடத்தில் பிரிட்டிஷ் உளவுப் படையிடமிருந்து 'இந்தியா' பத்திரிகையை பாதுகாப்பாக அச்சிட ரகசியக் குறியீட்டை விடுவியுங்கள்!
+                  </p>
+                  <div class="p-4 bg-stone-950 border border-stone-800 rounded-xl mb-4 font-mono text-xs text-amber-300">
+                    <div>BRITISH RAJ CONFIDENTIAL DOSSIER #1910</div>
+                    <div class="mt-1 text-stone-400">ENCRYPTED TELEGRAM: <span class="text-amber-400 font-bold">"V-I-D-U-T-H-A-L-A-I"</span></div>
+                  </div>
+                  <div class="flex gap-2">
+                    <input id="cipher-input" type="text" placeholder="ENTER DECODED KEYWORD..." class="bg-stone-950 border border-amber-500/40 rounded-xl px-4 py-2 text-stone-100 font-mono text-xs focus:outline-none focus:border-amber-400 flex-1 uppercase"/>
+                    <button onclick="window.viduthalaiSuite.verifyCipher()" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-cinzel text-xs font-bold transition-all">
+                      UNLOCK ARCHIVE
+                    </button>
+                  </div>
+                  <div id="cipher-status" class="mt-3 text-xs font-mono"></div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-stone-950 border border-amber-500/30 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+                <span class="text-5xl mb-3">🕵️‍♂️</span>
+                <h4 class="font-cinzel text-lg font-bold text-stone-200 mb-2">Pondicherry Underground Operations</h4>
+                <p class="font-tamil text-stone-400 text-xs leading-relaxed max-w-md">
+                  பாரதியாரும் வ.வே.சு. ஐயரும் பிரிட்டிஷ் அரசின் தடையை மீறி புதுச்சேரியிலிருந்து ரகசியமாக அச்சிட்டு சென்னைக்கு அனுப்பிய வரலாற்றுச் சுவடுகள்.
+                </p>
+              </div>
+            </div>
+
+            <!-- FEATURE 14: KUYIL PATTU BINAURAL RAGA SOUNDSCAPE STUDIO -->
+            <div id="feature-panel-f14" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• MULTI-CHANNEL 8D BINAURAL SOUND ENGINE</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Kuyil Pattu Binaural Raga Studio (இயற்கை ஓசை நயம்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பாரதியின் 'குயில் பாட்டு' கவிதையால் ஈர்க்கப்பட்ட இயற்கை பறவையோசைகள், சோலைத் தென்றல் மற்றும் வீணை நாதத்தின் 8D ஒலிக்கலவை.
+                  </p>
+                </div>
+                <div class="space-y-4 bg-stone-950 p-4 rounded-xl border border-stone-800">
+                  <div>
+                    <label class="flex justify-between text-xs font-cinzel text-stone-300 mb-1">
+                      <span>MANGO GROVE BIRDS / மாஞ்சோலைக் குயில்:</span>
+                      <span id="vol-val-1">70%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="70" class="w-full accent-amber-500" oninput="document.getElementById('vol-val-1').textContent=this.value+'%'"/>
+                  </div>
+                  <div>
+                    <label class="flex justify-between text-xs font-cinzel text-stone-300 mb-1">
+                      <span>VEENA DRONE RAGA / வீணை நாதம்:</span>
+                      <span id="vol-val-2">85%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="85" class="w-full accent-amber-500" oninput="document.getElementById('vol-val-2').textContent=this.value+'%'"/>
+                  </div>
+                  <div>
+                    <label class="flex justify-between text-xs font-cinzel text-stone-300 mb-1">
+                      <span>MONSOON BREEZE / சோலைத் தென்றல்:</span>
+                      <span id="vol-val-3">50%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="50" class="w-full accent-amber-500" oninput="document.getElementById('vol-val-3').textContent=this.value+'%'"/>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-stone-950 border border-amber-500/30 rounded-xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                <div class="w-24 h-24 rounded-full border border-amber-500/40 flex items-center justify-center bg-amber-500/10 mb-4 animate-pulse">
+                  <span class="text-4xl">🕊️</span>
+                </div>
+                <h4 class="font-cinzel text-lg font-bold text-amber-300 mb-1">Kuyil Pattu Soundscape Live</h4>
+                <p class="font-tamil text-stone-400 text-xs">காதல் காதால் கேட்கும் கானம் - 8D Binaural Mode Active</p>
+              </div>
+            </div>
+
+            <!-- FEATURE 15: 14-LANGUAGE POLYGLOT LITERATURE MATRIX -->
+            <div id="feature-panel-f15" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• MAHAKAVI 14-LANG POLYGLOT COMPARATIVE ENGINE</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">14-Language Polyglot Matrix (பன்மொழிப் பாவலர்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    "யாமறிந்த மொழிகளிலே தமிழ்மொழி போல் இனிதாவதெங்கும் காணோம்!" பாரதியார் தேர்ச்சி பெற்ற 14 மொழிகளின் சர்வதேச ஒப்பாய்வு.
+                  </p>
+                  <div class="grid grid-cols-3 sm:grid-cols-4 gap-2 mb-4">
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('sanskrit')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Sanskrit</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('french')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">French</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('english')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">English</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('hindi')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Hindi</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('bengali')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Bengali</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('telugu')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Telugu</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('arabic')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Arabic</button>
+                    <button onclick="window.viduthalaiSuite.setLangMatrix('persian')" class="px-2.5 py-1.5 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Persian</button>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-stone-950 border border-amber-500/30 rounded-xl p-6">
+                <span class="text-xs text-amber-400 font-mono mb-2 block uppercase" id="polyglot-title">SANSKRIT & BHARATHI TRANSLATION</span>
+                <div class="p-4 bg-stone-900 border border-stone-800 rounded-lg mb-3">
+                  <div class="text-stone-300 font-serif text-sm italic mb-2" id="polyglot-original">"அக்னிமீளே புரோஹிதம் யஜ்ஞஸ்ய தேவம் ரித்விஜம்" (Vedic Rigveda Hymn)</div>
+                  <div class="text-amber-300 font-tamil text-xs leading-relaxed" id="polyglot-tamil">பாரதியின் தமிழாக்கம்: "வேள்வியின் தலைவனும் ஒளியின் தெய்வமுமாகிய அக்கினியைப் போற்றுகின்றேன்."</div>
+                </div>
+                <p class="font-tamil text-stone-400 text-xs leading-relaxed" id="polyglot-note">
+                  பாரதியார் ரிக் வேதப் பாடல்களைத் தமிழில் முதன்முதலில் எளிய உரையாடை நடையில் மொழிபெயர்த்த முன்னோடி ஆவார்.
+                </p>
               </div>
             </div>
 
