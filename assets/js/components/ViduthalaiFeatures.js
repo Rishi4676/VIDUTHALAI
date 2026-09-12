@@ -44,10 +44,10 @@ class ViduthalaiSuite {
               VIDUTHALAI INNOVATION SUITE / விடுதலை கண்டுபிடிப்புகள்
             </span>
             <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-stone-100 tracking-wide mb-3">
-              20 Interactive Digital Innovations
+              25 Interactive Digital Innovations
             </h2>
             <p class="font-tamil text-stone-400 text-sm sm:text-base">
-              மகாகவி பாரதியாரின் கவிதைகள், இசை, 3D நினைவிடங்கள், AR கேமரா, அச்சுக்கூட சிமுலேட்டர், குரல் அலைவரிசை மற்றும் பன்மொழி AI தொழில்நுட்பத்துடன் கூடிய 20 பிரத்யேக அம்சங்கள்.
+              மகாகவி பாரதியாரின் கவிதைகள், இசை, 3D நினைவிடங்கள், VR அருங்காட்சியகம், அச்சுக்கூடம், ஹார்மோனியம் மற்றும் 25 பிரத்யேக நவீன அம்சங்கள்.
             </p>
           </div>
 
@@ -112,6 +112,21 @@ class ViduthalaiSuite {
             </button>
             <button onclick="window.viduthalaiSuite.switchTab('f20')" id="tab-btn-f20" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
               <span>20. GLOBAL FREEDOM MATRIX</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f21')" id="tab-btn-f21" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>21. VR MUSEUM 1910</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f22')" id="tab-btn-f22" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>22. PANCHAALI OPERA</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f23')" id="tab-btn-f23" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>23. GNANARATHAM SIMULATOR</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f24')" id="tab-btn-f24" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>24. UNDERGROUND MAP</span>
+            </button>
+            <button onclick="window.viduthalaiSuite.switchTab('f25')" id="tab-btn-f25" class="suite-tab-btn px-4 py-2.5 rounded-xl font-cinzel font-semibold text-xs tracking-wider whitespace-nowrap transition-all bg-stone-800 text-stone-400 hover:text-amber-300 border border-stone-700 flex items-center gap-2">
+              <span>25. HARMONIUM STUDIO</span>
             </button>
           </div>
 
@@ -826,6 +841,130 @@ class ViduthalaiSuite {
               </div>
             </div>
 
+            <!-- FEATURE 21: BHARATHI VR VIRTUAL MUSEUM WALKTHROUGH 1910 -->
+            <div id="feature-panel-f21" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• WEBVR 360° IMMERSIVE ARCHIVAL EXHIBITION</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Bharathi VR Virtual Museum 1910 (விர்ச்சுவல் அருங்காட்சியகம்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    1910 பாண்டிச்சேரி புகலிட இல்லம் மற்றும் அச்சுக்கூடத்தின் 360° விர்ச்சுவல் அருங்காட்சியக உலாவை VR கண்ணாடி அல்லது திரையிலேயே அனுபவியுங்கள்.
+                  </p>
+                  <button onclick="window.viduthalaiSuite.launchVRMuseum()" id="vr-launch-btn" class="w-full py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white rounded-xl font-cinzel font-bold text-xs uppercase shadow-lg transition-all flex items-center justify-center gap-2">
+                    <span>🥽 ENTER 360° VIRTUAL REALITY (VR) GALLERY</span>
+                  </button>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-stone-950 border border-amber-500/30 rounded-xl p-6 flex flex-col items-center justify-center text-center relative overflow-hidden min-h-[300px]" id="vr-canvas-box">
+                <div class="text-5xl mb-3 animate-bounce">🏛️</div>
+                <h4 class="font-cinzel text-lg font-bold text-amber-300 mb-1" id="vr-title">Pondicherry 1910 Archival Room</h4>
+                <p class="font-tamil text-stone-400 text-xs" id="vr-desc">360° Panoramas • Original Turban & Vintage Fountain Pen Replica</p>
+              </div>
+            </div>
+
+            <!-- FEATURE 22: PANCHAALI SABATHAM INTERACTIVE DRAMATIC OPERA -->
+            <div id="feature-panel-f22" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• MULTI-CHARACTER DRAMATIC VOICE & SOUNDSCAPE ENGINE</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Panchaali Sabatham Opera (பாஞ்சாலி சபதம் நாடக அரங்கம்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பாரதியாரின் மகத்தான காவியமான 'பாஞ்சாலி சபதம்' நாடகக் காட்சிகளை ஒலிவடிவிலும் நாடக அமைப்பிலும் அனுபவியுங்கள்.
+                  </p>
+                  <div class="space-y-2 mb-4">
+                    <button onclick="window.viduthalaiSuite.playOperaScene('draupadi')" class="w-full p-2.5 bg-stone-800 hover:bg-amber-600/30 border border-stone-700 rounded-lg text-left font-tamil text-xs flex justify-between items-center text-stone-200">
+                      <span>1. திரௌபதியின் சபதம் ("தேவி பராசக்தி மீது ஆணை!")</span>
+                      <span class="text-amber-400 font-mono">▶ OPERA</span>
+                    </button>
+                    <button onclick="window.viduthalaiSuite.playOperaScene('bheema')" class="w-full p-2.5 bg-stone-800 hover:bg-amber-600/30 border border-stone-700 rounded-lg text-left font-tamil text-xs flex justify-between items-center text-stone-200">
+                      <span>2. பீமனின் கணையடுக்கு வீர முழக்கம்</span>
+                      <span class="text-amber-400 font-mono">▶ OPERA</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-black border border-amber-500/40 rounded-xl p-6 flex flex-col justify-between">
+                <span class="text-xs text-amber-400 font-mono uppercase" id="opera-scene-name">SCENE I: DRAUPADI'S SACRED VOW</span>
+                <div class="p-4 bg-stone-900 border border-stone-800 rounded-lg my-3 font-tamil text-xs leading-relaxed text-amber-200" id="opera-dialogue">
+                  "ஒப்பற்ற பராசக்தி மீது ஆணை! துரியோதனன் குருதியை என் கூந்தலில் பூசிய பின்னரே முடிய முடிப்பேன்!"
+                </div>
+                <div class="text-[11px] font-mono text-stone-400 text-right" id="opera-raga-tag">RAGA: AATANA (வீர ரசம்)</div>
+              </div>
+            </div>
+
+            <!-- FEATURE 23: GNANARATHAM COSMIC JOURNEY SIMULATOR -->
+            <div id="feature-panel-f23" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• ALLEGORICAL PHILOSOPHICAL SIMULATOR</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Gnanaratham Cosmic Journey (ஞானரதம் பிரபஞ்சப் பயணம்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பாரதியின் முதல் உரைநடை காவியமான 'ஞானரதம்' அடிப்படையிலான தத்துவார்த்த பிரபஞ்சப் பயணம்.
+                  </p>
+                  <div class="grid grid-cols-3 gap-2 mb-4">
+                    <button onclick="window.viduthalaiSuite.travelGnanaratham('dharma')" class="p-2 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Dharma Lokam</button>
+                    <button onclick="window.viduthalaiSuite.travelGnanaratham('satya')" class="p-2 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Satya Lokam</button>
+                    <button onclick="window.viduthalaiSuite.travelGnanaratham('shanti')" class="p-2 bg-stone-800 hover:bg-amber-600 text-stone-200 hover:text-white rounded-lg text-xs font-mono">Shanti Lokam</button>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-stone-950 border border-amber-500/30 rounded-xl p-6 flex flex-col justify-between">
+                <span class="text-xs text-amber-400 font-mono uppercase" id="gnana-lokam-title">CHARIOT OF WISDOM: DHARMA LOKAM</span>
+                <div class="p-4 bg-stone-900 border border-stone-800 rounded-lg my-3 font-tamil text-xs leading-relaxed text-stone-200" id="gnana-lokam-desc">
+                  "அறத்தின் உலகத்தில் தர்மமும் நெறியும் சுடராய் ஒளிர்கின்றன. இங்கு மனித மனம் பொறாமையற்று ஒளிர்கிறது."
+                </div>
+              </div>
+            </div>
+
+            <!-- FEATURE 24: NATIONALIST CARTOGRAPHY & UNDERGROUND SMUGGLING MAP -->
+            <div id="feature-panel-f24" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• HISTORIC CLANDESTINE MARITIME COURIER MAP</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">1908 Underground Maritime Courier Map (கடல்வழி அஞ்சல்)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பிரிட்டிஷ் அரசின் தடையை மீறி பாண்டிச்சேரியிலிருந்து சென்னை, கொழும்பு மற்றும் லண்டனுக்கு 'இந்தியா' பத்திரிகையை ரகசியமாக கடத்திய பாதை.
+                  </p>
+                  <button onclick="window.viduthalaiSuite.animateSmugglerRoute()" class="w-full py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white rounded-xl font-cinzel font-bold text-xs uppercase shadow-lg transition-all">
+                    ⛵ TRACE CLANDESTINE MARITIME COURIER ROUTE
+                  </button>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-stone-950 border border-amber-500/30 rounded-xl p-6">
+                <span class="text-xs text-amber-400 font-mono mb-2 block">MARITIME ROUTE: PONDICHERRY ➔ MADRAS ➔ COLOMBO</span>
+                <div class="p-4 bg-stone-900 border border-stone-800 rounded-lg font-tamil text-xs space-y-2" id="smuggler-route-status">
+                  <p class="text-amber-300 font-bold">• புதுச்சேரி ரகசிய அச்சுக்கூடம் ➔ தேயிலைப் பெட்டிகளில் அச்சிடப்பட்ட தாள்கள் மறைப்பு.</p>
+                  <p class="text-stone-300">• பிரிட்டிஷ் உளவுத் துறையினரால் கண்டறிய முடியாத ரகசிய அஞ்சல் வழித்தடம்.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FEATURE 25: MAHAKAVI POLYPHONIC RAGA HARMONIUM STUDIO -->
+            <div id="feature-panel-f25" class="suite-tab-panel hidden flex-col lg:flex-row gap-8">
+              <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <span class="text-amber-400 text-xs font-mono mb-2 block">• WEB SYNTH INTERACTIVE CARNATIC KEYBOARD</span>
+                  <h3 class="font-cinzel text-2xl font-bold text-stone-100 mb-2">Harmonium Raga Studio (ஹார்மோனிய இசைப் பெட்டி)</h3>
+                  <p class="font-tamil text-stone-300 text-sm mb-4">
+                    பாரதியார் விரும்பிய கர்நாடக ஸ்வர அமைப்புகளைத் திரையிலேயே ஹார்மோனியம் வாசித்துப் பாருங்கள்!
+                  </p>
+                  <div class="flex gap-2 mb-4">
+                    <button onclick="window.viduthalaiSuite.playHarmoniumKey('Sa')" class="flex-1 py-4 bg-stone-100 hover:bg-amber-400 text-stone-900 font-bold rounded shadow font-mono text-sm">Sa (ஸ)</button>
+                    <button onclick="window.viduthalaiSuite.playHarmoniumKey('Ri')" class="flex-1 py-4 bg-stone-100 hover:bg-amber-400 text-stone-900 font-bold rounded shadow font-mono text-sm">Ri (ரி)</button>
+                    <button onclick="window.viduthalaiSuite.playHarmoniumKey('Ga')" class="flex-1 py-4 bg-stone-100 hover:bg-amber-400 text-stone-900 font-bold rounded shadow font-mono text-sm">Ga (க)</button>
+                    <button onclick="window.viduthalaiSuite.playHarmoniumKey('Ma')" class="flex-1 py-4 bg-stone-100 hover:bg-amber-400 text-stone-900 font-bold rounded shadow font-mono text-sm">Ma (ம)</button>
+                    <button onclick="window.viduthalaiSuite.playHarmoniumKey('Pa')" class="flex-1 py-4 bg-stone-100 hover:bg-amber-400 text-stone-900 font-bold rounded shadow font-mono text-sm">Pa (ப)</button>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/2 bg-black border border-amber-500/40 rounded-xl p-6 flex flex-col justify-between">
+                <span class="text-xs text-amber-400 font-mono" id="harmonium-status">KEYBOARD STATE: READY • FREQUENCY SYNTHESIZER ACTIVE</span>
+                <div class="p-4 bg-stone-900 border border-stone-800 rounded my-3 text-center font-tamil text-amber-300 font-bold text-lg" id="harmonium-swara-display">
+                  ஸ - ரி - க - ம - ப (Carnatic Swara Note)
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -1272,6 +1411,81 @@ class ViduthalaiSuite {
     pTitle.textContent = item.pTitle;
     pDesc.textContent = item.pDesc;
     pNote.textContent = item.pNote;
+  }
+
+  // Feature 21: VR Virtual Museum Method
+  launchVRMuseum() {
+    const title = document.getElementById('vr-title');
+    const desc = document.getElementById('vr-desc');
+    const btn = document.getElementById('vr-launch-btn');
+    if (title && desc && btn) {
+      btn.textContent = "🥽 360° VR SIMULATOR RUNNING (IN-BROWSER VIEW)";
+      title.textContent = "Pondicherry 1910 VR Walkthrough Active";
+      desc.textContent = "Pondicherry Exile House • Clandestine Press Room • Original Facsimiles";
+    }
+  }
+
+  // Feature 22: Panchaali Sabatham Opera Method
+  playOperaScene(scene) {
+    const dialog = document.getElementById('opera-dialogue');
+    const name = document.getElementById('opera-scene-name');
+    const tag = document.getElementById('opera-raga-tag');
+    if (!dialog) return;
+    if (scene === 'bheema') {
+      name.textContent = "SCENE II: BHEEMA'S FURY & THUNDER";
+      dialog.textContent = '"துரியோதனன் தொடைகளைப் பிளந்து அவனைக் களத்தே வீழ்த்துவேன்! இது வீமனின் உறுதி!"';
+      tag.textContent = "RAGA: GAMBHEERA NATTAI (வீர உக்கிரம்)";
+    } else {
+      name.textContent = "SCENE I: DRAUPADI'S SACRED VOW";
+      dialog.textContent = '"ஒப்பற்ற பராசக்தி மீது ஆணை! துரியோதனன் குருதியை என் கூந்தலில் பூசிய பின்னரே முடிய முடிப்பேன்!"';
+      tag.textContent = "RAGA: AATANA (வீர ரசம்)";
+    }
+  }
+
+  // Feature 23: Gnanaratham Simulator Method
+  travelGnanaratham(lokam) {
+    const title = document.getElementById('gnana-lokam-title');
+    const desc = document.getElementById('gnana-lokam-desc');
+    if (!title || !desc) return;
+    const lData = {
+      dharma: { title: "CHARIOT OF WISDOM: DHARMA LOKAM (அற உலகம்)", desc: '"அறத்தின் உலகத்தில் தர்மமும் நெறியும் சுடராய் ஒளிர்கின்றன. இங்கு மனித மனம் பொறாமையற்று ஒளிர்கிறது."' },
+      satya: { title: "CHARIOT OF WISDOM: SATYA LOKAM (சத்திய உலகம்)", desc: '"வாய்மையும் உண்மையும் மட்டுமே ஆளும் பேரொளி உலகம். இங்கு பொய்க்கும் மாயைக்கும் இடமில்லை."' },
+      shanti: { title: "CHARIOT OF WISDOM: SHANTI LOKAM (சாந்தி உலகம்)", desc: '"அமைதியும் பேரின்பமும் நிறைந்த அமைதி உலகம். இங்கு ஆசைகளும் மனக் கலக்கங்களும் ஒழிகின்றன."' }
+    };
+    const sel = lData[lokam] || lData['dharma'];
+    title.textContent = sel.title;
+    desc.textContent = sel.desc;
+  }
+
+  // Feature 24: Underground Maritime Courier Map Method
+  animateSmugglerRoute() {
+    const status = document.getElementById('smuggler-route-status');
+    if (status) {
+      status.innerHTML = `
+        <p class="text-amber-300 font-bold">⛵ ROUTE ANIMATION ACTIVE: Pondicherry ➔ French Port ➔ Madras Customs Bypass</p>
+        <p class="text-emerald-400 font-mono">• Secret Courier Dispatched: 500 Copies of 'India' Weekly Smuggled in Tea Crates.</p>
+      `;
+    }
+  }
+
+  // Feature 25: Harmonium Raga Studio Method
+  playHarmoniumKey(swara) {
+    const display = document.getElementById('harmonium-swara-display');
+    const status = document.getElementById('harmonium-status');
+    if (display && status) {
+      display.textContent = `PLAYING SWARA: ${swara.toUpperCase()} (கர்நாடக ஸ்வர அதிர்வு)`;
+      status.textContent = `KEY PRESSED: ${swara.toUpperCase()} • FREQUENCY OSCILLATOR ACTIVE`;
+    }
+    try {
+      const freqs = { Sa: 261.63, Ri: 293.66, Ga: 329.63, Ma: 349.23, Pa: 392.00 };
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(freqs[swara] || 261.63, ctx.currentTime);
+      osc.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.5);
+    } catch(e) {}
   }
 }
 
